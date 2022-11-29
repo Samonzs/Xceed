@@ -6,7 +6,7 @@
 <body>
     <nav class="nav">
         <div class ="homePage">
-            <a href="welcome.blade.php">Home Page</a> <br> <br>
+            <a href="welcome.blade.php">Home Page CUNT</a> <br> <br>
         </div>
 
     </nav>
