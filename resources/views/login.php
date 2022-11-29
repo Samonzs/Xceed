@@ -4,12 +4,13 @@
     <meta charset="utf-8">
 </head>
 <body>
+    
     <nav class="nav">
         <div class ="homePage">
-            <a href="welcome.blade.php">Home Page CUNT</a> <br> <br>
+            <a href="welcome.blade.php">Home Page CUNT</a>
         </div>
-
     </nav>
+
     <div class="loginBox">
         <div class = "loginTitle">
             <label>Admin Panel</label>
@@ -23,7 +24,6 @@
                 <div class="formClass">
                     <label class = "formLabel">PASSWORD</label>
                     <input class="inputBox" name ="password" type="password"  placeholder="Password">
-                    <p style="color:red;"><?php echo $errorMessage;?></p>
                 </div>
                 <button name= "submit" type="submit" class="submit">LOGIN</button>
             </section>
