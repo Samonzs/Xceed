@@ -15,7 +15,7 @@
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
             <nav id="nav1">
                 <ul>
-                    <li> <a href="">Sign In</a></li>
+                    <li> <a href="login.php">Sign In</a></li>
                     <li> <a href="">Call Staff ph(xxxx xxx xxx)</a></li>
                 </ul>
             </nav>
@@ -24,8 +24,9 @@
                 <ul>
                     <li> <a href="Index.html">Home</a></li> <!-- we need to turn this 
                         section into a png of the xceed logo which will act as the home page-->
-                    <li> <a href="quoteManagement.html">Quite Management</a></li>
-                    <li> <a href="">Create Staff</a></li>
+                    <li> <a href="listOfQuotes.php">List Of Quotes</a></li>
+                    <li> <a href="createQuotes.php">Create Quotes</a></li>
+                    <li> <a href="createStaff.php">Create Staff</a></li>
                 </ul>
             </nav>
 
