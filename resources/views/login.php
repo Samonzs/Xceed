@@ -5,29 +5,26 @@
 </head>
 <body>
     
-    <nav class="nav">
-        <div class ="homePage">
-            <a href="welcome.blade.php">Home Page CUNT</a>
+    <nav>
+        <div>
+            <a href="welcome.blade.php">Home Page</a>
         </div>
     </nav>
 
-    <div class="loginBox">
-        <div class = "loginTitle">
-            <label>Admin Panel</label>
-        </div>
-        <section class="main">
-            <form method="post">
-                <div class="formClass">
-                    <label class ="formLabel">EMAIL</label>
-                    <input class="inputBox" name="email" type="text" placeholder="Email">
-                </div>
-                <div class="formClass">
-                    <label class = "formLabel">PASSWORD</label>
-                    <input class="inputBox" name ="password" type="password"  placeholder="Password">
-                </div>
-                <button name= "submit" type="submit" class="submit">LOGIN</button>
+            <label>Login Page</label>
+
+            <section>
+                <form method="post">
+                    <div>
+                        <label>EMAIL</label>
+                        <input class="inputBox" name="email" type="text" placeholder="Email">
+                    </div>
+                    <div>
+                        <label class = "formLabel">PASSWORD</label>
+                        <input class="inputBox" name ="password" type="password"  placeholder="Password">
+                    </div>
+                    <button name= "submit" type="submit" class="submit">LOGIN</button>
             </section>
-        </div>
     </form>
 </body>
 </html>
