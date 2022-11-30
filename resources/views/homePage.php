@@ -22,7 +22,7 @@
             <!-- This nav bar will be a second nav bar with the first having a green accent, reflecting that of the official site-->
             <nav id="nav2">
                 <ul>
-                    <li> <a href="Index.html">Home</a></li> <!-- we need to turn this 
+                    <li> <a href="homePage.php">Home</a></li> <!-- we need to turn this 
                         section into a png of the xceed logo which will act as the home page-->
                     <li> <a href="listOfQuotes.php">List Of Quotes</a></li>
                     <li> <a href="createQuotes.php">Create Quotes</a></li>

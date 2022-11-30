@@ -7,7 +7,7 @@
     
     <nav>
         <div>
-            <a href="welcome.blade.php">Home Page</a>
+            <a href="homePage.php">Home Page</a>
         </div>
     </nav>
 
