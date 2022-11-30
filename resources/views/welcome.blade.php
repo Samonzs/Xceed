@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>xceed</title>
+        <title>xceeds</title>
     </head>
     <body>
         <nav class="nav">
