@@ -14,7 +14,8 @@
             <label>Login Page</label>
 
             <section>
-                <form method="post">
+                <form action="login.php" method="post">
+                <h2>LOGIN</h2>
                     <div>
                         <label>EMAIL</label>
                         <input class="inputBox" name="email" type="text" placeholder="Email">

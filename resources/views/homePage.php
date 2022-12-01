@@ -7,6 +7,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/stylesheet.css">
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.min.js"></script>
     </head>
     <body>
 
@@ -45,7 +47,79 @@
                 This hence will show the projects that the comapny has done in a slide show that will alter images periodically-->
             <section id="columb 2">
                 <h3>Some of our projects</h3>
-                <div class="carousel">
+                <div class="carousel", id="carousel">
+                    <a id="prevbt"></a>
+                    <a id="nextbt"></a>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="carousel_image1.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="carousel_image2.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="carousel_image3.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="carousel_image4.jpg" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <script>
+                    var li_Width = 1024;
+                    var banner_Li_Num = $('#banner li').length;
+                    $('#banner ul').css({
+                        'width': li_Width * banner_Li_Num,
+                        'marginLeft': -li_Width
+                    });
+
+                    function prevbt() {
+                        $('#prevbt').unbind('click');
+                        $('#banner li:last').detach().insertBefore('#banner li:first').parents('ul').css('marginLeft', -li_Width * 2).stop(true).animate({
+                            marginLeft: -li_Width
+                        }, 800, 'easeInOutBack', function() {
+                            $('#prevbt').bind('click', prevbt);
+                        });
+                    }
+
+                    function nextbt() {
+                        $('#nextbt').unbind();
+                        $('#banner ul').stop(true).animate({
+                            marginLeft: -li_Width * 2
+                        }, 800, 'easeInOutBack', function() {
+                            $('#banner ul').css('marginLeft', -li_Width).find('li:first').insertAfter('#banner li:last');
+                            $('#nextbt').bind('click', nextbt);
+                        })
+                    }
+
+                    $('#prevbt').click(function() {
+                        prevbt();
+                    })
+                    $('#nextbt').click(function() {
+                        nextbt();
+                    })
+
+                    banner_T = setInterval(banner_Auto, 5000)
+
+                    function banner_Auto() {
+                        nextbt();
+                    }
+                    $('#banner').hover(function() {
+                        clearInterval(banner_T);
+                    }, function() {
+                        banner_T = setInterval(banner_Auto, 5000);
+                    })
+                    </script>
+                    </div>
+
                     <div class="carousel_image">image 1</div>
                     <div class="carousel_image">image 1</div>
                     <div class="carousel_image">image 2</div>
