@@ -121,13 +121,13 @@
                     </div>
 
                     <div class="carousel_image">image 1</div>
-                    <div class="carousel_image">image 1</div>
-                    <div class="carousel_image">image 2</div>
                     <div class="carousel_image">image 2</div>
                     <div class="carousel_image">image 3</div>
-                    <div class="carousel_image">image 3</div>
+
                     <div class="carousel_nav">
-                        
+                        <span class = "carousel_button"></span>
+                        <span class = "carousel_button"></span>
+                        <span class = "carousel_button"></span>
                     </div>
                 </div>
                 <p>DENHAM COURT – HOME THEATRE INSTALLATION</p>
