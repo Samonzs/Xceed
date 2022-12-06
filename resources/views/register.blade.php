@@ -31,15 +31,15 @@
             <div class="col-lg-4">
                 <div class="bg-white p-4 mt-5 rounded">
                     <div class="text-center">
-                        <h4 class="fw-bold mb-3">注册</h4>
+                        <h4 class="fw-bold mb-3">Register</h4>
                     </div>
                     <form class="login-form">
                         <div class="row">
                             <div class="col-lg-12 mt-2">
-                                <input type="text" class="form-control" placeholder="名称" name="user" required="">
+                                <input type="text" class="form-control" placeholder="Name" name="user" required="">
                             </div>
                             <div class="col-lg-12 mt-2">
-                                <input type="password" class="form-control" placeholder="密码" name="pwd" required="">
+                                <input type="password" class="form-control" placeholder="Password" name="pwd" required="">
                             </div>
                             <div class="col-lg-12 mt-4">
                                 <select name="role" class="form-control">
@@ -81,7 +81,7 @@
                 $('input[name='+this.name+']').addClass('is-invalid');
                 //增加提示
                 var msg = $('input[name='+this.name+']').prev().text();
-                toastr.warning('请填写'+msg);
+                toastr.warning('Please enter'+msg);
                 return false;
             }
         });
