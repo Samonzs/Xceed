@@ -11,13 +11,14 @@
         <script type="text/javascript" src="js/jquery.easing.min.js"></script>
     </head>
     <body>
-
+        {{print_r(URL(''))}}
+        <img src="{{URL('images/logo.jpg')}}" class="img-fluid" alt="Logo">
         <header>
             <h1>XCEED ELECTRICAL</h1>
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
             <nav id="nav1">
                 <ul>
-                    <li> <a href="login.php">Sign In</a></li>
+                <li><a href="{{url('login')}}">Login</a></li>
                     <li> <a href="">Call Staff ph(xxxx xxx xxx)</a></li>
                 </ul>
             </nav>
