@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>XCEED Electrical Dashboard</title>
         <meta name="description" content="">
@@ -11,26 +12,32 @@
         <script type="text/javascript" src="js/jquery.easing.min.js"></script>
     </head>
     <body>
-        {{print_r(URL(''))}}
+        <!-- {{print_r(URL(''))}} -->
+
         <img src="{{URL('images/logo.jpg')}}" class="img-fluid" alt="Logo">
         <header>
             <h1>XCEED ELECTRICAL</h1>
-            <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
-            <nav id="nav1">
-                <ul>
-                <li><a href="{{url('login')}}">Login</a></li>
-                    <li> <a href="">Call Staff ph(xxxx xxx xxx)</a></li>
-                </ul>
-            </nav>
-            <!-- This nav bar will be a second nav bar with the first having a green accent, reflecting that of the official site-->
-            <nav id="nav2">
-                <ul>
-                    <li> <a href="homePage.php">Home</a></li> <!-- we need to turn this 
+
+            <nav class = "navbar navbar-light navbar-expand-lg fixed-top shadow-sm bg-white">
+                <button type = "button" data-toggle = "collapse" data-target = "#navbarOptions" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>></button>
+                <div id="navbarOptions" class="collapse navbar-collapse"></div>
+                
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="welcome.blade.php" class="nav-link">
+                            <img src="public/images/logo.jpg" alt="Home Page Logo">
+                        </a>
+                    </li>
+                    <li class="nav-item"> <a href="welcome.blade.php" class="nav-link">Home</a></li> <!-- we need to turn this 
                         section into a png of the xceed logo which will act as the home page-->
-                    <li> <a href="listOfQuotes.php">List Of Quotes</a></li>
-                    <li> <a href="createQuotes.php">Create Quotes</a></li>
-                    <li> <a href="createStaff.php">Create Staff</a></li>
+                    <li> <a href="listOfQuotes.php" class="nav-link">List of Quotes</a></li>
+                    <li> <a href="createQuotes.php" class="nav-link">Create Quotes</a></li>
+                    <li> <a href="createStaff.php" class="nav-link">Create Staff</a></li>
+                    <!-- <li><a href="{{url('login')}}" class="nav-link">Login</a></li> -->
                 </ul>
+                <!-- emphasised login button -->
+                <div class="navbar-text ml-lg-3">
+                    <a href="{{url('login')}}" class="btn btn-primary text-white shadow">Login</a>
+                </div>
             </nav>
 
         </header>
@@ -46,95 +53,9 @@
 
             <!-- This will be a slideshow of the projects that xceed has done. permission will be asked before using their images. 
                 This hence will show the projects that the comapny has done in a slide show that will alter images periodically-->
-            <section id="columb 2">
-                <h3>Some of our projects</h3>
-                <div class="carousel", id="carousel">
-                    <a id="prevbt"></a>
-                    <a id="nextbt"></a>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <img src="carousel_image1.jpg" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="carousel_image2.jpg" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="carousel_image3.jpg" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="carousel_image4.jpg" />
-                            </a>
-                        </li>
-                    </ul>
-
-                    <script>
-                    var li_Width = 1024;
-                    var banner_Li_Num = $('#banner li').length;
-                    $('#banner ul').css({
-                        'width': li_Width * banner_Li_Num,
-                        'marginLeft': -li_Width
-                    });
-
-                    function prevbt() {
-                        $('#prevbt').unbind('click');
-                        $('#banner li:last').detach().insertBefore('#banner li:first').parents('ul').css('marginLeft', -li_Width * 2).stop(true).animate({
-                            marginLeft: -li_Width
-                        }, 800, 'easeInOutBack', function() {
-                            $('#prevbt').bind('click', prevbt);
-                        });
-                    }
-
-                    function nextbt() {
-                        $('#nextbt').unbind();
-                        $('#banner ul').stop(true).animate({
-                            marginLeft: -li_Width * 2
-                        }, 800, 'easeInOutBack', function() {
-                            $('#banner ul').css('marginLeft', -li_Width).find('li:first').insertAfter('#banner li:last');
-                            $('#nextbt').bind('click', nextbt);
-                        })
-                    }
-
-                    $('#prevbt').click(function() {
-                        prevbt();
-                    })
-                    $('#nextbt').click(function() {
-                        nextbt();
-                    })
-
-                    banner_T = setInterval(banner_Auto, 5000)
-
-                    function banner_Auto() {
-                        nextbt();
-                    }
-                    $('#banner').hover(function() {
-                        clearInterval(banner_T);
-                    }, function() {
-                        banner_T = setInterval(banner_Auto, 5000);
-                    })
-                    </script>
-                    </div>
-
-                    <div class="carousel_image">image 1</div>
-                    <div class="carousel_image">image 2</div>
-                    <div class="carousel_image">image 3</div>
-
-                    <div class="carousel_nav">
-                        <span class = "carousel_button"></span>
-                        <span class = "carousel_button"></span>
-                        <span class = "carousel_button"></span>
-                    </div>
-                </div>
-                <p>DENHAM COURT – HOME THEATRE INSTALLATION</p>
-            </section>
-
         
+
+
         <footer>
             <p>Copyright XCEED blah blah blah</p>  
         </footer>
