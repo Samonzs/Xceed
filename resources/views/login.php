@@ -29,7 +29,7 @@
 <body>
     <nav>
         <div>
-            <a href="{{URL('login')}}">Home Page</a>
+            <a href="{{url('welcome')}}">Home Page</a>
         </div>
     </nav>
     

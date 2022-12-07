@@ -24,19 +24,19 @@
                 
                 <ul class="navbar-nav ml-auto">
                     <li><a href="welcome.blade.php" class="nav-link">
-                            <img src="public/images/logo.jpg" alt="Home Page Logo">
+                            <img src="{{URL('images/logo.jpg')}}" alt="Home Page Logo">
                         </a>
                     </li>
                     <li class="nav-item"> <a href="welcome.blade.php" class="nav-link">Home</a></li> <!-- we need to turn this 
                         section into a png of the xceed logo which will act as the home page-->
                     <li> <a href="listOfQuotes.php" class="nav-link">List of Quotes</a></li>
-                    <li> <a href="createQuotes.php" class="nav-link">Create Quotes</a></li>
+                    <li> <a href="{{URL('createquotes')}}" class="nav-link">Create Quotes</a></li>
                     <li> <a href="createStaff.php" class="nav-link">Create Staff</a></li>
                     <!-- <li><a href="{{url('login')}}" class="nav-link">Login</a></li> -->
                 </ul>
                 <!-- emphasised login button -->
                 <div class="navbar-text ml-lg-3">
-                    <a href="{{url('login')}}" class="btn btn-primary text-white shadow">Login</a>
+                    <a href="{{URL('login')}}" class="btn btn-primary text-white shadow">Login</a>
                 </div>
             </nav>
 
