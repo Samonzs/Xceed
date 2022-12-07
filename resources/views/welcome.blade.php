@@ -2,18 +2,23 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>XCEED Electrical Dashboard</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/stylesheet.css">
-        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-        <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+         
     </head>
+
+   
     <body>
         <!-- {{print_r(URL(''))}} -->
+    <header>     
+    <nav class="navbar navbar-inverse">
 
+<<<<<<< HEAD
         <img src="{{URL('images/logo.jpg')}}" class="img-fluid" alt="Logo">
         <header>
             <h1>XCEED ELECTRICAL</h1>
@@ -40,7 +45,44 @@
                 </div>
             </nav>
 
+=======
+     <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="welcome.blade.php"><img src="C:\xampp\htdocs\laravel\Xceed\public\images\logo.jpg" class="img-fluid" alt="XCEED ELectrical Logo"></a>
+            <a href="welcome.blade.php" class="navbar-brand"></a>
+            <!-- logo image located here -->
+            <a href="welcome.blade.php" class = "navbar-brand"></a>
+            
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quoting <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Create a Quote</a></li>
+                <li><a href="#">List of Quotes</a></li>
+            </ul>
+            <!-- <li><a href="#">section 2</a></li>
+            <li><a href="#">Section 3</a></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <!-- The glyphicon is just a symbol to use that can be called through the css and js components of bootstrap -->
+            <li><a href="CreateStaff.php"><span class="glyphicon glyphicon-user"></span> Create Staff</a></li>
+            <li><a href="{{url('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+  </div>
+</nav>
+>>>>>>> 4fca91ef153e4a995c1a82488824525354852e5b
         </header>
+
+                <h1>XCEED ELECTRICAL</h1>
                 <h2>XCEED Electrical Quote Management system</h2>
 
             <section id="columb 1"> 
@@ -60,4 +102,18 @@
             <p>Copyright XCEED blah blah blah</p>  
         </footer>
     </body>
+
+    <style>
+        .btn-primary {
+            color: #fff;
+            background-color: #0495c9;
+            border-color: #357ebd !important; /*set the color you want here*/
+        }
+    
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+            color: #fff;
+            background-color: #00b3db;
+            border-color: #285e8e !important; /*set the color you want here*/
+    </style>
+    
 </html>
