@@ -59,18 +59,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-  
-  <!-- Required meta tags --> 
-  <meta charset="utf-8"> 
-  <meta name="viewport" content=
-      "width=device-width, initial-scale=1, 
-      shrink-to-fit=no">
-  
-  <!-- Bootstrap CSS --> 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-</head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>XCEED Create Quote</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
 
 <header>
 <nav class="navbar navbar-inverse">
@@ -111,6 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </header>   
 <body>
+<center>
     
 <?php
     
@@ -156,7 +154,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
 <div class="container my-4 ">
     
-    <h1 class="text-center">Signup Here</h1> 
+    <h1 class="text-center">Signup Here</h1>
+    <head>
+ <style> 
+input[type=text] {
+  width: 50%;
+  padding: 6px 6px;
+  margin: 4px 0; 
+}
+input[type=password] {
+  width: 50%;
+  padding: 6px 6px;
+  margin: 4px 0;
+</style>
+</head> 
     <form action="signup.php" method="post">
     <div class="form-group"> 
             <label for="username">Username</label> 
@@ -209,5 +220,6 @@ https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 "sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous">
 </script> 
+</center>
 </body> 
 </html>
