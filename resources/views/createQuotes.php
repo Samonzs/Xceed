@@ -11,9 +11,11 @@
         <script type="text/javascript" src="js/jquery.easing.min.js"></script>
     </head>
     <body>
+    <center>
         <img src="images/logo.jpg" class="img-fluid" alt="Logo">
         <header>
-            <h1>XCEED ELECTRICAL</h1>
+        
+
             <h3>Create Quote</h3>
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
  <head>
@@ -48,7 +50,7 @@ input[type=text] {
     <input type="submit" value="Submit">
   </div>
 </form>  
-
+</center>
 </header>
                 
     </body>
