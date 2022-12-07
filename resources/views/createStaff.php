@@ -158,12 +158,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <head>
  <style> 
 input[type=text] {
-  width: 50%;
+  width: 15%;
   padding: 6px 6px;
   margin: 4px 0; 
 }
 input[type=password] {
-  width: 50%;
+  width: 15%;
   padding: 6px 6px;
   margin: 4px 0;
 </style>
