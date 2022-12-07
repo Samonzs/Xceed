@@ -25,10 +25,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>                        
             </button>
-            <a class="navbar-brand" href="welcome.blade.php">XCEED Electrical</a>
+            <a class="navbar-brand" href="welcome.blade.php"><img src="C:\xampp\htdocs\laravel\Xceed\public\images\logo.jpg" class="img-fluid" alt="XCEED ELectrical Logo"></a>
             <a href="welcome.blade.php" class="navbar-brand"></a>
             <!-- logo image located here -->
-            <a href="welcome.blade.php" class = "navbar-brand"><img src="C:\xampp\htdocs\laravel\Xceed\public\images\logo.jpg" class="img-fluid" alt="Logo"></a>
+            <a href="welcome.blade.php" class = "navbar-brand"></a>
             
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
