@@ -18,34 +18,6 @@
     <header>     
     <nav class="navbar navbar-inverse">
 
-<<<<<<< HEAD
-        <img src="{{URL('images/logo.jpg')}}" class="img-fluid" alt="Logo">
-        <header>
-            <h1>XCEED ELECTRICAL</h1>
-
-            <nav class = "navbar navbar-light navbar-expand-lg fixed-top shadow-sm bg-white">
-                <button type = "button" data-toggle = "collapse" data-target = "#navbarOptions" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>></button>
-                <div id="navbarOptions" class="collapse navbar-collapse"></div>
-                
-                <ul class="navbar-nav ml-auto">
-                    <li><a href="welcome.blade.php" class="nav-link">
-                            <img src="{{URL('images/logo.jpg')}}" alt="Home Page Logo">
-                        </a>
-                    </li>
-                    <li class="nav-item"> <a href="welcome.blade.php" class="nav-link">Home</a></li> <!-- we need to turn this 
-                        section into a png of the xceed logo which will act as the home page-->
-                    <li> <a href="listOfQuotes.php" class="nav-link">List of Quotes</a></li>
-                    <li> <a href="{{URL('createquotes')}}" class="nav-link">Create Quotes</a></li>
-                    <li> <a href="createStaff.php" class="nav-link">Create Staff</a></li>
-                    <!-- <li><a href="{{url('login')}}" class="nav-link">Login</a></li> -->
-                </ul>
-                <!-- emphasised login button -->
-                <div class="navbar-text ml-lg-3">
-                    <a href="{{URL('login')}}" class="btn btn-primary text-white shadow">Login</a>
-                </div>
-            </nav>
-
-=======
      <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -65,21 +37,20 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quoting <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#">Create a Quote</a></li>
-                <li><a href="#">List of Quotes</a></li>
+                <li><a href="{{url('createQuotes')}}">Create a Quote</a></li>
+                <li><a href="{{url('listOfQuotes')}}">List of Quotes</a></li>
             </ul>
             <!-- <li><a href="#">section 2</a></li>
             <li><a href="#">Section 3</a></li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <!-- The glyphicon is just a symbol to use that can be called through the css and js components of bootstrap -->
-            <li><a href="CreateStaff.php"><span class="glyphicon glyphicon-user"></span> Create Staff</a></li>
+            <li><a href="{{url('createStaff')}}"><span class="glyphicon glyphicon-user"></span> Create Staff</a></li>
             <li><a href="{{url('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
     </div>
   </div>
 </nav>
->>>>>>> 4fca91ef153e4a995c1a82488824525354852e5b
         </header>
 
                 <h1>XCEED ELECTRICAL</h1>
