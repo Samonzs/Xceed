@@ -17,9 +17,19 @@ class HomeController extends Controller
         return view("login");
     }
 
-    public function createquotes()
+    public function createQuotes()
     {
         return view("createquotes");
+    }
+
+    public function listOfQuotes()
+    {
+        return view("listofquotes");
+    }
+
+    public function createStaff()
+    {
+        return view("createstaff");
     }
 
 }

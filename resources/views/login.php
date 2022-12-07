@@ -29,7 +29,7 @@
 <body>
     <nav>
         <div>
-            <a href="{{url('welcome')}}">Home Page</a>
+            <a href="<?php echo url('welcome')?>">Home Page</a>
         </div>
     </nav>
     
