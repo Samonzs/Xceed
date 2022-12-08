@@ -2,9 +2,10 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 
@@ -18,40 +19,36 @@
 <!-- DASHBOARD  -->
 
 <header>
-    <nav class="navbar navbar-inverse">
-
-    <div class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-        </button>
-
-        <!-- logo image located here -->
-        <a class="navbar-brand" href="<?php echo url('welcome')?>"><img src="images/logo.jpg" class="img-fluid" alt="XCEED ELectrical Logo"></a>
-        
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quoting <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="<?php echo url('createquotes')?>">Create a Quote</a></li>
-            <li><a href="<?php echo url('listofquotes')?>">List of Quotes</a></li>
-        </ul>
-        <!-- <li><a href="#">section 2</a></li>
-        <li><a href="#">Section 3</a></li> -->
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <!-- The glyphicon is just a symbol to use that can be called through the css and js components of bootstrap -->
-        <li><a href="<?php echo url('createstaff')?>"><span class="glyphicon glyphicon-user"></span> Create Staff</a></li>
-        <li><a href="<?php echo url('login')?>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-    </div>
-    </div>
-    </nav>
+            <nav class="navbar navbar-light bg-light navbar-expand-lg">
+              <a class="navbar-brand" href="<?php echo url('welcome')?>"><img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" width="85" height="25" alt="XCEED ELectrical Logo"></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Quoting
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="<?php echo url('createquotes')?>">Create a Quote</a>
+                          <a class="dropdown-item" href="<?php echo url('listofquotes')?>">List of Quotes</a>
+                        </div>
+                      </li>
+                      </ul>
+                      <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                        <a class="nav-link" href="<?php echo url('createstaff')?>"><span class="glyphicon glyphicon-user"></span> Create Staff</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="<?php echo url('login')?>"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        </li>
+                      </ul>
+                    </div>
+                </nav>
 </header>        
 
 
