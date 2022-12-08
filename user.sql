@@ -34,7 +34,7 @@ CREATE TABLE `admin_menu`  (
 -- ----------------------------
 -- Records of admin_menu
 -- ----------------------------
-INSERT INTO `admin_menu` VALUES (1, 'HomePage', '/admin/index', 0, 1, 'Staff');
+INSERT INTO 'admin_menu' VALUES (1, 'HomePage', '/admin/index', 0, 1, 'Staff');
 INSERT INTO `admin_menu` VALUES (4, 'Change Password', '/admin/pwd', 0, 5000, 'Staff');
 INSERT INTO `admin_menu` VALUES (6, 'Staff Management', '/admin/user/index', 0, 500, NULL);
 
@@ -43,7 +43,7 @@ INSERT INTO `admin_menu` VALUES (6, 'Staff Management', '/admin/user/index', 0, 
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'User ID',
   `user` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'User Name',
   `pwd` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Passwprd',
   `create_time` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Creat Time',
