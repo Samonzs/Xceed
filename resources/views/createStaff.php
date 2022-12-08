@@ -154,7 +154,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
 <div class="container my-4 ">
     
-    <h1 class="text-center">Signup Here</h1>
+    <h1 class="text-center">Create Staff</h1>
     <head>
  <style> 
 input[type=text] {
