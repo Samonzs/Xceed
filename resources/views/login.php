@@ -15,35 +15,43 @@
         {
             background: rgb(219, 226, 226);
         }
-        .row{
+        
+        .row
+        {
             background: white;
-            border radius: 30px;
+            border radius: 40px;
         }
 
-        img{
-            border-top-left-radius: 30px;
-            border-bottom-left-radius: 30px;
+        button{
+            border: none;
+            outline: none;
+            height: 40px;
+            width: 100%;
+            background-color: navy;
+            color: white;
+            border-radius: 4px;
+
+        }
+
+        button:hover{
+           background: white; 
+           border: 1px solid;
+           color: black;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div>
-            <a href="<?php echo url('welcome')?>">Home Page</a>
-        </div>
-    </nav>
-    
+    <center>
     <section class="Form my-4 mx-5">
-        <div class="container">
-            <div class="row no-gutters">
-                
-                <div class="col-lg">
-
-                    <img src="images/logo.jpg" class="img-fluid" alt="Logo">  
-
-                </div>
-
+        <div class="">
+            <div class="">     
                 <div class="col-lg-7">
+                    
+                <div class="col-lg">
+                    <img src="images/logo.jpg" class="img-fluid" alt="Logo">  
+                </div>
+                <h3 class= "font-weight-bold py-3">Log in</h3>
+                
                     <form >
                         <div class= "form-row">
                             <div class="col-lg-7">
@@ -51,7 +59,7 @@
                                 <input class="form-control" name="email" type="text" placeholder="Email Address">
                             </div>
                         </div>
-
+                        <br>
                         <div class= "form-row">
                             <div class="col-lg-7">
                                 <label>Password</label>
@@ -61,15 +69,17 @@
 
                         <div class= "form-row">
                             <div class="col-lg-7">
-                                <button name= "submit" type="button" class="submit">Login</button>      
+                                <button name= "submit" type="submit" class="button mt-3" formaction ="<?php echo url('welcome')?>">Login</button>      
                             </div>
                         </div>
-                        <a href="#">Forgot Password</a>
+                        <br>
+                        <a href="#"> Forgot Password?</a>
                     </form>
                 </div>
             </div>
         </div>
-    </section>      
+    </section>  
+    </center>    
 </body>
 </html>
 
