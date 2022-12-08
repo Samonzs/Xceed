@@ -187,7 +187,7 @@ input[type=password] {
         </div>      
     
         <button type="submit" class="btn btn-primary">
-        SignUp
+        Sign Up User
         </button> 
     </form> 
     </div>

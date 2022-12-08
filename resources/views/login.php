@@ -54,21 +54,21 @@
                 
                     <form >
                         <div class= "form-row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-5">
                                 <label>Email</label>
                                 <input class="form-control" name="email" type="text" placeholder="Email Address">
                             </div>
                         </div>
                         <br>
                         <div class= "form-row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-5">
                                 <label>Password</label>
                                 <input class="form-control" name ="password" type="password"  placeholder="Password">
                             </div>
                         </div>
 
                         <div class= "form-row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-5">
                                 <button name= "submit" type="submit" class="button mt-3" formaction ="<?php echo url('welcome')?>">Login</button>      
                             </div>
                         </div>
