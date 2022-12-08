@@ -47,7 +47,7 @@
 
     <body>
     <center>
-        <img src="images/logo.jpg" class="img-fluid" alt="Logo">
+        <img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" alt="Logo">
         <header>
         
 
@@ -81,7 +81,7 @@ input[type=text] {
 	</textarea><br><br>
   <label for="price">Total cost:</label><br>
   <input type="number" min="0.00" max="100000.00" id="price" name="price" step="0.01" value=""><br><br>
-   <div class="row">
+   <div>
     <input type="submit" value="Submit">
   </div>
 </form>  
