@@ -15,7 +15,7 @@
    
     <body>
           <header>     
-              <nav class="navbar fixed-top navbar-light bg-light navbar-expand-lg">
+              <nav class="navbar navbar-light bg-light navbar-expand-lg">
               <a class="navbar-brand" href="<?php echo url('welcome')?>"><img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" width="70" height="20" alt="XCEED ELectrical Logo"></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
