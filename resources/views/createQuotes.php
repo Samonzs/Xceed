@@ -76,8 +76,7 @@
                <label for="email">Job Reference Number</label><br>
                <input type="number" id="jrNumber" name="jrNumber" value=""><br><br>
                <label for="quotedesc">Description of Quote:</label><br>
-               <textarea id="quotedesc" name="quotedesc" rows="10" cols="55">
-	</textarea>
+               <textarea id="quotedesc" name="quotedesc" rows="10" cols="55"></textarea>
                <br><br>
                <label for="price">Total cost:</label><br>
                <input type="number" min="0.00" max="100000.00" id="price" name="price" step="0.01" value=""><br><br>
