@@ -165,9 +165,9 @@ input[type=password] {
 </head> 
     <form action="signup.php" method="post">
     <div class="form-group"> 
-            <label for="username">Username</label> 
-        <input type="text" class="form-control" id="username"
-            name="username" aria-describedby="emailHelp">    
+            <label for="email">Email</label> 
+        <input type="text" class="form-control" id="email"
+            name="email" aria-describedby="emailHelp">    
         </div>
     
         <div class="form-group"> 

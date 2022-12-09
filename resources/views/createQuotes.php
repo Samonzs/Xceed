@@ -72,10 +72,16 @@ input[type=text] {
   <input type="text" id="lname" name="lname" value=""><br><br>
   <label for="pNumber">Phone Number:</label><br>
   <input type="text" id="pNumber" name="pNumber" value=""><br><br>
-  <label for="Address">Address:</label><br>
+  <label for="Address">Address line:</label><br>
   <input type="text" id="Address" name="Address" value=""><br><br>
+  <label for="suburb">Suburb:</label><br>
+  <input type="text" id="suburb" name="suburb" value=""><br><br>
+    <label for="postcode">Post Code:</label><br>
+  <input type="text" id="postcode" name="postcode" value=""><br><br>
     <label for="email">Email:</label><br>
   <input type="text" id="email" name="email" value=""><br><br>
+      <label for="email">Job Reference Number</label><br>
+  <input type="number" id="jrNumber" name="jrNumber" value=""><br><br>
   <label for="quotedesc">Description of Quote:</label><br>
   <textarea id="quotedesc" name="quotedesc" rows="10" cols="55">
 	</textarea><br><br>
