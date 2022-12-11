@@ -20,8 +20,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                     <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
+                  <li class="nav-item">
+                     <a class="nav-link" href="<?php echo url('listofquotes')?>">Home</a>
                   </li>
                   <li class="nav-item active">
                      <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variation <span class="sr-only">(current)</span></a>

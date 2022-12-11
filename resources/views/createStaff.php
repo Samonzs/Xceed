@@ -82,16 +82,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                <ul class="navbar-nav">
-                  <li class="nav-item active">
+                  <li class="nav-item">
                      <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item active">
-                     <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variation <span class="sr-only">(current)</span></a>
+                  <li class="nav-item">
+                     <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variation</a>
                   </li>
                </ul>
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                     <a class="nav-link" href="<?php echo url('createstaff')?>"><span class="glyphicon glyphicon-user"></span> Create Staff</a>
+                     <a class="nav-link active" href="<?php echo url('createstaff')?>"><span class="glyphicon glyphicon-user"></span> Create Staff  <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Login</a>
