@@ -8,12 +8,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
-
-<style>
-    table, th, td {
-    border:1px solid black;
-    }
-</style>
 <body>
 
 <!-- DASHBOARD  -->
@@ -55,19 +49,38 @@
     <center>
     <h2>List of Quotes</h2>
 
-    <table style="width:50%">
+    <table class="table table-striped">
+      <thead>
         <tr>
-            <th>Client Name</th>
+          <th scope="col">Quote/Client Name</th>
+          <th scope="col">Job Number</th>
+          <th scope="col">Price</th>
+          <th scope="col">Status</th>
+          <th scope="col">Editing Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1. Quote-1</th>
+          <td>123456</td>
+          <td>$--</td>
+          <td>In Progress</td>
+          <td><button type="button" class="btn btn-secondary">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
         </tr>
         <tr>
-            <td>Alfreds Comedy&nbsp;&nbsp;&nbsp;<a href="https://www.w3schools.com/" target="_blank">View</a>&nbsp;/&nbsp;<a href="https://www.w3schools.com/" target="_blank">Edit</a> </td>
+          <th scope="row">2. Quote-2</th>
+          <td>132456</td>
+          <td>$--</td>
+          <td>Done</td>
         </tr>
         <tr>
-            <center>
-                <td>Centro comercial Moctezuma&nbsp;&nbsp;&nbsp;<a href="https://www.w3schools.com/"      target="_blank">View</a>&nbsp;/&nbsp;<a href="https://www.w3schools.com/" target="_blank">Edit</a></td></td>
-            </center>
+          <th scope="row">3. Quote-3</th>
+          <td>123654</td>
+          <td>$--</td>
+          <td>In Progress</td>
         </tr>
-</table>
+      </tbody>
+    </table>
 <center>
 
 
