@@ -23,14 +23,15 @@
                       <li class="nav-item active">
                         <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
                       </li>
-                      <li class="nav-item dropdown">
+                      <a class="nav-link" href="<?php echo url('listofquotes')?>">Create Variations</a>
+                      <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Quoting
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="<?php echo url('createquotes')?>">Create a Quote</a>
+                          <a class="dropdown-item" href="">Create a Quote</a>
                         </div>
-                      </li>
+                      </li> -->
                       </ul>
                       <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -46,7 +47,7 @@
 
 
     <center>
-    <h2>List of Quotes</h2>
+    <h2>List of Variations</h2>
 
     <table class="table table-striped">
       <thead>
