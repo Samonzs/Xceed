@@ -24,14 +24,8 @@
                   <li class="nav-item active">
                      <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Quoting
-                     </a>
-                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="<?php echo url('createquotes')?>">Create a Quote</a>
-                        <a class="dropdown-item" href="<?php echo url('listofquotes')?>">List of Quotes</a>
-                     </div>
+                  <li class="nav-item active">
+                     <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variation <span class="sr-only">(current)</span></a>
                   </li>
                </ul>
                <ul class="navbar-nav ml-auto">
@@ -39,7 +33,7 @@
                      <a class="nav-link" href="<?php echo url('createstaff')?>"><span class="glyphicon glyphicon-user"></span> Create Staff</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                     <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Login</a>
                   </li>
                </ul>
             </div>
