@@ -51,6 +51,10 @@
                   padding: 6px 6px;
                   margin: 4px 0; 
                   }
+
+
+
+                  
                </style>
             </head>
             <form>
@@ -75,7 +79,54 @@
                <br><br>
                <label for="price">Total cost:</label><br>
                <input type="number" min="0.00" max="100000.00" id="price" name="price" step="0.01" value=""><br><br>
-               <div>
+               
+               Variations
+
+               <div class="wrapper">
+                  <div id="survey_options">
+                     <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Item">
+                     <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Price">          
+                  </div>
+                  <div class="controls">
+                     <a type="button" id="add_more_fields"><i class="fa fa-plus"></i>Add More</a>
+                     <a type="button" id="remove_fields"><i class="fa fa-plus"></i>Remove Field</a>
+                  </div>
+               </div>
+
+
+         <script> 
+ 
+            var survey_options = document.getElementById('survey_options');
+            var add_more_fields = document.getElementById('add_more_fields');
+            var remove_fields = document.getElementById('remove_fields');
+            
+            add_more_fields.onclick = function(){
+
+            var item = document.createElement('input');
+            var price = document.createElement('input');
+            item.setAttribute('placeholder','Item');
+            price.setAttribute('placeholder','Price');
+
+            survey_options.appendChild(item);
+            survey_options.appendChild(price);
+
+            
+
+            }
+
+            
+            remove_fields.onclick = function(){
+            var input_tags = survey_options.getElementsByTagName('input');
+            if(input_tags.length > 2) {
+               survey_options.removeChild(input_tags[(input_tags.length) - 1]);
+               survey_options.removeChild(input_tags[(input_tags.length) - 1]);
+            }
+            }
+ 
+         
+         </script>
+
+   <div>
                   <input type="submit" value="Submit">
                </div>
             </form>

@@ -23,7 +23,7 @@
                       <li class="nav-item active">
                         <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
                       </li>
-                      <a class="nav-link" href="<?php echo url('listofquotes')?>">Create Variations</a>
+                      <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
                       <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Quoting
