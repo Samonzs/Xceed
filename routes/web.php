@@ -19,3 +19,4 @@ Route::get('login', 'App\Http\Controllers\HomeController@login');
 Route::get('createquotes', 'App\Http\Controllers\HomeController@createquotes');
 Route::get('listofquotes', 'App\Http\Controllers\HomeController@listofquotes');
 Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
+Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');

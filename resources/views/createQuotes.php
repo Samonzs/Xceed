@@ -32,6 +32,9 @@
                      <a class="nav-link" href="<?php echo url('createstaff')?>"><span class="glyphicon glyphicon-user"></span> Create Staff</a>
                   </li>
                   <li class="nav-item">
+                        <a class="nav-link" href="<?php echo url('listofstaff')?>"><span class="glyphicon glyphicon-user"></span> Staff List</a>
+                        </li>
+                  <li class="nav-item">
                      <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Login</a>
                   </li>
                </ul>
