@@ -51,9 +51,10 @@
    margin: 10px;
    font-weight: bold;
    }
-  
-  
 
+   .fieldsetc{
+      border: 1px solid black;
+      }
    
 </style>
    
@@ -95,10 +96,10 @@
             <h3>Create Variation</h3>
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
             <form>
-<<<<<<< HEAD
-                <!-- customer dets -->
-                <section>
-                  <fieldset>
+               <!-- customer dets -->
+               <section>
+                  <fieldset class = "fieldset">
+                     <legend>Customer Details:</legend>
                         <label for="fname">First name:</label>
                         <input type="text" id="fname" name="fname" value="">
                         <label for="lname">Last name:</label>
@@ -119,31 +120,6 @@
                         <input type="text" id="postcode" name="postcode" value="">
                         <label for="email">Email:</label>
                         <input type="text" id="email" name="email" value="">
-=======
-               <!-- customer dets -->
-               <section>
-                  <fieldset>
-                        <label for="fname">First name:</label><br>
-                        <input type="text" id="fname" name="fname" value=""><br>
-                        <label for="lname">Last name:</label><br>
-                        <input type="text" id="lname" name="lname" value=""><br><br>
-                        <label for="compName">Company Name:</label><br>
-                        <input type="text" id="compName" name="compName" value=""><br><br>
-                        <label for="date">Date:</label><br>
-                        <input type="text" id="date" name="date" value=""><br><br>
-                        <label for="pNumber">Phone Number:</label><br>
-                        <input type="text" id="pNumber" name="pNumber" value=""><br><br>
-                        <label for="abn">ABN:</label><br>
-                        <input type="text" id="abn" name="abn" value=""><br><br>
-                        <label for="address">Address line:</label><br>
-                        <input type="text" id="address" name="address" value=""><br><br>
-                        <label for="suburb">Suburb:</label><br>
-                        <input type="text" id="suburb" name="suburb" value=""><br><br>
-                        <label for="postcode">Post Code:</label><br>
-                        <input type="text" id="postcode" name="postcode" value=""><br><br>
-                        <label for="email">Email:</label><br>
-                        <input type="text" id="email" name="email" value=""><br><br>
->>>>>>> af4f6e2a0e7ead3314c5f9258b9b121f6e3e1020
                      </fieldset>
                </section>
                   
@@ -151,34 +127,21 @@
                <!-- Variations dets -->
                <section>
                   <fieldset>
-                        <label for="jrNumber">Job Reference Number</label><br>
-<<<<<<< HEAD
-                        <input type="number" id="jrNumber" name="jrNumber" value=""><br>
+                        <label for="jrNumber">Job Reference Number</label>
+                        <input type="number" id="jrNumber" name="jrNumber" value="">
                         <label for="ordNumber">Order Number</label><br>
-                        <input type="number" id="ordNumber" name="ordNumber" value=""><br>
-                        <label for="siteName">Site Name:</label><br>
-                        <input type="text" id="siteName" name="siteName" value="">
-                        <label for="siteAddress">Site Address:</label><br>
-                        <input type="text" id="siteAddress" name="siteAddress" value=""><br>
-=======
-                        <input type="number" id="jrNumber" name="jrNumber" value=""><br><br>
-                        <label for="ordNumber">Order Number</label><br>
-                        <input type="number" id="ordNumber" name="ordNumber" value=""><br><br>
+                        <input type="number" id="ordNumber" name="ordNumber" value="">
                         <label for="siteName">Site Name:</label><br>
                         <input type="text" id="siteName" name="siteName" value=""><br>
                         <label for="siteAddress">Site Address:</label><br>
-                        <input type="text" id="siteAddress" name="siteAddress" value=""><br><br>
->>>>>>> af4f6e2a0e7ead3314c5f9258b9b121f6e3e1020
+                        <input type="text" id="siteAddress" name="siteAddress" value="">
                         <label for="quotedesc">Description of Quote:</label><br>
                         <textarea id="quotedesc" name="quotedesc" rows="10" cols="55"></textarea>
                         <br><br>
                      </fieldset>
                </section>
-<<<<<<< HEAD
-=======
                
                
->>>>>>> af4f6e2a0e7ead3314c5f9258b9b121f6e3e1020
                
                
                <!-- Variations (item price inputs) -->
