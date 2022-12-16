@@ -68,7 +68,45 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </head>
+        <style> 
+
+                
+                  
+}
+
+.wrapper {
+width: 400px;
+margin: 40px auto;
+padding: 10px;
+border-radius: 5px;
+background: white;
+box-shadow: 0px 10px 40px 0px rgba(47,47,47,.1);
+}
+
+input[type="password"]{
+padding: 10px;
+margin: 10px auto;
+display: block;
+border-radius: 5px;
+border: 1px solid lightgrey;
+background: none;
+width: 274px;
+color: black;
+}
+input[type="text"]{
+padding: 10px;
+margin: 10px auto;
+display: block;
+border-radius: 5px;
+border: 1px solid lightgrey;
+background: none;
+width: 274px;
+color: black;
+}
+</style>
+        
+        
+</head>
 
     
 <body>
@@ -151,23 +189,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container my-4 ">
     
     <h1 class="text-center">Create Staff</h1>
-    <head>
- <style> 
-input[type=text] {
-  width: 15%;
-  padding: 6px 6px;
-  margin: 4px 0; 
-}
-input[type=password] {
-  width: 15%;
-  padding: 6px 6px;
-  margin: 4px 0;
-</style>
-</head> 
+
     <form action="signup.php" method="post">
     <div class="form-group"> 
             <label for="email">Email</label> 
-        <input type="text" class="form-control" id="email"
+        <input type="text"  class="form-control" id="email"
             name="email" aria-describedby="emailHelp">    
         </div>
     

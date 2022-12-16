@@ -10,6 +10,53 @@
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+      <style> 
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
+   
+
+   .wrapper {
+   width: 400px;
+   margin: 40px auto;
+   padding: 10px;
+   border-radius: 5px;
+   background: white;
+   box-shadow: 0px 10px 40px 0px rgba(47,47,47,.1);
+   }
+
+   input[type="text"]{
+   padding: 10px;
+   margin: 10px auto;
+   display: block;
+   border-radius: 5px;
+   border: 1px solid lightgrey;
+   background: none;
+   width: 274px;
+   color: black;
+   }
+
+   input[type="number"]{
+   padding: 10px;
+   margin: 10px auto;
+   display: block;
+   border-radius: 5px;
+   border: 1px solid lightgrey;
+   background: none;
+   width: 274px;
+   color: black;
+   }
+
+   #remove_fields, #add_more_fields{
+   margin: 10px;
+   font-weight: bold;
+   }
+  
+  
+
+   
+</style>
+   
    </head>
    <!-- DASHBOARD  -->
 <header>
@@ -47,83 +94,50 @@
          <header>
             <h3>Create Variation</h3>
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
-            <head>
-               <style> 
-
-               @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
-                  
-               input[type=text] {
-                  width: 15%;
-                  padding: 6px 6px;
-                  margin: 4px 0; 
-                  }
-
-                  .wrapper {
-                  width: 400px;
-                  margin: 40px auto;
-                  padding: 10px;
-                  border-radius: 5px;
-                  background: white;
-                  box-shadow: 0px 10px 40px 0px rgba(47,47,47,.1);
-                  }
-
-                  input[type="text"]{
-                  padding: 10px;
-                  margin: 10px auto;
-                  display: block;
-                  border-radius: 5px;
-                  border: 1px solid lightgrey;
-                  background: none;
-                  width: 274px;
-                  color: black;
-                  }
-
-                  #remove_fields, #add_more_fields{
-                  margin: 10px;
-                  font-weight: bold;
-                  }
-                 
-                 
-
-                  
-               </style>
-            </head>
             <form>
-               <!-- customer dets -->
-               <label for="fname">First name:</label><br>
-               <input type="text" id="fname" name="fname" value=""><br>
-               <label for="lname">Last name:</label><br>
-               <input type="text" id="lname" name="lname" value=""><br><br>
-               <label for="compName">Company Name:</label><br>
-               <input type="text" id="compName" name="compName" value=""><br><br>
-               <label for="date">Date:</label><br>
-               <input type="text" id="date" name="date" value=""><br><br>
-               <label for="pNumber">Phone Number:</label><br>
-               <input type="text" id="pNumber" name="pNumber" value=""><br><br>
-               <label for="abn">ABN:</label><br>
-               <input type="text" id="abn" name="abn" value=""><br><br>
-               <label for="address">Address line:</label><br>
-               <input type="text" id="address" name="address" value=""><br><br>
-               <label for="suburb">Suburb:</label><br>
-               <input type="text" id="suburb" name="suburb" value=""><br><br>
-               <label for="postcode">Post Code:</label><br>
-               <input type="text" id="postcode" name="postcode" value=""><br><br>
-               <label for="email">Email:</label><br>
-               <input type="text" id="email" name="email" value=""><br><br>
+                <!-- customer dets -->
+                <section>
+                  <fieldset>
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname" value="">
+                        <label for="lname">Last name:</label>
+                        <input type="text" id="lname" name="lname" value="">
+                        <label for="compName">Company Name:</label>
+                        <input type="text" id="compName" name="compName" value="">
+                        <label for="date">Date:</label>
+                        <input type="text" id="date" name="date" value="">
+                        <label for="pNumber">Phone Number:</label>
+                        <input type="text" id="pNumber" name="pNumber" value="">
+                        <label for="abn">ABN:</label>
+                        <input type="text" id="abn" name="abn" value="">
+                        <label for="address">Address line:</label>
+                        <input type="text" id="address" name="address" value="">
+                        <label for="suburb">Suburb:</label>
+                        <input type="text" id="suburb" name="suburb" value="">
+                        <label for="postcode">Post Code:</label>
+                        <input type="text" id="postcode" name="postcode" value="">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" value="">
+                     </fieldset>
+               </section>
+                  
 
                <!-- Variations dets -->
-
-               <label for="jrNumber">Job Reference Number</label><br>
-               <input type="number" id="jrNumber" name="jrNumber" value=""><br><br>
-               <label for="ordNumber">Order Number</label><br>
-               <input type="number" id="ordNumber" name="ordNumber" value=""><br><br>
-               <label for="siteName">Site Name:</label><br>
-               <input type="text" id="siteName" name="siteName" value=""><br>
-               <label for="siteAddress">Site Address:</label><br>
-               <input type="text" id="siteAddress" name="siteAddress" value=""><br><br>
-               <label for="quotedesc">Description of Quote:</label><br>
-               <textarea id="quotedesc" name="quotedesc" rows="10" cols="55"></textarea>
-               <br><br>
+               <section>
+                  <fieldset>
+                        <label for="jrNumber">Job Reference Number</label><br>
+                        <input type="number" id="jrNumber" name="jrNumber" value=""><br>
+                        <label for="ordNumber">Order Number</label><br>
+                        <input type="number" id="ordNumber" name="ordNumber" value=""><br>
+                        <label for="siteName">Site Name:</label><br>
+                        <input type="text" id="siteName" name="siteName" value="">
+                        <label for="siteAddress">Site Address:</label><br>
+                        <input type="text" id="siteAddress" name="siteAddress" value=""><br>
+                        <label for="quotedesc">Description of Quote:</label><br>
+                        <textarea id="quotedesc" name="quotedesc" rows="10" cols="55"></textarea>
+                        <br><br>
+                     </fieldset>
+               </section>
                
                
                <!-- Variations (item price inputs) -->
