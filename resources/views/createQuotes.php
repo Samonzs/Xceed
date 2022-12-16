@@ -49,13 +49,39 @@
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
             <head>
                <style> 
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
                   input[type=text] {
                   width: 15%;
                   padding: 6px 6px;
                   margin: 4px 0; 
                   }
 
+                  .wrapper {
+                  width: 400px;
+                  margin: 40px auto;
+                  padding: 10px;
+                  border-radius: 5px;
+                  background: white;
+                  box-shadow: 0px 10px 40px 0px rgba(47,47,47,.1);
+                  }
 
+                  input[type="text"]{
+                  padding: 10px;
+                  margin: 10px auto;
+                  display: block;
+                  border-radius: 5px;
+                  border: 1px solid lightgrey;
+                  background: none;
+                  width: 274px;
+                  color: black;
+                  }
+
+                  a{
+                  margin: 10px;
+                  font-weight: bold;
+                  }
+                 
 
                   
                </style>
@@ -80,25 +106,27 @@
                <label for="quotedesc">Description of Quote:</label><br>
                <textarea id="quotedesc" name="quotedesc" rows="10" cols="55"></textarea>
                <br><br>
-               <label for="price">Total cost:</label><br>
-               <input type="number" min="0.00" max="100000.00" id="price" name="price" step="0.01" value=""><br><br>
+               
                
                Variations
 
                <div class="wrapper">
                   <div id="survey_options">
-                     <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Item">
-                     <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Price">          
-                  </div>
+                  <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Item">
+                  <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Price">    
+                          
+               </div>
+                  
                   <div class="controls">
-                     <a type="button" id="add_more_fields"><i class="fa fa-plus"></i>Add More</a>
-                     <a type="button" id="remove_fields"><i class="fa fa-plus"></i>Remove Field</a>
+                     <a type="button" id="add_more_fields"><i class="fa fa-plus"></i>+ Add More</a>
+                     <a type="button" id="remove_fields"><i class="fa fa-plus"></i>- Remove Field</a>
                   </div>
                </div>
 
 
          <script> 
  
+
             var survey_options = document.getElementById('survey_options');
             var add_more_fields = document.getElementById('add_more_fields');
             var remove_fields = document.getElementById('remove_fields');
@@ -107,14 +135,23 @@
 
             var item = document.createElement('input');
             var price = document.createElement('input');
+
+            item.setAttribute('type','text');
+            item.setAttribute('name','survey_options[]');
+            item.setAttribute('class','survey_options');
+            item.setAttribute('siz',50);
             item.setAttribute('placeholder','Item');
+
+            price.setAttribute('type','text');
+            price.setAttribute('name','survey_options[]');
+            price.setAttribute('class','survey_options');
+            price.setAttribute('siz',50);
             price.setAttribute('placeholder','Price');
 
             survey_options.appendChild(item);
             survey_options.appendChild(price);
-
             
-
+         
             }
 
             
@@ -130,10 +167,15 @@
          </script>
 
    <div>
-                  <input type="submit" value="Submit">
-               </div>
-            </form>
+
+            <label for="price">Total cost:</label><br>
+            <input type="number" min="0.00" max="100000.00" id="price" name="price" step="0.01" value=""><br><br>
+
+
+               <input type="submit" value="Submit">
+            </div>
+         </form>
       </center>
-      </header>
-   </body>
+   </header>
+</body>
 </html>

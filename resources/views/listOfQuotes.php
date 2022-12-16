@@ -75,12 +75,14 @@
           <td>132456</td>
           <td>$--</td>
           <td>Done</td>
+          <td><button type="button" class="btn btn-secondary">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
         </tr>
         <tr>
           <th scope="row">3. Quote-3</th>
           <td>123654</td>
           <td>$--</td>
           <td>In Progress</td>
+          <td><button type="button" class="btn btn-secondary">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
         </tr>
       </tbody>
     </table>
