@@ -35,7 +35,7 @@
                         <a class="nav-link" href="<?php echo url('listofstaff')?>"><span class="glyphicon glyphicon-user"></span> Staff List</a>
                         </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+                     <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
                   </li>
                </ul>
             </div>
@@ -50,8 +50,9 @@
             <head>
                <style> 
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
-                  input[type=text] {
+               @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
+                  
+               input[type=text] {
                   width: 15%;
                   padding: 6px 6px;
                   margin: 4px 0; 
@@ -77,10 +78,11 @@
                   color: black;
                   }
 
-                  a{
+                  #remove_fields, #add_more_fields{
                   margin: 10px;
                   font-weight: bold;
                   }
+                 
                  
 
                   
@@ -88,7 +90,7 @@
             </head>
             <form>
                <label for="fname">First name:</label><br>
-               <input type="text" id="fname" name="fname" value=""><br><br>
+               <input type="text" id="fname" name="fname" value=""><br>
                <label for="lname">Last name:</label><br>
                <input type="text" id="lname" name="lname" value=""><br><br>
                <label for="pNumber">Phone Number:</label><br>
