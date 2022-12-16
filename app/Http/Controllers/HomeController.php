@@ -31,6 +31,7 @@ class HomeController extends Controller
     {
         return view("createstaff");
     }
+    
     public function listOfStaff()
     {
         return view("listOfStaff");
