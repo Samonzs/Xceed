@@ -97,7 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a class="nav-link" href="<?php echo url('listofstaff')?>"><span class="glyphicon glyphicon-user"></span> Staff List</a>
                         </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+                     <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
                   </li>
                </ul>
             </div>
