@@ -15,7 +15,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
    
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+    box-shadow:  0px 0px 0px 0px #000;
+}
 
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
    .wrapper {
    width: 400px;
    margin: 40px auto;
@@ -51,10 +66,9 @@
    margin: 10px;
    font-weight: bold;
    }
+  
+  
 
-   .fieldsetc{
-      border: 1px solid black;
-      }
    
 </style>
    
@@ -96,10 +110,10 @@
             <h3>Create Variation</h3>
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
             <form>
-               <!-- customer dets -->
-               <section>
-                  <fieldset class = "fieldset">
-                     <legend>Customer Details:</legend>
+                <!-- customer dets -->
+                <section>
+                  <fieldset class="scheduler-border">
+                     <legend class="scheduler-border">Client Details</legend>
                         <label for="fname">First name:</label>
                         <input type="text" id="fname" name="fname" value="">
                         <label for="lname">Last name:</label>
@@ -126,26 +140,26 @@
 
                <!-- Variations dets -->
                <section>
-                  <fieldset>
-                        <label for="jrNumber">Job Reference Number</label>
-                        <input type="number" id="jrNumber" name="jrNumber" value="">
+               <fieldset class="scheduler-border">
+                     <legend class="scheduler-border">Client Site Details</legend>
+                        <label for="jrNumber">Job Reference Number</label><br>
+                        <input type="number" id="jrNumber" name="jrNumber" value=""><br><br>
                         <label for="ordNumber">Order Number</label><br>
-                        <input type="number" id="ordNumber" name="ordNumber" value="">
+                        <input type="number" id="ordNumber" name="ordNumber" value=""><br><br>
                         <label for="siteName">Site Name:</label><br>
                         <input type="text" id="siteName" name="siteName" value=""><br>
                         <label for="siteAddress">Site Address:</label><br>
-                        <input type="text" id="siteAddress" name="siteAddress" value="">
+                        <input type="text" id="siteAddress" name="siteAddress" value=""><br><br>
                         <label for="quotedesc">Description of Quote:</label><br>
                         <textarea id="quotedesc" name="quotedesc" rows="10" cols="55"></textarea>
                         <br><br>
-                     </fieldset>
-               </section>
+                     
                
                
                
                
                <!-- Variations (item price inputs) -->
-
+               
                <div class="wrapper">
                   <div id="survey_options">
                   <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Item">
@@ -210,6 +224,9 @@
 
                <input type="submit" value="Submit">
             </div>
+            </fieldset>
+            
+            </section>
          </form>
       </center>
    </header>
