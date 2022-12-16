@@ -90,40 +90,50 @@
             </head>
             <form>
                <!-- customer dets -->
-               <label for="fname">First name:</label><br>
-               <input type="text" id="fname" name="fname" value=""><br>
-               <label for="lname">Last name:</label><br>
-               <input type="text" id="lname" name="lname" value=""><br><br>
-               <label for="compName">Company Name:</label><br>
-               <input type="text" id="compName" name="compName" value=""><br><br>
-               <label for="date">Date:</label><br>
-               <input type="text" id="date" name="date" value=""><br><br>
-               <label for="pNumber">Phone Number:</label><br>
-               <input type="text" id="pNumber" name="pNumber" value=""><br><br>
-               <label for="abn">ABN:</label><br>
-               <input type="text" id="abn" name="abn" value=""><br><br>
-               <label for="address">Address line:</label><br>
-               <input type="text" id="address" name="address" value=""><br><br>
-               <label for="suburb">Suburb:</label><br>
-               <input type="text" id="suburb" name="suburb" value=""><br><br>
-               <label for="postcode">Post Code:</label><br>
-               <input type="text" id="postcode" name="postcode" value=""><br><br>
-               <label for="email">Email:</label><br>
-               <input type="text" id="email" name="email" value=""><br><br>
+               <section>
+                  <fieldset>
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" value=""><br>
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" value=""><br><br>
+                        <label for="compName">Company Name:</label><br>
+                        <input type="text" id="compName" name="compName" value=""><br><br>
+                        <label for="date">Date:</label><br>
+                        <input type="text" id="date" name="date" value=""><br><br>
+                        <label for="pNumber">Phone Number:</label><br>
+                        <input type="text" id="pNumber" name="pNumber" value=""><br><br>
+                        <label for="abn">ABN:</label><br>
+                        <input type="text" id="abn" name="abn" value=""><br><br>
+                        <label for="address">Address line:</label><br>
+                        <input type="text" id="address" name="address" value=""><br><br>
+                        <label for="suburb">Suburb:</label><br>
+                        <input type="text" id="suburb" name="suburb" value=""><br><br>
+                        <label for="postcode">Post Code:</label><br>
+                        <input type="text" id="postcode" name="postcode" value=""><br><br>
+                        <label for="email">Email:</label><br>
+                        <input type="text" id="email" name="email" value=""><br><br>
+                     </fieldset>
+               </section>
+                  
 
                <!-- Variations dets -->
-
-               <label for="jrNumber">Job Reference Number</label><br>
-               <input type="number" id="jrNumber" name="jrNumber" value=""><br><br>
-               <label for="ordNumber">Order Number</label><br>
-               <input type="number" id="ordNumber" name="ordNumber" value=""><br><br>
-               <label for="siteName">Site Name:</label><br>
-               <input type="text" id="siteName" name="siteName" value=""><br>
-               <label for="siteAddress">Site Address:</label><br>
-               <input type="text" id="siteAddress" name="siteAddress" value=""><br><br>
-               <label for="quotedesc">Description of Quote:</label><br>
-               <textarea id="quotedesc" name="quotedesc" rows="10" cols="55"></textarea>
-               <br><br>
+               <section>
+                  <fieldset>
+                        <label for="jrNumber">Job Reference Number</label><br>
+                        <input type="number" id="jrNumber" name="jrNumber" value=""><br><br>
+                        <label for="ordNumber">Order Number</label><br>
+                        <input type="number" id="ordNumber" name="ordNumber" value=""><br><br>
+                        <label for="siteName">Site Name:</label><br>
+                        <input type="text" id="siteName" name="siteName" value=""><br>
+                        <label for="siteAddress">Site Address:</label><br>
+                        <input type="text" id="siteAddress" name="siteAddress" value=""><br><br>
+                        <label for="quotedesc">Description of Quote:</label><br>
+                        <textarea id="quotedesc" name="quotedesc" rows="10" cols="55"></textarea>
+                        <br><br>
+                     </fieldset>
+               </section>
+               
+               
                
                
                <!-- Variations (item price inputs) -->
