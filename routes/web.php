@@ -15,7 +15,6 @@ use App\Http\Controllers\UserFormController;
 */
 
 Route::get('users', [UserFormController::class, 'getData']);
-Route::view('/login', 'login');
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 

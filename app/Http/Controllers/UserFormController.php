@@ -11,7 +11,7 @@ class UserFormController extends Controller
     {
         // Validate and store the blog post...
 
-        $request->validate([
+        $validator = $request->validate([
             'email' => [
                 'required',
                 'string',
@@ -29,7 +29,7 @@ class UserFormController extends Controller
 
         ]);
 
-        return $request->input();
+        return $validator();
 
     }
 }
