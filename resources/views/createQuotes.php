@@ -47,6 +47,17 @@
    color: black;
    }
 
+   input[type="date"]{
+   padding: 10px;
+   margin: 10px auto;
+   display: block;
+   border-radius: 5px;
+   border: 1px solid lightgrey;
+   background: none;
+   width: 274px;
+   color: black;
+   }
+
    #remove_fields, #add_more_fields{
    margin: 10px;
    font-weight: bold;
@@ -97,68 +108,111 @@
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
             <form>
                <!-- customer dets -->
-               <section>
-                  <fieldset class = "fieldset">
-                     <legend>Customer Details:</legend>
-                        <label for="fname">First name:</label>
-                        <input type="text" id="fname" name="fname" value="">
-                        <label for="lname">Last name:</label>
-                        <input type="text" id="lname" name="lname" value="">
-                        <label for="compName">Company Name:</label>
-                        <input type="text" id="compName" name="compName" value="">
-                        <label for="date">Date:</label>
-                        <input type="text" id="date" name="date" value="">
-                        <label for="pNumber">Phone Number:</label>
-                        <input type="text" id="pNumber" name="pNumber" value="">
-                        <label for="abn">ABN:</label>
-                        <input type="text" id="abn" name="abn" value="">
-                        <label for="address">Address line:</label>
-                        <input type="text" id="address" name="address" value="">
-                        <label for="suburb">Suburb:</label>
-                        <input type="text" id="suburb" name="suburb" value="">
-                        <label for="postcode">Post Code:</label>
-                        <input type="text" id="postcode" name="postcode" value="">
-                        <label for="email">Email:</label>
-                        <input type="text" id="email" name="email" value="">
-                     </fieldset>
-               </section>
-                  
+
+               <div class="accordion" id="accordionExample">
+                  <div class="card">
+                     <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                           Client Details
+                        </button>
+                        </h2>
+                     </div>
+
+                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                           <section>
+                              <label for="fname">First name:</label>
+                              <input type="text" id="fname" name="fname" value="">
+                              <label for="lname">Last name:</label>
+                              <input type="text" id="lname" name="lname" value="">
+                              <label for="compName">Company Name:</label>
+                              <input type="text" id="compName" name="compName" value="">
+                              <label for="date">Date:</label>
+                              <input type="date" id="date" name="date" value="">
+                              <label for="pNumber">Phone Number:</label>
+                              <input type="text" id="pNumber" name="pNumber" value="">
+                              <label for="abn">ABN:</label>
+                              <input type="text" id="abn" name="abn" value="">
+                              <label for="address">Address line:</label>
+                              <input type="text" id="address" name="address" value="">
+                              <label for="suburb">Suburb:</label>
+                              <input type="text" id="suburb" name="suburb" value="">
+                              <label for="postcode">Post Code:</label>
+                              <input type="text" id="postcode" name="postcode" value="">
+                              <label for="email">Email:</label>
+                              <input type="text" id="email" name="email" value="">
+                           </section>
+                        </div>
+                     </div>
+               </div>
 
                <!-- Variations dets -->
-               <section>
-                  <fieldset>
-                        <label for="jrNumber">Job Reference Number</label>
-                        <input type="number" id="jrNumber" name="jrNumber" value="">
-                        <label for="ordNumber">Order Number</label><br>
-                        <input type="number" id="ordNumber" name="ordNumber" value="">
-                        <label for="siteName">Site Name:</label><br>
-                        <input type="text" id="siteName" name="siteName" value=""><br>
-                        <label for="siteAddress">Site Address:</label><br>
-                        <input type="text" id="siteAddress" name="siteAddress" value="">
-                        <label for="quotedesc">Description of Quote:</label><br>
-                        <textarea id="quotedesc" name="quotedesc" rows="10" cols="55"></textarea>
-                        <br><br>
-                     </fieldset>
-               </section>
-               
-               
-               
+               <div class="card">
+                  <div class="card-header" id="headingTwo">
+                     <h2 class="mb-0">
+                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Client Site
+                     </button>
+                     </h2>
+                  </div>
+                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                        <section>
+                              <label for="jrNumber">Job Reference Number</label>
+                              <input type="number" id="jrNumber" name="jrNumber" value="">
+                              <label for="ordNumber">Order Number</label><br>
+                              <input type="number" id="ordNumber" name="ordNumber" value="">
+                              <label for="siteName">Site Name:</label><br>
+                              <input type="text" id="siteName" name="siteName" value=""><br>
+                              <label for="siteAddress">Site Address:</label><br>
+                              <input type="text" id="siteAddress" name="siteAddress" value="">
+                           </section>      
+                        </div>
+                     </div>
+                </div>
+
+                           
                
                <!-- Variations (item price inputs) -->
 
-               <div class="wrapper">
-                  <div id="survey_options">
-                  <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Item">
-                  <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Price">    
-                          
-               </div>
+               <div class="card">
+                  <div class="card-header" id="headingThree">
+                     <h2 class="mb-0">
+                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Variations
+                     </button>
+                     </h2>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                     <div class="card-body">
+                        <!-- This is where the code goes -->
+                           <label for="quotedesc">Description of Variation:</label><br>
+                                 <textarea id="quotedesc" name="quotedesc" rows="3" cols="13"></textarea>
+                           <div class="wrapper">
+                           <div id="survey_options">
+                           <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Item">
+                           <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Price">    
+                                 
+                        </div>
                   
-                  <div class="controls">
-                     <a type="button" id="add_more_fields"><i class="fa fa-plus"></i>+ Add More</a>
-                     <a type="button" id="remove_fields"><i class="fa fa-plus"></i>- Remove Field</a>
+                        <div class="controls">
+                           <a type="button" id="add_more_fields"><i class="fa fa-plus"></i>+ Add More</a>
+                           <a type="button" id="remove_fields"><i class="fa fa-plus"></i>- Remove Field</a>
+                        </div>
+                     </div>
+                        <div>
+                           <label for="price">Total cost:</label><br>
+                           <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value=""><br><br>
+
+
+                              <input type="submit" value="Submit">
+                        </div>
+                     </div>
                   </div>
                </div>
 
+              
 
          <script> 
  
@@ -202,14 +256,7 @@
          
          </script>
 
-   <div>
-
-            <label for="price">Total cost:</label><br>
-            <input type="number" min="0.00" max="100000.00" id="price" name="price" step="0.01" value=""><br><br>
-
-
-               <input type="submit" value="Submit">
-            </div>
+ 
          </form>
       </center>
    </header>
