@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('users', [UserFormController::class, 'getData']);
+Route::view('/login', 'login');
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
@@ -26,3 +30,4 @@ Route::get('listofquotes', 'App\Http\Controllers\HomeController@listofquotes');
 Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
 Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
+

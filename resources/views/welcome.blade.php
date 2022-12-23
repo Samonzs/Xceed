@@ -46,6 +46,9 @@
            color: black;
         }
     </style>
+    <script>
+ 
+    </script>
 </head>
 <body>
     <center>
@@ -59,11 +62,12 @@
                 </div>
                 <h3 class= "font-weight-bold py-3">Log in</h3>
                 
-                    <form >
+                    <form action= "users" metohd= "POST">
                         <div class= "form-row">
                             <div class="col-lg-5">
                                 <label>Email</label>
-                                <input class="form-control" name="email" type="text" placeholder="Email Address">
+                                <input class="form-control" name="email" placeholder="Email Address">
+                                <span style="color:red">@error('email'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <br>
@@ -71,12 +75,13 @@
                             <div class="col-lg-5">
                                 <label>Password</label>
                                 <input class="form-control" name ="password" type="password"  placeholder="Password">
+                                <span style="color:red">@error('password'){{$message}}@enderror</span>
                             </div>
                         </div>
 
                         <div class= "form-row">
                             <div class="col-lg-5">
-                                <button name= "submit" type="submit" class="button mt-3" formaction ="<?php echo url('listofquotes')?>">Login</button>      
+                            <button name= "submit" type="submit" class="button mt-3" >Login</button>      
                             </div>
                         </div>
                         <br>
