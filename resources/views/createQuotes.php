@@ -203,7 +203,7 @@
                      </div>
                         <div>
                            <label for="price">Total cost:</label><br>
-                           <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value=""><br><br>
+                           <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value="" readonly><br><br>
 
 
                               <input type="submit" value="Submit">
