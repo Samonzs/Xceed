@@ -211,6 +211,39 @@
                      </div>
                   </div>
                </div>
+               <div class="card">
+
+               <!-- Send Email) -->
+               <div class="card">
+                  <div class="card-header" id="headingFour">
+                     <h2 class="mb-0">
+                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Send Email
+                     </button>
+                     </h2>
+                  </div>
+
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                     <div class="card-body">
+                  <div class="form-box">
+                     <form class="" enctype="multipart/form-data">
+                        <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" value="">
+                        <label>Title:</label>
+                        <input type="text"  class="form-control" name="title"  >
+                        </div>
+                  <div class="form-group">
+                     <label>Content</label>
+                     <textarea name="content" class="form-control" rows="3" cols="13"></textarea>
+                  </div>
+                     </form>
+               </div>
+               <div class="submit-box">
+                  <button type="button" class="btn btn-primary addPost">Send</button>
+                  <button type="button" onclick="window.history.back()" class="btn btn-outline-secondary">Cancle</button>
+               </div>
+               </div>
 
               
 
@@ -252,6 +285,35 @@
                survey_options.removeChild(input_tags[(input_tags.length) - 1]);
             }
             }
+
+
+            $('.addPost').click(function () {
+        $('.content').val(getPlainTxt());
+        var d = {};
+        var t = $('form').serializeArray();
+        $.each(t, function () {
+            d[this.name] = this.value;
+            if(this.value == ''){
+                //Add a red frame
+                $('input[name='+this.name+']').addClass('is-invalid');
+                //Add notice
+                var msg = $('input[name='+this.name+']').prev().text();
+                toastr.error(msg+'Cannot be Empty');
+                return false;
+            }
+        });
+        $.post('/admin/sendEmail', d, function (data) {
+            if (data.code == 1) {
+                toastr.success(data.msg);
+                setTimeout(function () {
+                    window.location.href = data.url;
+                }, 1500);
+            }else{
+                toastr.error(data.msg);
+            }
+        });
+    });
+
  
          
          </script>
