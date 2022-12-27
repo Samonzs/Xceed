@@ -45,7 +45,7 @@
 <center>
     <h2>Staff List</h2>
 
-    <table class="table table-striped">
+    <table class="table table-striped table-responsive-sm table-hover">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -59,25 +59,25 @@
           <th scope="row">01</th>
           <td>Ali</td>
           <td>Samonzs</td>
-          <td><button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Delete</button></td>
+          <td><button type="button" class="btn btn-secondary text-nowrap">Edit</button> <button type="button" class="btn btn-secondary">Delete</button></td>
         </tr>
         <tr>
           <th scope="row">02</th>
           <td>Kathy</td>
           <td>Han</td>
-          <td><button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Delete</button></td>
+          <td><button type="button" class="btn btn-secondary text-nowrap">Edit</button> <button type="button" class="btn btn-secondary">Delete</button></td>
         </tr>
         <tr>
           <th scope="row">03</th>
           <td>Yahya</td>
           <td>Kata'A</td>
-          <td><button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Delete</button></td>
+          <td><button type="button" class="btn btn-secondary text-nowrap">Edit</button> <button type="button" class="btn btn-secondary">Delete</button></td>
         </tr>
         <tr>
           <th scope="row">04</th>
           <td>William</td>
           <td>Carson</td>
-          <td><button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Delete</button></td>
+          <td><button type="button" class="btn btn-secondary text-nowrap">Edit</button> <button type="button" class="btn btn-secondary">Delete</button></td>
         </tr>
       </tbody>
     </table>

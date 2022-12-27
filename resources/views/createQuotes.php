@@ -103,7 +103,7 @@
    <body>
       <center>
          <img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" alt="Logo">
-         <header>
+         
             <h3>Create Variation</h3>
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
             <form>
@@ -194,7 +194,7 @@
                            <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Item">
                            <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Price">    
                                  
-                        </div>
+                           </div>
                   
                         <div class="controls">
                            <a type="button" id="add_more_fields"><i class="fa fa-plus"></i>+ Add More</a>
@@ -204,10 +204,10 @@
                         <div>
                            <label for="price">Total cost:</label><br>
                            <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value="" readonly><br><br>
-
-
-                              <input type="submit" value="Submit">
                         </div>
+
+                        <button type="button" class="btn btn-primary addPost">Submit</button>
+
                      </div>
                   </div>
                </div>
@@ -238,13 +238,16 @@
                      <textarea name="content" class="form-control" rows="3" cols="13"></textarea>
                   </div>
                      </form>
-               </div>
-               <div class="submit-box">
+                  </div>
+
+                  <div class="submit-box">
                   <button type="button" class="btn btn-primary addPost">Send</button>
                   <button type="button" onclick="window.history.back()" class="btn btn-outline-secondary">Cancle</button>
+                  
                </div>
                </div>
 
+               
               
 
          <script> 
@@ -321,6 +324,5 @@
  
          </form>
       </center>
-   </header>
 </body>
 </html>
