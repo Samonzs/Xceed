@@ -28,29 +28,25 @@
                         <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
-                      <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Quoting
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="">Create a Quote</a>
-                        </div>
-                      </li> -->
                       </ul>
                       <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                        <a class="nav-link" href="<?php echo url('createstaff')?>"><span class="glyphicon glyphicon-user"></span> Create Staff</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="<?php echo url('listofstaff')?>"><span class="glyphicon glyphicon-user"></span> Staff List</a>
-                        </li>
+                      <div class="dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Admin Panel
+                        </a>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="<?php echo url('listofstaff')?>">Staff List</a>
+                        <a class="dropdown-item" href="<?php echo url('createstaff')?>">Create Staff</a>
+                        <a class="dropdown-item" href="#">Terms & Conditions</a>
+                     </div>
+                     </div>
                         <li class="nav-item">
                         <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
                         </li>
                       </ul>
                     </div>
                 </nav>
-</header>        
+</header>          
 
 
     <center>
