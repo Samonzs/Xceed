@@ -28,35 +28,31 @@
                         <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
-                      <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Quoting
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="">Create a Quote</a>
-                        </div>
-                      </li> -->
                       </ul>
                       <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                        <a class="nav-link" href="<?php echo url('createstaff')?>"><span class="glyphicon glyphicon-user"></span> Create Staff</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="<?php echo url('listofstaff')?>"><span class="glyphicon glyphicon-user"></span> Staff List</a>
-                        </li>
+                      <div class="dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Admin Panel
+                        </a>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="<?php echo url('listofstaff')?>">Staff List</a>
+                        <a class="dropdown-item" href="<?php echo url('createstaff')?>">Create Staff</a>
+                        <a class="dropdown-item" href="#">Terms & Conditions</a>
+                     </div>
+                     </div>
                         <li class="nav-item">
                         <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
                         </li>
                       </ul>
                     </div>
                 </nav>
-</header>        
+</header>          
 
 
     <center>
     <h2>List of Variations</h2>
 
-    <table class="table table-striped">
+    <table class="table table-striped table-responsive-sm table-hover">
       <thead>
         <tr>
           <th scope="col">Quote/Client Name</th>
@@ -72,21 +68,21 @@
           <td>123456</td>
           <td>$--</td>
           <td>In Progress</td>
-          <td><button type="button" class="btn btn-secondary">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
+          <td><button type="button" class="btn btn-secondary text-nowrap">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
         </tr>
         <tr>
           <th scope="row">2. Quote-2</th>
           <td>132456</td>
           <td>$--</td>
           <td>Done</td>
-          <td><button type="button" class="btn btn-secondary">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
+          <td><button type="button" class="btn btn-secondary text-nowrap">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
         </tr>
         <tr>
           <th scope="row">3. Quote-3</th>
           <td>123654</td>
           <td>$--</td>
           <td>In Progress</td>
-          <td><button type="button" class="btn btn-secondary">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
+          <td><button type="button" class="btn btn-secondary text-nowrap">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
         </tr>
       </tbody>
     </table>
