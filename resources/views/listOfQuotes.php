@@ -51,8 +51,8 @@
 
     <center>
     <h2>List of Variations</h2>
-
-    <table class="table table-striped table-responsive-sm table-hover">
+   
+    <table class="table table-striped table-responsive-sm table-hover text-center">
       <thead>
         <tr>
           <th scope="col">Quote/Client Name</th>
