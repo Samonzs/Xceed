@@ -191,7 +191,7 @@
                         <!-- This is where the code goes -->
                            <label for="quotedesc">Description of Variation:</label><br>
                                  <textarea id="quotedesc" name="quotedesc" rows="3" cols="13"></textarea>
-                           <div class="wrapper">
+                           <div class="container-sm">
                            <div id="survey_options">
                            <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Item">
                            <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Price">    
