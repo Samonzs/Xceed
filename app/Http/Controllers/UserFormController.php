@@ -29,10 +29,29 @@ class UserFormController extends Controller
                 'regex:/[@$!%*#?&]/', // must contain a special character  
             ],
 
+            
+
+            
+
+
            
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
         return $validator($messages);
+
+    }
+
+    public function getClientData(Request $request)
+    {
+
+        $request->validate([
+
+        'fname' => 'required|regex:/^([^0-9]*)$/|min:3',
+        'lname' => 'required|regex:/^([^0-9]*)$/|min:3',
+
+        ]);
+
+        return $request->validate;
 
     }
 }

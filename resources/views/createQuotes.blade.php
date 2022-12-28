@@ -105,12 +105,12 @@
    <body>
       <center>
          <img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" alt="Logo">
-         
+      
             <h3>Create Variation</h3>
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
-            <form>
+            <form action= "userInfo" >
                <!-- customer dets -->
-
+            
                <div class="accordion" id="accordionExample">
                   <div class="card">
                      <div class="card-header" id="headingOne">
@@ -124,10 +124,16 @@
                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
                            <section>
+
+                           
                               <label for="fname">First name:</label>
+                              <span style="color:red">@error('fname'){{$message}}@enderror</span>
                               <input type="text" id="fname" name="fname" value="">
+
                               <label for="lname">Last name:</label>
                               <input type="text" id="lname" name="lname" value="">
+                              <span style="color:red">@error('lname'){{$message}}@enderror</span>
+
                               <label for="compName">Company Name:</label>
                               <input type="text" id="compName" name="compName" value="">
                               <label for="date">Date:</label>
@@ -208,14 +214,16 @@
                            <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value="" readonly><br><br>
                         </div>
 
-                        <button type="button" class="btn btn-primary addPost">Submit</button>
 
                      </div>
                   </div>
                </div>
+                  <br>
+                  <button type="submit" name="submit" class="btn btn-primary addPost">Submit</button>
+                  <br>
                <div class="card">
 
-               <!-- Send Email) -->
+               <!-- (Send Email) -->
                <div class="card">
                   <div class="card-header" id="headingFour">
                      <h2 class="mb-0">
@@ -244,7 +252,7 @@
 
                   <div class="submit-box">
                   <button type="button" class="btn btn-primary addPost">Send</button>
-                  <button type="button" onclick="window.history.back()" class="btn btn-outline-secondary">Cancle</button>
+                  <button type="button" onclick="window.history.back()" class="btn btn-outline-secondary">Cancel</button>
                   
                </div>
                </div>
@@ -324,7 +332,7 @@
          </script>
 
  
-         </form>
+         </form >
       </center>
 </body>
 </html>

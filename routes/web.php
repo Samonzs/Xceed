@@ -16,6 +16,10 @@ use App\Http\Controllers\UserFormController;
 
 Route::get('users', [UserFormController::class, 'getData']);
 
+Route::get('userInfo', [UserFormController::class, 'getClientData']);
+
+
+
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::get('/welcome', 'App\Http\Controllers\HomeController@index');
