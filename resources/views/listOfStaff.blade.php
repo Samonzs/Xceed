@@ -47,7 +47,7 @@
 <center>
     <h2>Staff List</h2>
 
-    <table class="table table-striped table-responsive-sm table-hover">
+    <table class="table table-striped table-responsive-sm table-hover text-center">
       <thead>
         <tr>
           <th scope="col">ID</th>
