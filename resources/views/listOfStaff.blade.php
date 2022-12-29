@@ -21,7 +21,7 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                      <li class="nav-item active">
+                      <li class="nav-item">
                         <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
