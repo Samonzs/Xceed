@@ -23,6 +23,7 @@ Route::post('register', [insertFields_DB::class, 'register']);
 
 Route::get('users', [UserFormController::class, 'getData']);
 
+
 Route::get('userInfo', [UserFormController::class, 'getClientData']);
 
 
