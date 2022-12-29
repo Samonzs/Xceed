@@ -192,29 +192,90 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <h1 class="text-center">Create Staff</h1>
 
-    <form action="signup.php" method="post">
+@if(Session::get('success'))
+<div class ="alert alert success">
+{{Session::get('success')}}
+</div>
+@endif
+
+
+@if(Session::get('fail'))
+<div class ="alert alert danger">
+{{Session::get('fail')}}
+</div>
+@endif
+
+    <form action="register" method="post">
+    @csrf
+
+
     <div class="form-group"> 
-            <label for="email">Email</label> 
-        <input type="text"  class="form-control" id="email"
-            name="email" aria-describedby="emailHelp">    
+            <label for="staff_fname">First Name</label> 
+        <input type="text"  class="form-control" id="staff_fname"
+            name="staff_fname" aria-describedby="staff_fnameHelp"> 
+            <span style="color:red">@error('staff_fname'){{$message}}@enderror</span>   
+        </div>
+
+    <div class="form-group"> 
+            <label for="staff_lname">Last Name</label> 
+        <input type="text"  class="form-control" id="staff_lname"
+            name="staff_lname" aria-describedby="staff_lnameHelp">  
+            <span style="color:red">@error('staff_lname'){{$message}}@enderror</span>
+        </div>
+
+    <div class="form-group"> 
+            <label for="staff_email">Email</label> 
+        <input type="text"  class="form-control" id="staff_email"
+            name="staff_email" aria-describedby="staff_emailHelp">  
+            <span style="color:red">@error('staff_email'){{$message}}@enderror</span>
+  
         </div>
     
         <div class="form-group"> 
             <label for="password">Password</label> 
-            <input type="password" class="form-control"
-            id="password" name="password"> 
+            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+            <span style="color:red">@error('password'){{$message}}@enderror</span>
+
         </div>
     
         <div class="form-group"> 
             <label for="cpassword">Confirm Password</label> 
-            <input type="password" class="form-control"
-                id="cpassword" name="cpassword">
-    
+            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="current-password">
             <small id="emailHelp" class="form-text text-muted">
             Make sure to type the same password
             </small> 
         </div>      
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         <button type="submit" class="btn btn-primary">
         Sign Up User
         </button> 

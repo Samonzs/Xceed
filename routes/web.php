@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserFormController;
+use App\Http\Controllers\insertFields_DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,11 @@ use App\Http\Controllers\UserFormController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('listofstaff', [insertFields_DB::class, 'index']);
+Route::post('register', [insertFields_DB::class, 'register']);
+
+
 
 Route::get('users', [UserFormController::class, 'getData']);
 
