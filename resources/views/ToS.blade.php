@@ -85,7 +85,7 @@ legend.scheduler-border {
                   <li class="nav-item">
                      <a class="nav-link" href="<?php echo url('listofquotes')?>">Home</a>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item">
                      <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variation <span class="sr-only">(current)</span></a>
                   </li>
                </ul>
