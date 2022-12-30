@@ -36,7 +36,7 @@ class UserFormController extends Controller
            
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
-        return $validator($messages);
+        return $validator;
 
     }
 
@@ -45,8 +45,8 @@ class UserFormController extends Controller
 
         $request->validate([
 
-        'fname' => 'required|regex:/^([^0-9]*)$/|min:3',
-        'lname' => 'required|regex:/^([^0-9]*)$/|min:3',
+        'first name' => 'required|regex:/^([^0-9]*)$/|min:3',
+        'last name' => 'required|regex:/^([^0-9]*)$/|min:3',
 
         ]);
 
