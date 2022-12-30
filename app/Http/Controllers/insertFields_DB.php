@@ -21,13 +21,14 @@ class insertFields_DB extends Controller
             'staff_email' => [
                 'required',
                 'string',
+                'unique:users',
                 'email',
                 'max:255',
                 'regex:/^\w+[-\.\w]*@(?!(?:outlook|myemail|yahoo)\.com$)\w+[-\.\w]*?\.\w{2,4}$/'
             ],
             'password' => [
                 'required',
-                'confirmed',
+                'confirmed',       
                 'string',
                 'min:8',              // must be at least 10 characters in length
                 'regex:/[A-Z]/',      // must contain at least one uppercase letter
@@ -47,9 +48,12 @@ class insertFields_DB extends Controller
 
         ]);
 
-        if($query){
-            return back()->with('Staff user has been successfully created and stored into the db');
-        }else{
+        if($query)
+        {
+            return back()->with('success','Staff user has been successfully created and stored into the db');
+        }
+        else
+        {
             return back()->with('fail', 'Something went wrong');
         }
 

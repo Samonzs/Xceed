@@ -193,14 +193,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1 class="text-center">Create Staff</h1>
 
 @if(Session::get('success'))
-<div class ="alert alert success">
+<div class ="alert alert-success">
 {{Session::get('success')}}
 </div>
 @endif
 
 
 @if(Session::get('fail'))
-<div class ="alert alert danger">
+<div class ="alert alert-danger">
 {{Session::get('fail')}}
 </div>
 @endif
@@ -211,22 +211,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="form-group"> 
             <label for="staff_fname">First Name</label> 
-        <input type="text"  class="form-control" id="staff_fname"
-            name="staff_fname" aria-describedby="staff_fnameHelp"> 
+        <input value="{{ old('staff_fname')}}" type="text"  class="form-control" id="staff_fname" name="staff_fname" aria-describedby="staff_fnameHelp"> 
             <span style="color:red">@error('staff_fname'){{$message}}@enderror</span>   
         </div>
 
     <div class="form-group"> 
             <label for="staff_lname">Last Name</label> 
-        <input type="text"  class="form-control" id="staff_lname"
-            name="staff_lname" aria-describedby="staff_lnameHelp">  
+        <input value= "{{ old('staff_lname')}}"type="text"  class="form-control" id="staff_lname" name="staff_lname" aria-describedby="staff_lnameHelp">  
             <span style="color:red">@error('staff_lname'){{$message}}@enderror</span>
         </div>
 
     <div class="form-group"> 
             <label for="staff_email">Email</label> 
-        <input type="text"  class="form-control" id="staff_email"
-            name="staff_email" aria-describedby="staff_emailHelp">  
+        <input value= "{{ old('staff_email')}}" type="text"  class="form-control" id="staff_email" name="staff_email" aria-describedby="staff_emailHelp">  
             <span style="color:red">@error('staff_email'){{$message}}@enderror</span>
   
         </div>

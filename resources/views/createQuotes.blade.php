@@ -129,29 +129,38 @@
 
                            
                               <label for="fname">First name:</label>
-                              <span style="color:red">@error('fname'){{$message}}@enderror</span>
-                              <input type="text" id="fname" name="fname" value="">
+                              <span style="color:red">@error('first name'){{$message}}@enderror</span>
+                              <input type="text" id="fname" name="first name" value="">
 
                               <label for="lname">Last name:</label>
-                              <input type="text" id="lname" name="lname" value="">
+                              <input type="text" id="lname" name="last name" value="">
                               <span style="color:red">@error('lname'){{$message}}@enderror</span>
+
+                              <label for="email">Email:</label>
+                              <input type="text" id="email" name="client email" value="">
+
+                              <label for="pNumber">Phone Number:</label>
+                              <input type="text" id="pNumber" name="phone number" value="">
+
+                              <label for="date">Date:</label>
+                              <input type="date" id="date" name="date" value="">
 
                               <label for="compName">Company Name:</label>
                               <input type="text" id="compName" name="compName" value="">
-                              <label for="date">Date:</label>
-                              <input type="date" id="date" name="date" value="">
-                              <label for="pNumber">Phone Number:</label>
-                              <input type="text" id="pNumber" name="pNumber" value="">
+
                               <label for="abn">ABN:</label>
                               <input type="text" id="abn" name="abn" value="">
+
                               <label for="address">Address line:</label>
-                              <input type="text" id="address" name="address" value="">
+                              <input type="text" id="address" name="address line" value="">
+
                               <label for="suburb">Suburb:</label>
                               <input type="text" id="suburb" name="suburb" value="">
+
                               <label for="postcode">Post Code:</label>
                               <input type="text" id="postcode" name="postcode" value="">
-                              <label for="email">Email:</label>
-                              <input type="text" id="email" name="email" value="">
+
+                              
                            </section>
                         </div>
                      </div>
@@ -170,13 +179,22 @@
                         <div class="card-body">
                         <section>
                               <label for="jrNumber">Job Reference Number</label>
-                              <input type="number" id="jrNumber" name="jrNumber" value="">
+                              <input type="number" id="jrNumber" name="job reference number" value="">
+
                               <label for="ordNumber">Order Number</label><br>
-                              <input type="number" id="ordNumber" name="ordNumber" value="">
+                              <input type="number" id="ordNumber" name="oder number" value="">
+
                               <label for="siteName">Site Name:</label><br>
-                              <input type="text" id="siteName" name="siteName" value=""><br>
-                              <label for="siteAddress">Site Address:</label><br>
-                              <input type="text" id="siteAddress" name="siteAddress" value="">
+                              <input type="text" id="siteName" name="site name" value=""><br>
+
+                              <label for="siteAddress">Site Address Line:</label><br>
+                              <input type="text" id="siteAddress" name="site address line" value="">
+
+                              <label for="siteAddress">Site State:</label><br>
+                              <input type="text" id="siteAddress" name="site address state" value="">
+
+                              <label for="siteAddress">Site Postcode:</label><br>
+                              <input type="text" id="siteAddress" name="site postcode" value="">
                            </section>      
                         </div>
                      </div>
@@ -197,12 +215,10 @@
                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                      <div class="card-body">
                         <!-- This is where the code goes -->
-                           <label for="quotedesc">Description of Variation:</label><br>
-                                 <textarea id="quotedesc" name="quotedesc" rows="3" cols="13"></textarea>
                            <div class="container-sm">
                            <div id="survey_options">
-                           <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Item">
-                           <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Price">    
+                           <input type="text" name="variation item" class="survey_options" size="50" placeholder="Variation Item">
+                           <input type="text" name="variation item price" class="survey_options" size="50" placeholder="Variation Price">    
                                  
                            </div>
                   
@@ -211,10 +227,17 @@
                            <a type="button" id="remove_fields"><i class="fa fa-plus"></i>- Remove Field</a>
                         </div>
                      </div>
+                     <label for="quotedesc">Description of Variation:</label><br>
+                                 <textarea id="variation description" name="variation description" rows="3" cols="13"></textarea>
                         <div>
                            <label for="price">Total cost:</label><br>
-                           <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value="" readonly><br><br>
+                           <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value="" readonly>
                         </div>
+
+                        <label for="date">Variation Date Request:</label>
+                              <input type="date" id="date" name="variation date request" value="">
+                        
+
 
 
                      </div>
@@ -222,10 +245,13 @@
                </div>
                   <br>
                   <button type="submit" name="submit" class="btn btn-primary addPost">Submit</button>
-                  <br>
+     
                <div class="card">
 
-               <!-- (Send Email) -->
+               <!-- 
+                  
+               (Send Email) 
+               
                <div class="card">
                   <div class="card-header" id="headingFour">
                      <h2 class="mb-0">
@@ -259,7 +285,7 @@
                </div>
                </div>
 
-               
+               -->
               
 
          <script> 
