@@ -27,33 +27,29 @@ return new class extends Migration
             $table->string('first name');
             $table->string('last name');
             $table->string('client email');
-            $table->int('phone number');
+            $table->integer('phone number');
             $table->date('date');
             $table->string('company name');
-            $table->int('abn');
+            $table->integer('abn');
             $table->string('address line');
             $table->string('suburb');
-            $table->int('postcode');
+            $table->integer('postcode');
             $table->timestamps();
         });
 
         Schema::create('clientSiteDetails', function (Blueprint $table) {
             $table->id();
-            $table->int('job reference number');
-            $table->int('oder number');
+            $table->integer('job reference number');
+            $table->integer('oder number');
             $table->string('site name');
             $table->string('site address line');
             $table->string('site address state');
-            $table->int('site postcode');
+            $table->integer('site postcode');
             $table->string('variation item');
-            $table->int('variation item price');
+            $table->integer('variation item price');
             $table->string('variation description');
-            $table->int('total cost');
+            $table->integer('total cost');
             $table->Date('variation date request');
-
-
-
-
             $table->timestamps();
         });
     }
@@ -66,5 +62,8 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('clientDetails');
+        Schema::dropIfExists('clientSiteDetails');
+
     }
 };
