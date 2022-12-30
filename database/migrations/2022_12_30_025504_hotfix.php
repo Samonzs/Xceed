@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('clientSiteDetails', function (Blueprint $table) {
            
-            $table->string('ToC'); // adding terms of conditions as its own column in clientSiteDetails table
+            // $table->string('Terms and Conditions'); // adding terms of conditions as its own column in clientSiteDetails table
           
         });
     }

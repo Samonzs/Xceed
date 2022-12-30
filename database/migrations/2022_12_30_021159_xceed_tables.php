@@ -50,6 +50,7 @@ return new class extends Migration
             $table->string('variation description');
             $table->integer('total cost');
             $table->Date('variation date request');
+            $table->string('Terms and Conditions');
             $table->timestamps();
         });
     }

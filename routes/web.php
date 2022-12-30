@@ -24,6 +24,11 @@ Route::get('users', [UserFormController::class, 'getData']);
 Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 
 
+Route::resource('clientSiteDetails', 'App\Http\Controllers\TasCrudController@index');
+
+
+
+
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
