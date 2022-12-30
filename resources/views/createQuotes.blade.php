@@ -215,6 +215,8 @@
                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                      <div class="card-body">
                         <!-- This is where the code goes -->
+                           <label for="quotedesc">Description of Variation:</label><br>
+                                 <textarea id="quotedesc" name="quotedesc" rows="3" cols="20"></textarea>
                            <div class="container-sm">
                            <div id="survey_options">
                            <input type="text" name="variation item" class="survey_options" size="50" placeholder="Variation Item">
@@ -355,8 +357,6 @@
         });
     });
 
- 
-         
          </script>
 
  
