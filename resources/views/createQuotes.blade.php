@@ -110,7 +110,7 @@
       
             <h3>Create Variation</h3>
             <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
-            <form action= "userInfo" >
+            <form action= "clientDetails" >
                <!-- customer dets -->
             
                <div class="accordion" id="accordionExample">
@@ -134,7 +134,7 @@
 
                               <label for="lname">Last name:</label>
                               <input type="text" id="lname" name="last name" value="">
-                              <span style="color:red">@error('lname'){{$message}}@enderror</span>
+                              <span style="color:red">@error('last name'){{$message}}@enderror</span>
 
                               <label for="email">Email:</label>
                               <input type="text" id="email" name="client email" value="">

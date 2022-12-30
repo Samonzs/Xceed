@@ -15,16 +15,13 @@ use App\Http\Controllers\insertFields_DB;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('listofstaff', [insertFields_DB::class, 'index']);
+Route::get('register', [insertFields_DB::class, 'getStaffData']);
 Route::post('register', [insertFields_DB::class, 'register']);
 
 
 
 Route::get('users', [UserFormController::class, 'getData']);
-
-
-Route::get('userInfo', [UserFormController::class, 'getClientData']);
+Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 
 
 

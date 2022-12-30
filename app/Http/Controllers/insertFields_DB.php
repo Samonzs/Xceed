@@ -9,10 +9,6 @@ class insertFields_DB extends Controller
 {
     //
 
-    function index(){
-        return('listofstaff');
-    }
-
     function register(Request $request){
 
         $request->validate([
@@ -34,11 +30,11 @@ class insertFields_DB extends Controller
                 'regex:/[A-Z]/',      // must contain at least one uppercase letter
                 'regex:/[0-9]/',      // must contain at least one digit
                 'regex:/[@$!%*#?&]/', // must contain a special character  
-            ]
-        ]);
+            ],
+            'password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
 
-
+            
         $query = DB::table('users')->insert([
 
             'staff_fname'=>$request->input('staff_fname'),
@@ -50,12 +46,21 @@ class insertFields_DB extends Controller
 
         if($query)
         {
-            return back()->with('success','Staff user has been successfully created and stored into the db');
+            return back()->with('success','Staff user has been successfully created and stored into the db'); //data has been stored in db
         }
         else
         {
-            return back()->with('fail', 'Something went wrong');
+            return back()->with('fail', 'Something went wrong'); //error has occured
         }
 
     }
+
+
+    //Client Details for 'Create Variation' page 
+
+
+    
+
+
+
 }
