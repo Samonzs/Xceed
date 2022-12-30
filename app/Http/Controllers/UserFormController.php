@@ -28,6 +28,8 @@ class UserFormController extends Controller
                 'regex:/[0-9]/',      // must contain at least one digit
                 'regex:/[@$!%*#?&]/', // must contain a special character  
             ],
+            'fname' => 'required|regex:/^([^0-9]*)$/|min:3'
+            
 
            
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
