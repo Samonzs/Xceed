@@ -17,13 +17,12 @@ class UserFormController extends Controller
                 'string',
                 'email',
                 'max:255',
-                'unique:users',
                 'regex:/^\w+[-\.\w]*@(?!(?:outlook|myemail|yahoo)\.com$)\w+[-\.\w]*?\.\w{2,4}$/'
             ],
             'password' => [
                 'required',
                 'string',
-                'min:8',             // must be at least 10 characters in length
+                'min:8',              // must be at least 10 characters in length
                 'regex:/[A-Z]/',      // must contain at least one uppercase letter
                 'regex:/[0-9]/',      // must contain at least one digit
                 'regex:/[@$!%*#?&]/', // must contain a special character  
@@ -31,10 +30,29 @@ class UserFormController extends Controller
             'fname' => 'required|regex:/^([^0-9]*)$/|min:3'
             
 
+            
+
+            
+
+
            
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
-        return $validator($messages);
+        return $validator;
+
+    }
+
+    public function getClientData(Request $request)
+    {
+
+        $request->validate([
+
+        'first name' => 'required|regex:/^([^0-9]*)$/|min:3',
+        'last name' => 'required|regex:/^([^0-9]*)$/|min:3',
+
+        ]);
+
+        return $request->validate;
 
     }
 }

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserFormController;
+use App\Http\Controllers\insertFields_DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,17 @@ use App\Http\Controllers\UserFormController;
 |
 */
 
+Route::get('listofstaff', [insertFields_DB::class, 'index']);
+Route::post('register', [insertFields_DB::class, 'register']);
+
+
+
 Route::get('users', [UserFormController::class, 'getData']);
+
+
+Route::get('userInfo', [UserFormController::class, 'getClientData']);
+
+
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
