@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\TermsAndConditions;
 use Illuminate\Http\Request;
 
-class TasCrudController extends Controller
+class TaCcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,18 @@ class TasCrudController extends Controller
      */
     public function index()
     {
-        $TaC = \App\Models\TermsAndConditions::all();
-        return view('TaC.TaC',compact('TaC'))->with('TaC', $TaC);
+
+
+        $TaC = TermsAndConditions::latest()->paginate(5);
+  
+        return view('TaC.TaC',compact('TaC'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+
+
+        /*       
+        $TaC = TermsAndConditions::all();
+                
+        return view('TaC.TaC')->with('termsAndConditions', $TaC); */
     }
 
     /**
@@ -35,7 +45,7 @@ class TasCrudController extends Controller
      */
     public function store(Request $request)
     {
-         $input = $request->all();
+        $input = $request->all();
         TermsAndConditions::create($input);
         return redirect()->route('TaC.TaC')->with('success', 'Terms and Conditions saved'); 
     }
@@ -48,6 +58,7 @@ class TasCrudController extends Controller
      */
     public function show(TermsAndConditions $id)
     {
+        $termsAndConditions = Contact::find($id);        
         return view('TaC.TaCshow', compact('TaC'));
     }
 
@@ -59,6 +70,7 @@ class TasCrudController extends Controller
      */
     public function edit($id)
     {
+        $termsAndConditions = Contact::find($id);        
         return view('TaC.TaCedit', compact('TaC'));
 
     }
@@ -72,6 +84,7 @@ class TasCrudController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $termsAndConditions = Contact::find($id);        
         $TaC->update($request->all());
         return redirect('TaC.TaC')->with('success', 'Terms of Conditions Updated');      }
 
@@ -83,6 +96,7 @@ class TasCrudController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+
     }
 }

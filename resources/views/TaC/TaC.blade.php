@@ -122,11 +122,11 @@ legend.scheduler-border {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($TaC as $item)
+                                @foreach($TaC as $tac)
                                     <tr>
-                                        <td>{{ $item->Terms and Conditions }}</td>                                      
-                                        <td>
-                                            <a href="{{ url('/TaC.TaCedit/' . $item->id . '/TaCedit') }}" title="Edit Terms and Conditions"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                    <td>{{ $tac->Terms and Conditions }}</td>                                      
+                                    <td>
+                                            <a href="{{ url('/TaC.TaCedit/' . $tac->id . '/TaCedit') }}" title="Edit Terms and Conditions"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                         </td>
                                     </tr>
                                 @endforeach

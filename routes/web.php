@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserFormController;
+use App\Http\Controllers\TaCcontroller;
 use App\Http\Controllers\insertFields_DB;
 
 
@@ -25,12 +26,8 @@ Route::get('users', [UserFormController::class, 'getData']);
 Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 
 
-
-
-Route::resource('clientSiteDetails', 'App\Http\Controllers\TasCrudController');
-
-
-
+Route::get('TaC', 'App\Http\Controllers\HomeController@TaC');
+Route::resource('TaC', TaCcontroller::class);
 
 
 
@@ -49,6 +46,5 @@ Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
 Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
 
-Route::get('TaC', 'App\Http\Controllers\HomeController@TaC');
 
 
