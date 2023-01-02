@@ -105,9 +105,40 @@ legend.scheduler-border {
       </header>
    <body>
       <center>
-         <img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" alt="Logo">
-         <header>
-            <h3>Create Variation</h3>   
+@extends('TaC.layout')
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">Terms and Conditions</div>
+                    <div class="card-body">
+                        <br/>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Terms & Conditions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($TaC as $item)
+                                    <tr>
+                                        <td>{{ $item->Terms and Conditions }}</td>                                      
+                                        <td>
+                                            <a href="{{ url('/TaC.TaCedit/' . $item->id . '/TaCedit') }}" title="Edit Terms and Conditions"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
       </center>
    </header>
 </body>

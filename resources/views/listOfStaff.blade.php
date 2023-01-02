@@ -34,7 +34,7 @@
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="<?php echo url('listofstaff')?>">Staff List</a>
                         <a class="dropdown-item" href="<?php echo url('createstaff')?>">Create Staff</a>
-                        <a class="dropdown-item" href="#">Terms & Conditions</a>
+                        <a class="dropdown-item" href="<?php echo url('TaC')?>">Terms & Conditions</a>
                      </div>
                      </div>
                         <li class="nav-item">

@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class TermsAndConditions extends Model
 {
-    protected $table = 'contacts';
+
+    use HasFactory;
+
+    protected $table = 'clientSiteDetails';
+
     protected $fillable = ['Terms and Conditions'];
 
 }

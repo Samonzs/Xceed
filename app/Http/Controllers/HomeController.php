@@ -37,4 +37,11 @@ class HomeController extends Controller
         return view("listOfStaff");
     }
 
+
+    
+    public function TaC()
+    {
+        return view("TaC.TaC");
+    }
+
 }

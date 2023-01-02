@@ -13,7 +13,8 @@ class TasCrudController extends Controller
      */
     public function index()
     {
-        //
+        $TaC = \App\Models\TermsAndConditions::all();
+        return view('TaC.TaC',compact('TaC'))->with('TaC', $TaC);
     }
 
     /**
@@ -34,7 +35,9 @@ class TasCrudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $input = $request->all();
+        TermsAndConditions::create($input);
+        return redirect()->route('TaC.TaC')->with('success', 'Terms and Conditions saved'); 
     }
 
     /**
@@ -43,9 +46,9 @@ class TasCrudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(TermsAndConditions $id)
     {
-        //
+        return view('TaC.TaCshow', compact('TaC'));
     }
 
     /**
@@ -56,7 +59,8 @@ class TasCrudController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('TaC.TaCedit', compact('TaC'));
+
     }
 
     /**
@@ -68,8 +72,8 @@ class TasCrudController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $TaC->update($request->all());
+        return redirect('TaC.TaC')->with('success', 'Terms of Conditions Updated');      }
 
     /**
      * Remove the specified resource from storage.
