@@ -5,6 +5,7 @@ use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\insertFields_DB;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +25,11 @@ Route::get('users', [UserFormController::class, 'getData']);
 Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 
 
-Route::resource('clientSiteDetails', 'App\Http\Controllers\TasCrudController@index');
+
+
+Route::resource('clientSiteDetails', 'App\Http\Controllers\TasCrudController');
+
+
 
 
 
@@ -43,4 +48,7 @@ Route::get('listofquotes', 'App\Http\Controllers\HomeController@listofquotes');
 Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
 Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
+
+Route::get('TaC', 'App\Http\Controllers\HomeController@TaC');
+
 
