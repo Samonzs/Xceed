@@ -111,29 +111,32 @@ legend.scheduler-border {
         <div class="row">
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Terms and Conditions</div>
                     <div class="card-body">
                         <br/>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
+                                    $TaC->Terms and Conditions
                                         <th>Terms & Conditions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($TaC as $tac)
+
+                                $course = Course::where('Terms and Conditions', $TaC)->first();
+
+                                @foreach($TaC as $item)
                                     <tr>
-                                    <td>{{ $tac->Terms and Conditions }}</td>                                      
-                                    <td>
-                                            <a href="{{ url('/TaC.TaCedit/' . $tac->id . '/TaCedit') }}" title="Edit Terms and Conditions"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                        </td>
+                                        <td>{{ $item->Terms and Conditions}}</td>   
+                                        <td>
+                                            <a href="{{ url('/TaC.TaCedit/' . $item->id . '/TaCedit') }}" title="Edit Terms and Conditions"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                         </td>                                                
                                     </tr>
                                 @endforeach
                                 </tbody>
+                                    
                             </table>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -40,7 +40,7 @@ return new class extends Migration
         Schema::create('clientSiteDetails', function (Blueprint $table) {
             $table->id();
             $table->integer('job reference number');
-            $table->integer('oder number');
+            $table->integer('order number');
             $table->string('site name');
             $table->string('site address line');
             $table->string('site address state');
@@ -50,10 +50,16 @@ return new class extends Migration
             $table->string('variation description');
             $table->integer('total cost');
             $table->Date('variation date request');
-            $table->string('Terms and Conditions');
             $table->timestamps();
         });
+
+        Schema::create('TermsAndConditions', function (Blueprint $table) {
+            $table->id();
+            $table->string('TermsAndConditions');
+        });
     }
+
+
 
     /**
      * Reverse the migrations.
@@ -65,6 +71,8 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('clientDetails');
         Schema::dropIfExists('clientSiteDetails');
+        Schema::dropIfExists('TermsAndConditions');
+
 
     }
 };
