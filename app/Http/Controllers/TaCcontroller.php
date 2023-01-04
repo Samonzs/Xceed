@@ -15,10 +15,9 @@ class TaCcontroller extends Controller
     {
 
 
-        $TaC = TermsAndConditions::latest()->paginate(5);
-  
-        return view('TaC.TaC',compact('TaC'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $TaC = TermsAndConditions::all();
+        return view('TaC.TaC')->with('TaC', $TaC);
+
 
 
         /*       
@@ -45,9 +44,9 @@ class TaCcontroller extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
+       /* $input = $request->all();
         TermsAndConditions::create($input);
-        return redirect()->route('TaC.TaC')->with('success', 'Terms and Conditions saved'); 
+        return redirect()->route('TaC.TaC')->with('success', 'Terms and Conditions saved'); */
     }
 
     /**
@@ -56,10 +55,11 @@ class TaCcontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(TermsAndConditions $id)
+    public function show($id)
     {
-        $termsAndConditions = Contact::find($id);        
-        return view('TaC.TaCshow', compact('TaC'));
+        $TaC = TermsAndConditions::find($id);        
+        return view('TaC.TaCshow')->with('TaC', $TaC);
+        
     }
 
     /**
@@ -70,8 +70,8 @@ class TaCcontroller extends Controller
      */
     public function edit($id)
     {
-        $termsAndConditions = Contact::find($id);        
-        return view('TaC.TaCedit', compact('TaC'));
+        $TaC = TermsAndConditions::find($id);
+        return view('TaC.TaCedit')->with('TaC', $TaC);
 
     }
 
@@ -84,10 +84,18 @@ class TaCcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $termsAndConditions = Contact::find($id);        
-        $TaC->update($request->all());
-        return redirect('TaC.TaC')->with('success', 'Terms of Conditions Updated');      }
+        
+        $TaC = TermsAndConditions::find($id);
+        $TaC->TermsAndConditions = $request->all();
+        $TaC->save();
+        return redirect('TaC')->with('success', 'Contact Updated!');
+        
 
+        // Getting values from the blade template form
+        
+  
+   
+    }
     /**
      * Remove the specified resource from storage.
      *

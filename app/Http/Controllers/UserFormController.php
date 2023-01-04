@@ -44,7 +44,7 @@ class UserFormController extends Controller
 
         $request->validate([
 
-        'first name' => 'required|regex:/^([^0-9]*)$/|min:3',
+        'first_name' => 'required|regex:/^([^0-9]*)$/|min:3',
         'last name' => 'required|regex:/^([^0-9]*)$/|min:3',
 
         ]);

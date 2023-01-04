@@ -27,7 +27,8 @@ Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 
 
 Route::get('TaC', 'App\Http\Controllers\HomeController@TaC');
-Route::resource('TaC', TaCcontroller::class);
+
+Route::resource('/TaC', TaCcontroller::class);
 
 
 
