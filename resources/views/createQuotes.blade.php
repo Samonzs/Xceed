@@ -128,36 +128,43 @@
                            <section>
 
                            
-                              <label for="fname">First name:</label>
-                              <span style="color:red">@error('first name'){{$message}}@enderror</span>
-                              <input type="text" id="fname" name="first name" value="">
+                           <label for="firstname">First name:</label>
+                              <span style="color:red">@error('firstname'){{$message}}@enderror</span>
+                              <input type="text" id="firstname" name="firstname" value="">
 
                               <label for="lname">Last name:</label>
+                              <span style="color:red">@error('lastname'){{$message}}@enderror</span>
                               <input type="text" id="lname" name="last name" value="">
-                              <span style="color:red">@error('last name'){{$message}}@enderror</span>
 
                               <label for="email">Email:</label>
+                              <span style="color:red">@error('clientemail'){{$message}}@enderror</span>
                               <input type="text" id="email" name="client email" value="">
 
                               <label for="pNumber">Phone Number:</label>
+                              <span style="color:red">@error('phonenumber'){{$message}}@enderror</span>
                               <input type="text" id="pNumber" name="phone number" value="">
 
                               <label for="date">Date:</label>
                               <input type="date" id="date" name="date" value="">
 
                               <label for="compName">Company Name:</label>
+                              <span style="color:red">@error('compName'){{$message}}@enderror</span>
                               <input type="text" id="compName" name="compName" value="">
 
                               <label for="abn">ABN:</label>
+                              <span style="color:red">@error('abn'){{$message}}@enderror</span>
                               <input type="text" id="abn" name="abn" value="">
 
                               <label for="address">Address line:</label>
+                              <span style="color:red">@error('addressline'){{$message}}@enderror</span>
                               <input type="text" id="address" name="address line" value="">
 
                               <label for="suburb">Suburb:</label>
+                              <span style="color:red">@error('suburb'){{$message}}@enderror</span>
                               <input type="text" id="suburb" name="suburb" value="">
 
                               <label for="postcode">Post Code:</label>
+                              <span style="color:red">@error('postcode'){{$message}}@enderror</span>
                               <input type="text" id="postcode" name="postcode" value="">
 
                               
@@ -178,22 +185,28 @@
                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
                         <section>
-                              <label for="jrNumber">Job Reference Number</label>
+                        <label for="jrNumber">Job Reference Number</label>
+                              <span style="color:red">@error('jobreferencenumber'){{$message}}@enderror</span>
                               <input type="number" id="jrNumber" name="job reference number" value="">
 
                               <label for="ordNumber">Order Number</label><br>
-                              <input type="number" id="ordNumber" name="oder number" value="">
+                              <span style="color:red">@error('ordernumber'){{$message}}@enderror</span>
+                              <input type="number" id="ordNumber" name="order number" value="">
 
                               <label for="siteName">Site Name:</label><br>
+                              <span style="color:red">@error('sitename'){{$message}}@enderror</span>
                               <input type="text" id="siteName" name="site name" value=""><br>
 
                               <label for="siteAddress">Site Address Line:</label><br>
+                              <span style="color:red">@error('siteaddressline'){{$message}}@enderror</span>
                               <input type="text" id="siteAddress" name="site address line" value="">
 
                               <label for="siteAddress">Site State:</label><br>
+                              <span style="color:red">@error('siteaddressstate'){{$message}}@enderror</span>
                               <input type="text" id="siteAddress" name="site address state" value="">
 
                               <label for="siteAddress">Site Postcode:</label><br>
+                              <span style="color:red">@error('sitepostcode'){{$message}}@enderror</span>
                               <input type="text" id="siteAddress" name="site postcode" value="">
                            </section>      
                         </div>

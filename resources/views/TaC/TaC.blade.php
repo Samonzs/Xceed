@@ -117,20 +117,18 @@ legend.scheduler-border {
                             <table class="table">
                                 <thead>
                                     <tr>
-                                    $TaC->Terms and Conditions
                                         <th>Terms & Conditions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                $course = Course::where('Terms and Conditions', $TaC)->first();
-
                                 @foreach($TaC as $item)
                                     <tr>
-                                        <td>{{ $item->Terms and Conditions}}</td>   
+                                        <td>{{ $item->TermsAndConditions}}</td>   
                                         <td>
-                                            <a href="{{ url('/TaC.TaCedit/' . $item->id . '/TaCedit') }}" title="Edit Terms and Conditions"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                         </td>                                                
+                                           <a href="{{ route('TaC.show', $item->id) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                           <a href="{{ route('TaC.edit', $item->id) }}" title="Edit Terms and Conditions"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                        </td>                                                
                                     </tr>
                                 @endforeach
                                 </tbody>

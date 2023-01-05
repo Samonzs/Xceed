@@ -56,6 +56,7 @@ return new class extends Migration
         Schema::create('TermsAndConditions', function (Blueprint $table) {
             $table->id();
             $table->string('TermsAndConditions');
+            $table->timestamps();
         });
     }
 
