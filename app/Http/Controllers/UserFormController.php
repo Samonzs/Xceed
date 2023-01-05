@@ -44,8 +44,21 @@ class UserFormController extends Controller
 
         $request->validate([
 
-        'first_name' => 'required|regex:/^([^0-9]*)$/|min:3',
-        'last name' => 'required|regex:/^([^0-9]*)$/|min:3',
+        'firstname' => 'required|regex:/^([^0-9])$/|max:25|min:1',
+        'lastname' => 'required|regex:/^([^0-9])$/|max:25|min:1',
+        'clientemail' => 'required', 'string','email','max:255', 'regex:/^\w+[-.\w]@(?!(?:outlook|myemail|yahoo).com$)\w+[-.\w]?.\w{2,4}$/|min:1',
+        'compName' => 'required|regex:/^([^0-9])$/|max:255|min:1',
+        'phonenumber' => 'required|regex:/^[0-9]+$/|max:10|min:1',
+        'abn' => 'required|regex:/^[0-9]+$/|max:11|min:1',
+        'addressline' => 'required|regex:/^([^0-9])$/|max:255|min:1',
+        'suburb' => 'required|regex:/^([^0-9])$/|max:255|min:1',
+        'postcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
+        'jobreferencenumber' => 'required|regex:/^[0-9]+$/|max:10|min:1',
+        'ordernumber' => 'required|regex:/^[0-9]+$/|max:10|min:1',
+        'sitename' => 'required|regex:/^([^0-9])$/|max:255|min:1',
+        'siteaddressline' => 'required|regex:/^([^0-9])$/|max:255|min:1',
+        'siteaddressstate' => 'required|regex:/^([^0-9])$/|max:255|min:1',
+        'sitepostcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
 
         ]);
 
