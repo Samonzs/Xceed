@@ -66,7 +66,7 @@ class UserFormController extends Controller
 
     }
 
-    /* public function getStaffData(Request $request)
+    public function getStaffData(Request $request)
     {
 
         //validation for staff creation page
@@ -96,7 +96,7 @@ class UserFormController extends Controller
         return $request->validate;
 
     }
-    */
+   
 }
 
 

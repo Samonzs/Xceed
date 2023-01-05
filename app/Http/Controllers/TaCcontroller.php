@@ -86,7 +86,7 @@ class TaCcontroller extends Controller
     {
         
         $TaC = TermsAndConditions::find($id);
-        $TaC->TermsAndConditions = $request->all();
+        $TaC->TermsAndConditions = $request->input("TermsAndConditions");
         $TaC->save();
         return redirect('TaC')->with('success', 'Contact Updated!');
         

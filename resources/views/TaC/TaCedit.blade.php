@@ -8,7 +8,7 @@
         @method("PATCH")
        
         <label>Terms and Conditions</label></br><br>
-        <input type="text" id ="TaC" name="Terms and Conditions" value="{{$TaC->TermsAndConditions}}" class="form-control"></br>
+        <input type="text" id ="TaC" name="TermsAndConditions" value="{{$TaC->TermsAndConditions}}" class="form-control"></br>
         <input type="submit" value="Update" class="btn btn-success"></br>
       </form>
   
