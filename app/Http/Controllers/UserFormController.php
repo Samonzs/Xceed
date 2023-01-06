@@ -69,8 +69,9 @@ class UserFormController extends Controller
     public function getStaffData(Request $request)
     {
 
+      
         //validation for staff creation page
-
+        /*
         $request->validate([
             'staff_fname' => 'required|regex:/^([^0-9]*)$/|min:3',
             'staff_lname' => 'required|regex:/^([^0-9]*)$/|min:3',
@@ -94,7 +95,7 @@ class UserFormController extends Controller
             'password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
         return $request->validate;
-
+        */
     }
    
 }

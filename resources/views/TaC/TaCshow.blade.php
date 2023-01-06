@@ -5,7 +5,7 @@
   <div class="card-body">
   
         <div class="card-body">
-        <h5 class="card-title">Terms and Conditions : {{ $clientSiteDetails->Terms and Conditions }}</h5>
+        <h5 class="card-title">Terms and Conditions : {{ $TaC->TermsAndConditions }}</h5>
 
   </div>
       

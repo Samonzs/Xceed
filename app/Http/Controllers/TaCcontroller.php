@@ -88,12 +88,11 @@ class TaCcontroller extends Controller
         $TaC = TermsAndConditions::find($id);
         $TaC->TermsAndConditions = $request->input("TermsAndConditions");
         $TaC->save();
-        return redirect('TaC')->with('success', 'Contact Updated!');
+        return redirect('TaC')->with('success', 'Terms and Conditions Updated');
         
 
         // Getting values from the blade template form
-        
-  
+       
    
     }
     /**

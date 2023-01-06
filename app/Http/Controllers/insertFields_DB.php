@@ -9,8 +9,8 @@ class insertFields_DB extends Controller
 {
     //
 
-    function register(Request $request){
-/*
+    function getStaffData(Request $request){
+    
         $request->validate([
             'staff_fname' => 'required|regex:/^([^0-9]*)$/|min:3',
             'staff_lname' => 'required|regex:/^([^0-9]*)$/|min:3',
@@ -32,7 +32,7 @@ class insertFields_DB extends Controller
                 'regex:/[@$!%*#?&]/', // must contain a special character  
             ],
             'password.regex' => 'The password must contain a capital letter, number, and symbol ']);
-*/
+
 
             
         $query = DB::table('users')->insert([

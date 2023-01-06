@@ -17,9 +17,8 @@ use App\Http\Controllers\insertFields_DB;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('register', [UserFormController::class, 'getStaffData']);
-
-Route::post('register', [insertFields_DB::class, 'register']);
+Route::get('register', [insertFields_DB::class, 'getStaffData']);
+Route::post('register', [insertFields_DB::class, 'getStaffData']);
 
 
 
