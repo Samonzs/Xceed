@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\TaCcontroller;
 use App\Http\Controllers\insertFields_DB;
+use App\Http\Controllers\staffListCrudController;
 
 
 
@@ -46,5 +47,5 @@ Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
 Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
 
-
+Route::resource('/staffListCrud', staffListCrudController::class);
 
