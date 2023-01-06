@@ -123,7 +123,6 @@ legend.scheduler-border {
                                  @endif
                                  </tr>     
                                        <th>Terms & Conditions</th>
-                                <tbody>
                                 @foreach($TaC as $item)
                                     <tr>
                                         <td>{{ $item->TermsAndConditions}}</td>   
@@ -134,7 +133,6 @@ legend.scheduler-border {
                                     </tr>
                                     
                                 @endforeach
-                                </tbody>
                                     
                             </table>
                         </div>
