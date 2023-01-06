@@ -263,9 +263,9 @@
      
                <div class="card">
 
-               <!-- 
+                
                   
-               (Send Email) 
+              
                
                <div class="card">
                   <div class="card-header" id="headingFour">
@@ -275,7 +275,7 @@
                      </button>
                      </h2>
                   </div>
-
+<!--
                   <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                      <div class="card-body">
                   <div class="form-box">
