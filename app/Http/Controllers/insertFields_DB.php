@@ -24,14 +24,17 @@ class insertFields_DB extends Controller
             ],
             'password' => [
                 'required',
-                'confirmed',       
+                'confirmed', 
                 'string',
                 'min:8',              // must be at least 10 characters in length
                 'regex:/[A-Z]/',      // must contain at least one uppercase letter
                 'regex:/[0-9]/',      // must contain at least one digit
                 'regex:/[@$!%*#?&]/', // must contain a special character  
             ],
-            'password.regex' => 'The password must contain a capital letter, number, and symbol ']);
+           
+        ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
+
+       
 
 
             
