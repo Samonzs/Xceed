@@ -11,6 +11,7 @@ class TermsAndConditions extends Model
     use HasFactory;
 
     protected $table = 'TermsAndConditions';
+    protected $primaryKey = 'id';
     protected $fillable = ['TermsAndConditions'];
 
 }

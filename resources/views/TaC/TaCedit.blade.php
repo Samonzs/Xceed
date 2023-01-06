@@ -3,15 +3,16 @@
 <div class="card">
   <div class="card-body">
       
-      <form action="{{ route('TaC.update' .$TermnsAndConditions->id) }}" method="post">
-        {!! csrf_field() !!}
+      <form action="{{ url('TaC/' .$TaC->id) }}" method="post">
+      {!! csrf_field() !!}
         @method("PATCH")
-        <input type="hidden" name="id" id="id" value="{{$clientSiteDetails->id}}" id="id" />
-        <label>Terms and Conditions</label></br>
-        <input type="text" name="Terms and Conditions" id="name" value="{{$clientSiteDetails->Terms and Conditions}}" class="form-control"></br>
+       
+        <label>Terms and Conditions</label></br><br>
+        <input type="text" id ="TaC" name="TermsAndConditions" value="{{$TaC->TermsAndConditions}}" class="form-control"></br>
         <input type="submit" value="Update" class="btn btn-success"></br>
-    </form>
+      </form>
   
   </div>
 </div>
 @stop
+

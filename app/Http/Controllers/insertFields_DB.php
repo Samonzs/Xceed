@@ -9,8 +9,8 @@ class insertFields_DB extends Controller
 {
     //
 
-    function register(Request $request){
-
+    function getStaffData(Request $request){
+    
         $request->validate([
             'staff_fname' => 'required|regex:/^([^0-9]*)$/|min:3',
             'staff_lname' => 'required|regex:/^([^0-9]*)$/|min:3',

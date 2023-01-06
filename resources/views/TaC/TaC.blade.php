@@ -109,31 +109,30 @@ legend.scheduler-border {
 @section('content')
     <div class="container">
         <div class="row">
+        
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
                         <br/>
                         <div class="table-responsive">
                             <table class="table">
-                                <thead>
-                                    <tr>
-                                    $TaC->Terms and Conditions
-                                        <th>Terms & Conditions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                $course = Course::where('Terms and Conditions', $TaC)->first();
-
+                                 <tr>@if(Session::get('success'))
+                                 <div class ="alert alert-success">
+                                 {{Session::get('success')}}
+                                 </div>
+                                 @endif
+                                 </tr>     
+                                       <th>Terms & Conditions</th>
                                 @foreach($TaC as $item)
                                     <tr>
-                                        <td>{{ $item->Terms and Conditions}}</td>   
+                                        <td>{{ $item->TermsAndConditions}}</td>   
                                         <td>
-                                            <a href="{{ url('/TaC.TaCedit/' . $item->id . '/TaCedit') }}" title="Edit Terms and Conditions"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                         </td>                                                
+                                           <a href="{{ route('TaC.show', $item->id) }}"><button class="btn btn-info"><i class="" ></i> View</button></a>
+                                           <a href="{{ route('TaC.edit', $item->id) }}"><button class="btn btn-info"><i class="" ></i> Edit</button></a>
+                                    </td>                             
                                     </tr>
+                                    
                                 @endforeach
-                                </tbody>
                                     
                             </table>
                         </div>

@@ -5,8 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 50726
  Source Host           : localhost:3306
- Source Schema         : zuoyelaraveluser
-
+s
  Target Server Type    : MySQL
  Target Server Version : 50726
  File Encoding         : 65001

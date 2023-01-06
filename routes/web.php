@@ -19,7 +19,7 @@ use App\Http\Controllers\staffListCrudController;
 |
 */
 Route::get('register', [insertFields_DB::class, 'getStaffData']);
-Route::post('register', [insertFields_DB::class, 'register']);
+Route::post('register', [insertFields_DB::class, 'getStaffData']);
 
 
 
@@ -28,7 +28,7 @@ Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 
 
 Route::get('TaC', 'App\Http\Controllers\HomeController@TaC');
-Route::resource('TaC', TaCcontroller::class);
+Route::resource('/TaC', TaCcontroller::class);
 
 
 
