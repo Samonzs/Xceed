@@ -39,7 +39,7 @@ class insertFields_DB extends Controller
 
             
         $query = DB::table('users')->insert([
-
+            
             'staff_fname'=>$request->input('staff_fname'),
             'staff_lname'=>$request->input('staff_lname'),
             'staff_email'=>$request->input('staff_email'),
