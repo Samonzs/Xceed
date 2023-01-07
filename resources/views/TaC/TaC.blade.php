@@ -130,6 +130,7 @@ legend.scheduler-border {
                                         <td>{{ $item->TermsAndConditions}}</td>   
                                         <td>
                                            <a href="{{ route('TaC.show', $item->id) }}"><button class="btn btn-info"><i class="" ></i> View</button></a>
+                                           <br><br>
                                            <a href="{{ route('TaC.edit', $item->id) }}"><button class="btn btn-info"><i class="" ></i> Edit</button></a>
                                     </td>                             
                                     </tr>
