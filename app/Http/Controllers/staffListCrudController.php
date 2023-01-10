@@ -13,19 +13,7 @@ class staffListCrudController extends Controller
         return view ('users.index')->with('users', $users);
     }
 
-    
-    // public function create()
-    // {
-    //     //
-    // }
 
-    
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
-
-   
     public function show($id)
     {
         $users = staffListCrud::find($id);
@@ -42,16 +30,33 @@ class staffListCrudController extends Controller
    
     public function update(Request $request, $id)
     {
-        $users = staffListCrud::find($id);
-        $users->staff_fname = $request->input("staff_fname");
-        $users->staff_lname = $request->input("staff_lname");
-        $users->staff_email = $request->input("staff_email");
-        $users->password = $request->input("password");        
-        $users->save();
-        return redirect('users')->with('flash_message', 'User Details Updated');
+        $request->validate([
+            'staff_fname' => 'required|regex:/^([^0-9]*)$/|min:3',
+            'staff_lname' => 'required|regex:/^([^0-9]*)$/|min:3',
+            'staff_email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'regex:/^\w+[-\.\w]*@(?!(?:outlook|myemail|yahoo)\.com$)\w+[-\.\w]*?\.\w{2,4}$/'
+            ],
+            'password' => [
+                'required',
+                'string',
+                'min:8',              // must be at least 10 characters in length
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+                'regex:/[@$!%*#?&]/', // must contain a special character  
+            ],
+            'password.regex' => 'The password must contain a capital letter, number, and symbol ']);
+
+
+        $stafListCrud=staffListCrud::find($id);
+        $input=$request->all();
+        $stafListCrud->update($input);
+        return redirect('staffListCrud')->with('flash_message', 'staff updated');
     }
 
-    
     public function destroy($id)
     {
         staffListCrud::destroy($id);

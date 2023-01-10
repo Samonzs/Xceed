@@ -10,6 +10,7 @@
             <h5 class="card-title">Last Name : {{ $users->staff_lname }}</h5>
             <p class="card-text">Email : {{ $users->staff_email }}</p>
             <p class="card-text">Password : {{ $users->password }}</p>
+            <a href="<?php echo url('/staffListCrud')?>"><button class="btn btn-secondary btn-info btn-sm">Back</button></a>
         </div>
   </div>
 </div>
