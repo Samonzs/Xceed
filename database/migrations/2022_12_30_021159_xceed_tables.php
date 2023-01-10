@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('staff_email');
             $table->string('password');
             $table->timestamps();
+            
         });
 
         Schema::create('clientDetails', function (Blueprint $table) {
@@ -55,7 +56,17 @@ return new class extends Migration
 
         Schema::create('TermsAndConditions', function (Blueprint $table) {
             $table->id();
-            $table->string('TermsAndConditions');
+            $table->longText('TermsAndConditions');
+            $table->timestamps();
+        });
+
+
+        Schema::create('admin', function (Blueprint $table) {
+            $table->id();
+            $table->string('fname');
+            $table->string('lname');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -69,10 +80,12 @@ return new class extends Migration
      */
     public function down()
     {
+        
         Schema::dropIfExists('users');
         Schema::dropIfExists('clientDetails');
         Schema::dropIfExists('clientSiteDetails');
         Schema::dropIfExists('TermsAndConditions');
+        Schema::dropIfExists('admin');
 
 
     }

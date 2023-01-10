@@ -29,6 +29,7 @@ Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 
 Route::get('TaC', 'App\Http\Controllers\HomeController@TaC');
 Route::resource('/TaC', TaCcontroller::class);
+Route::resource('/staffListCrud', staffListCrudController::class);
 
 
 
@@ -47,5 +48,4 @@ Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
 Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
 
-Route::resource('/staffListCrud', staffListCrudController::class);
 

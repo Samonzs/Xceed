@@ -84,7 +84,13 @@ class TaCcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
+
         
+        $request->validate([
+            'TermsAndConditions' => 'required',
+        ]);
+
+
         $TaC = TermsAndConditions::find($id);
         $TaC->TermsAndConditions = $request->input("TermsAndConditions");
         $TaC->save();
