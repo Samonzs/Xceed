@@ -24,6 +24,7 @@ Route::post('register', [insertFields_DB::class, 'getStaffData']);
 
 
 Route::get('users', [UserFormController::class, 'getData']);
+
 Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 
 
@@ -36,7 +37,8 @@ Route::resource('/staffListCrud', staffListCrudController::class);
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
-Route::get('/welcome', 'App\Http\Controllers\HomeController@index');
+
+
 
 Route::get('login', 'App\Http\Controllers\HomeController@login');
 
