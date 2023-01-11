@@ -40,7 +40,7 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 
 
-Route::get('login', 'App\Http\Controllers\HomeController@login');
+Route::get('welcome', 'App\Http\Controllers\HomeController@login');
 
 Route::get('createquotes', 'App\Http\Controllers\HomeController@createquotes');
 
