@@ -23,7 +23,7 @@ return new class extends Migration
             
         });
 
-        Schema::create('clientDetails', function (Blueprint $table) {
+        Schema::create('VariationDetails', function (Blueprint $table) {
             $table->id();
             $table->string('first name');
             $table->string('last name');
@@ -35,11 +35,6 @@ return new class extends Migration
             $table->string('address line');
             $table->string('suburb');
             $table->integer('postcode');
-            $table->timestamps();
-        });
-
-        Schema::create('clientSiteDetails', function (Blueprint $table) {
-            $table->id();
             $table->integer('job reference number');
             $table->integer('order number');
             $table->string('site name');

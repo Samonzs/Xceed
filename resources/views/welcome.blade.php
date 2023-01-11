@@ -62,7 +62,7 @@
                 </div>
                 <h3 class= "font-weight-bold py-3">Log in</h3>
                 
-                    <form action="users" method= "get" >
+                    <form action="users" method= "post" >
                         <div class= "form-row">
                             <div class="col-lg-5">
                                 <label>Email</label>

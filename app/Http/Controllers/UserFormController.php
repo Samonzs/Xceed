@@ -7,11 +7,14 @@ use Illuminate\Http\Request;
 class UserFormController extends Controller
 {
     
+    function login(Request $req){
+        return User::where('staff_email', $req->input('staff_email'));
+    }
     public function getData(Request $request)
     {
         // Validate for staff (user) login.
 
-        $request->validate([
+        $validator = $request->validate([
             'email' => [
                 'required',
                 'string',
@@ -33,7 +36,12 @@ class UserFormController extends Controller
            
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
-        return $request->validate;
+        if ($validator->success()) {
+            return redirect('listofquotes');
+        }
+        else{
+            return $validator;
+        }
       
 
     }
