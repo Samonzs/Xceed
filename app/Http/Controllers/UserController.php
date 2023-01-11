@@ -11,8 +11,8 @@ class UserController extends Controller
 {
 
     public function show_pdf(Request $request){
-        
-            //get id
+
+        //get id
         $id = $request->input("id");
 
         $clientDetails = DB::table("clientDetails")->where("id","=",$id)->get()->first();
@@ -35,6 +35,7 @@ class UserController extends Controller
         }
         //generate pdf file
         $pdf = new \TCPDF();
+
         // info. of file
         $pdf->SetCreator('XCEED');
         $pdf->SetAuthor('XCEED');
@@ -56,6 +57,10 @@ class UserController extends Controller
         $pdf->setFontSubsetting(true);
         //Font senting
         $pdf->SetFont('stsongstdlight', '', 14);
+
+       // $logo_path='https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png';
+       // $logo_path='public/images/logo.jpg';
+
         if(!empty($clientDetails)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Client Details</h1></div>');
@@ -223,7 +228,7 @@ class UserController extends Controller
         //get id
         $client_email = $request->input("client_email");
         $content = $request->input("content");
-        $subject = "发送邮件";
+        $subject = "Send Email";
        $seed =  Mail::to($client_email)->send(new SendMail($client_email,$subject,$content,$_SERVER['DOCUMENT_ROOT']."pdf/".$danhao.'.pdf',$danhao));
         if($seed){
             unlink($_SERVER['DOCUMENT_ROOT']."pdf/".$danhao.'.pdf');

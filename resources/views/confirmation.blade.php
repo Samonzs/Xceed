@@ -104,8 +104,10 @@
                     </div>
                 </nav>
 </header> 
+<body>
 <center>
-    <h2>Confirmation Details</h2>
+<img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" alt="Logo">
+    <h3>Confirmation Details</h3>
     <table class="table table-striped table-responsive-sm table-hover text-center">
       <thead>
         <tr>
@@ -132,6 +134,7 @@
       @endforeach
       </tbody>
     </table>
+    <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
 <center>
 
     <script>
