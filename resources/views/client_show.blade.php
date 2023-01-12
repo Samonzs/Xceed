@@ -57,8 +57,13 @@
                 <div class="form-group">
                     <textarea type="text" class="form-control" id="content" name="content" placeholder="Please enter the content" style="resize: none; height: 500px;"></textarea>
                 </div>
+                <div class="form-group">
+                    <a href="pdf/{{$danhao}}.pdf">mail.pdf</a>
+                </div>
                 <input type="hidden" name="id"  value="{{$client_email_find['id']}}">
-                <button type="submit" class="btn btn-success">Send</button>
+                <input type="hidden" name="pfd"  value="{{$pdf}}">
+                <input type="hidden" name="danhao"  value="{{$danhao}}">
+                <button type="submit" class="btn btn-success">Submit</button>
             </form></div>
 
     </div>

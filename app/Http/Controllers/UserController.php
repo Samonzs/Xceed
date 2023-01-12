@@ -123,18 +123,6 @@ class UserController extends Controller
     }
     //email contents
     public function client_show(Request $request){
-        $id  = $request->input("id");
-        $client_email_find = DB::table("clientDetails")->where("id","=",$id)->get()->first();
-        if(!empty($client_email_find)){
-            $client_email_find = get_object_vars($client_email_find);
-        }else{
-            return redirect('confirmation')->withInput()->with("No such mailbox");
-        }
-        return view("client_show",['client_email_find'=>$client_email_find]);
-    }
-    //find emaill address
-    public function send_email(Request $request){
-
         //get id
         $id = $request->input("id");
 
@@ -156,28 +144,28 @@ class UserController extends Controller
         }else{
             $TermsAndConditions=[];
         }
-        //generate pdf file
+        //generate pdf
         $pdf = new \TCPDF();
-        // info. of file
+        // contents of padf file
         $pdf->SetCreator('XCEED');
         $pdf->SetAuthor('XCEED');
         $pdf->SetTitle('XCEED');
         $pdf->SetSubject('XCEED');
         $pdf->SetKeywords('XCEED');
-
+        // font of header and footer
         $pdf->setHeaderFont(['stsongstdlight', '', '10']);
         $pdf->setFooterFont(['helvetica', '', '8']);
         
         $pdf->SetDefaultMonospacedFont('courier');
-        
+        // margins
         $pdf->SetMargins(15, 15, 15);
         $pdf->SetHeaderMargin(5);
         $pdf->SetFooterMargin(10);
-        // set subpage
+        // page break
         $pdf->SetAutoPageBreak(true, 25);
         // set default font subsetting mode
         $pdf->setFontSubsetting(true);
-        //Font senting
+        
         $pdf->SetFont('stsongstdlight', '', 14);
         if(!empty($clientDetails)){
             $pdf->AddPage();
@@ -214,27 +202,34 @@ class UserController extends Controller
         }
         if(!empty($TermsAndConditions)){
             $pdf->AddPage();
-            $pdf->writeHTML('<div style="text-align: center"><h1>Client Site Details</h1></div>');
+            $pdf->writeHTML('<div style="text-align: center"><h1>Terms And Conditions</h1></div>');
             $pdf->writeHTML('<p>Terms And Conditions: '.$TermsAndConditions['TermsAndConditions'].'</p>');
-            // $pdf->writeHTML('<p>created_at: '.$TermsAndConditions['created_at'].'</p>');
-            // $pdf->writeHTML('<p>updated_at: '.$TermsAndConditions['updated_at'].'</p>');
+           // $pdf->writeHTML('<p>Created At: '.$TermsAndConditions['created_at'].'</p>');
+           // $pdf->writeHTML('<p>Updated At: '.$TermsAndConditions['updated_at'].'</p>');
         }
         $danhao = date('Ymd') . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
 
-        //output PDF
+        //outpit PDF
 //       $pdf =  $pdf->Output(base_path('resources/pdf')."/".date("Y-m-d")."/" .$danhao.'.pdf', 'F');//I输出、D下载、 F保存到服务器\
-         $pdf->Output($danhao.'.pdf', 'F');//I- output、D- download、 F- save to server
+        $pdf->Output($danhao.'.pdf', 'F');//I-output、D-download、 F-save to server
 
+        return view("client_show",['client_email_find'=>$clientDetails,"pdf"=>$_SERVER['DOCUMENT_ROOT']."pdf/".$danhao.'.pdf','danhao'=>$danhao]);
+    }
+    //send email
+    public function send_email(Request $request){
+
+       $pdf = $request->input("pdf");
+        $danhao = $request->input("danhao");
         //get id
         $client_email = $request->input("client_email");
         $content = $request->input("content");
         $subject = "Send Email";
-       $seed =  Mail::to($client_email)->send(new SendMail($client_email,$subject,$content,$_SERVER['DOCUMENT_ROOT']."pdf/".$danhao.'.pdf',$danhao));
+       $seed =  Mail::to($client_email)->send(new SendMail($client_email,$subject,$content,$pdf,$danhao));
         if($seed){
-            unlink($_SERVER['DOCUMENT_ROOT']."pdf/".$danhao.'.pdf');
+            unlink($pdf);
             return redirect('confirmation')->withInput()->with("msg","Sending succeeded");
         }else{
-            unlink($_SERVER['DOCUMENT_ROOT']."pdf/".$danhao.'.pdf');
+            unlink($pdf);
             return redirect('confirmation')->withInput()->with("msg","fail in send");
         }
 
