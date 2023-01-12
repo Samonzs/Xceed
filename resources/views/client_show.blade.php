@@ -58,13 +58,14 @@
                     <textarea type="text" class="form-control" id="content" name="content" placeholder="Please enter the content" style="resize: none; height: 500px;"></textarea>
                 </div>
                 <div class="form-group">
-                    <a href="pdf/{{$danhao}}.pdf">mail.pdf</a>
+                    <a href="pdf/{{$danhao}}.pdf">Confirmation.pdf</a>
                 </div>
                 <input type="hidden" name="id"  value="{{$client_email_find['id']}}">
-                <input type="hidden" name="pfd"  value="{{$pdf}}">
+                <input type="hidden" name="pdf"  value="{{$pdf}}">
                 <input type="hidden" name="danhao"  value="{{$danhao}}">
-                <button type="submit" class="btn btn-success">Submit</button>
-            </form></div>
+                <button type="button" onclick="window.history.back()" class="btn btn-outline-secondary">Cancel & Return</button>
+                <button type="submit" class="btn btn-success">Confirm & Send</button>
+              </form></div>
 
     </div>
 

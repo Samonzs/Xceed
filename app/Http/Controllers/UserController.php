@@ -15,11 +15,11 @@ class UserController extends Controller
         //get id
         $id = $request->input("id");
 
-        $clientDetails = DB::table("clientDetails")->where("id","=",$id)->get()->first();
-        if(!empty($clientDetails)){
-            $clientDetails = get_object_vars($clientDetails);
+        $VariationDetails = DB::table("VariationDetails")->where("id","=",$id)->get()->first();
+        if(!empty($VariationDetails)){
+            $VariationDetails = get_object_vars($VariationDetails);
         }else{
-            $clientDetails  =[];
+            $VariationDetails  =[];
         }
         $clientSiteDetails = DB::table("clientSiteDetails")->where("id","=",$id)->get()->first();
         if(!empty($clientSiteDetails)){
@@ -61,21 +61,21 @@ class UserController extends Controller
        // $logo_path='https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png';
        // $logo_path='public/images/logo.jpg';
 
-        if(!empty($clientDetails)){
+        if(!empty($VariationDetails)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Client Details</h1></div>');
-            $pdf->writeHTML('<p>First Name: '.$clientDetails['first name'].'</p>');
-            $pdf->writeHTML('<p>Last Name: '.$clientDetails['last name'].'</p>');
-            $pdf->writeHTML('<p>Client Email: '.$clientDetails['client email'].'</p>');
-            $pdf->writeHTML('<p>Phone Number: '.$clientDetails['phone number'].'</p>');
-            $pdf->writeHTML('<p>Date of Birth: '.$clientDetails['date'].'</p>');
-            $pdf->writeHTML('<p>Company Name: '.$clientDetails['company name'].'</p>');
-            $pdf->writeHTML('<p>ABN: '.$clientDetails['abn'].'</p>');
-            $pdf->writeHTML('<p>Address Line: '.$clientDetails['address line'].'</p>');
-            $pdf->writeHTML('<p>Suburb: '.$clientDetails['suburb'].'</p>');
-            $pdf->writeHTML('<p>Postcode: '.$clientDetails['postcode'].'</p>');
-            $pdf->writeHTML('<p>Created At: '.$clientDetails['created_at'].'</p>');
-            $pdf->writeHTML('<p>Updated At: '.$clientDetails['updated_at'].'</p>');
+            $pdf->writeHTML('<p>First Name: '.$VariationDetails['first name'].'</p>');
+            $pdf->writeHTML('<p>Last Name: '.$VariationDetails['last name'].'</p>');
+            $pdf->writeHTML('<p>Client Email: '.$VariationDetails['client email'].'</p>');
+            $pdf->writeHTML('<p>Phone Number: '.$VariationDetails['phone number'].'</p>');
+            $pdf->writeHTML('<p>Date of Birth: '.$VariationDetails['date'].'</p>');
+            $pdf->writeHTML('<p>Company Name: '.$VariationDetails['company name'].'</p>');
+            $pdf->writeHTML('<p>ABN: '.$VariationDetails['abn'].'</p>');
+            $pdf->writeHTML('<p>Address Line: '.$VariationDetails['address line'].'</p>');
+            $pdf->writeHTML('<p>Suburb: '.$VariationDetails['suburb'].'</p>');
+            $pdf->writeHTML('<p>Postcode: '.$VariationDetails['postcode'].'</p>');
+            $pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
+            $pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
         }
         if(!empty($clientSiteDetails)){
             $pdf->AddPage();
@@ -113,7 +113,7 @@ class UserController extends Controller
     //client list
     public function  confirmation(){
 
-        $confirmation =DB::table("clientDetails")->get()->toArray();
+        $confirmation =DB::table("VariationDetails")->get()->toArray();
         $client_list_data =[];
         foreach ($confirmation as $item){
             $client_list_data[] = get_object_vars($item);
@@ -126,11 +126,11 @@ class UserController extends Controller
         //get id
         $id = $request->input("id");
 
-        $clientDetails = DB::table("clientDetails")->where("id","=",$id)->get()->first();
-        if(!empty($clientDetails)){
-            $clientDetails = get_object_vars($clientDetails);
+        $VariationDetails = DB::table("VariationDetails")->where("id","=",$id)->get()->first();
+        if(!empty($VariationDetails)){
+            $VariationDetails = get_object_vars($VariationDetails);
         }else{
-            $clientDetails  =[];
+            $VariationDetails  =[];
         }
         $clientSiteDetails = DB::table("clientSiteDetails")->where("id","=",$id)->get()->first();
         if(!empty($clientSiteDetails)){
@@ -167,21 +167,21 @@ class UserController extends Controller
         $pdf->setFontSubsetting(true);
         
         $pdf->SetFont('stsongstdlight', '', 14);
-        if(!empty($clientDetails)){
+        if(!empty($VariationDetails)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Client Details</h1></div>');
-            $pdf->writeHTML('<p>First Name: '.$clientDetails['first name'].'</p>');
-            $pdf->writeHTML('<p>Last Name: '.$clientDetails['last name'].'</p>');
-            $pdf->writeHTML('<p>Client Email: '.$clientDetails['client email'].'</p>');
-            $pdf->writeHTML('<p>Phone Number: '.$clientDetails['phone number'].'</p>');
-            $pdf->writeHTML('<p>Date of Birth: '.$clientDetails['date'].'</p>');
-            $pdf->writeHTML('<p>Company Name: '.$clientDetails['company name'].'</p>');
-            $pdf->writeHTML('<p>ABN: '.$clientDetails['abn'].'</p>');
-            $pdf->writeHTML('<p>Address Line: '.$clientDetails['address line'].'</p>');
-            $pdf->writeHTML('<p>Suburb: '.$clientDetails['suburb'].'</p>');
-            $pdf->writeHTML('<p>Postcode: '.$clientDetails['postcode'].'</p>');
-            $pdf->writeHTML('<p>Created At: '.$clientDetails['created_at'].'</p>');
-            $pdf->writeHTML('<p>Updated At: '.$clientDetails['updated_at'].'</p>');
+            $pdf->writeHTML('<p>First Name: '.$VariationDetails['first name'].'</p>');
+            $pdf->writeHTML('<p>Last Name: '.$VariationDetails['last name'].'</p>');
+            $pdf->writeHTML('<p>Client Email: '.$VariationDetails['client email'].'</p>');
+            $pdf->writeHTML('<p>Phone Number: '.$VariationDetails['phone number'].'</p>');
+            $pdf->writeHTML('<p>Date of Birth: '.$VariationDetails['date'].'</p>');
+            $pdf->writeHTML('<p>Company Name: '.$VariationDetails['company name'].'</p>');
+            $pdf->writeHTML('<p>ABN: '.$VariationDetails['abn'].'</p>');
+            $pdf->writeHTML('<p>Address Line: '.$VariationDetails['address line'].'</p>');
+            $pdf->writeHTML('<p>Suburb: '.$VariationDetails['suburb'].'</p>');
+            $pdf->writeHTML('<p>Postcode: '.$VariationDetails['postcode'].'</p>');
+            $pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
+            $pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
         }
         if(!empty($clientSiteDetails)){
             $pdf->AddPage();
@@ -213,13 +213,14 @@ class UserController extends Controller
 //       $pdf =  $pdf->Output(base_path('resources/pdf')."/".date("Y-m-d")."/" .$danhao.'.pdf', 'F');//I输出、D下载、 F保存到服务器\
         $pdf->Output($danhao.'.pdf', 'F');//I-output、D-download、 F-save to server
 
-        return view("client_show",['client_email_find'=>$clientDetails,"pdf"=>$_SERVER['DOCUMENT_ROOT']."pdf/".$danhao.'.pdf','danhao'=>$danhao]);
+        return view("client_show",['client_email_find'=>$VariationDetails,"pdf"=>$_SERVER['DOCUMENT_ROOT']."pdf/".$danhao.'.pdf','danhao'=>$danhao]);
     }
     //send email
     public function send_email(Request $request){
 
        $pdf = $request->input("pdf");
         $danhao = $request->input("danhao");
+       
         //get id
         $client_email = $request->input("client_email");
         $content = $request->input("content");
