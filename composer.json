@@ -10,7 +10,11 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+<<<<<<< HEAD
         "laravel/ui": "^4.2"
+=======
+        "tecnickcom/tcpdf": "^6.6"
+>>>>>>> fafffecfc3a483c80e40b37606645066d220e1c4
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

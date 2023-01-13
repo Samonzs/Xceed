@@ -58,4 +58,9 @@ Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
 Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
 
+Route::any('confirmation', 'App\Http\Controllers\UserController@confirmation');
+Route::any('client_show', 'App\Http\Controllers\UserController@client_show');
+Route::any('send_email', 'App\Http\Controllers\UserController@send_email');
+Route::any('send', 'App\Http\Controllers\UserController@send');
+Route::any('show_pdf', 'App\Http\Controllers\UserController@show_pdf');
 
