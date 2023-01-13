@@ -3,19 +3,18 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
- 
+use Illuminate\Support\Facades\DB;
+
+use Auth;
+
 class UserFormController extends Controller
 {
-    
-    function login(Request $req){
-        return User::where('staff_email', $req->input('staff_email'));
-    }
-    public function getData(Request $request)
+    public function checklogin(Request $request)
     {
         // Validate for staff (user) login.
 
         $validator = $request->validate([
-            'email' => [
+            'staff_email' => [
                 'required',
                 'string',
                 'email',
@@ -30,21 +29,56 @@ class UserFormController extends Controller
                 'regex:/[0-9]/',      // must contain at least one digit
                 'regex:/[@$!%*#?&]/', // must contain a special character  
             ],
-
-
-
            
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
-        if ($validator->success()) {
-            return redirect('listofquotes');
+        $admin = array(
+            'email'  => $request->get('email'),
+            'password' => $request->get('password')
+           );
+
+        if (Auth::guard('admin')->attempt($admin))
+        {
+            return redirect('user/successlogin');
         }
-        else{
-            return $validator;
+
+        else
+        {
+            return back()->with('error', 'Incorrect email or password');
         }
-      
+
+
+        if (Auth::guard('web')->attempt(['staff_email' => $request->staff_email, 'password' => 
+        $request->password], $request->remember))       
+        {
+            return redirect('user/successlogin');
+        }
+
+        else
+        {
+            return back()->with('error', 'Incorrect email or password');
+        }
+        
 
     }
+
+    function index()
+    {
+     return view('welcome');
+    }
+    
+    function logout()
+    {
+     Auth::logout();
+     return redirect('welcome');
+    }
+
+    function successlogin()
+    {
+     return view('listofquotes');
+    }
+
+
 
     public function getClientData(Request $request)
     {
