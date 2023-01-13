@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\TaCcontroller;
@@ -23,7 +23,15 @@ Route::post('register', [insertFields_DB::class, 'getStaffData']);
 
 
 
-Route::get('users', [UserFormController::class, 'getData']);
+//Route::get('users', [UserFormController::class, 'getData']);
+
+
+Route::get('/user', 'App\Http\Controllers\UserFormController@index');
+Route::post('/user/checklogin', 'App\Http\Controllers\UserFormController@checklogin');
+Route::get('user/successlogin', 'App\Http\Controllers\UserFormController@successlogin');
+Route::get('user/logout', 'App\Http\Controllers\UserFormController@logout');
+
+
 
 Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 
@@ -37,10 +45,10 @@ Route::resource('/staffListCrud', staffListCrudController::class);
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
-
-
-
 Route::get('welcome', 'App\Http\Controllers\HomeController@login');
+
+Route::get('login', 'App\Http\Controllers\HomeController@login');
+
 
 Route::get('createquotes', 'App\Http\Controllers\HomeController@createquotes');
 

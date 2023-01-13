@@ -13,6 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::create('admin', function (Blueprint $table) {
+            $table->id();
+            $table->string('fname');
+            $table->string('lname');
+            $table->string('email');
+            $table->string('password');
+            $table->timestamps();
+        });
+        
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('staff_fname');
@@ -25,27 +34,27 @@ return new class extends Migration
 
         Schema::create('VariationDetails', function (Blueprint $table) {
             $table->id();
-            $table->string('first name');
-            $table->string('last name');
-            $table->string('client email');
-            $table->integer('phone number');
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->string('clientEmail');
+            $table->integer('phoneNumber');
             $table->date('date');
-            $table->string('company name');
+            $table->string('companyName');
             $table->integer('abn');
-            $table->string('address line');
+            $table->string('addressLine');
             $table->string('suburb');
             $table->integer('postcode');
-            $table->integer('job reference number');
-            $table->integer('order number');
-            $table->string('site name');
-            $table->string('site address line');
-            $table->string('site address state');
-            $table->integer('site postcode');
-            $table->string('variation item');
-            $table->integer('variation item price');
-            $table->string('variation description');
-            $table->integer('total cost');
-            $table->Date('variation date request');
+            $table->integer('jobReferenceNumber');
+            $table->integer('orderNumber');
+            $table->string('siteName');
+            $table->string('siteAddressLine');
+            $table->string('siteAddressState');
+            $table->integer('sitePostcode');
+            $table->string('variationItem');
+            $table->integer('variationItemPrice');
+            $table->string('variationDescription');
+            $table->integer('totalCost');
+            $table->Date('variationDateRequest');
             $table->timestamps();
         });
 
@@ -56,14 +65,7 @@ return new class extends Migration
         });
 
 
-        Schema::create('admin', function (Blueprint $table) {
-            $table->id();
-            $table->string('fname');
-            $table->string('lname');
-            $table->string('email');
-            $table->string('password');
-            $table->timestamps();
-        });
+        
     }
 
 

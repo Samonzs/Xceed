@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class insertFields_DB extends Controller
 {
@@ -34,20 +35,16 @@ class insertFields_DB extends Controller
            
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
-       
+      
 
-
-            
-        $query = DB::table('users')->insert([
-            
-            'staff_fname'=>$request->input('staff_fname'),
-            'staff_lname'=>$request->input('staff_lname'),
-            'staff_email'=>$request->input('staff_email'),
-            'password'=>$request->input('password')
-
+        $user = User::create([
+            'staff_fname' => $request->staff_fname,
+            'staff_lname' => $request->staff_lname,
+            'staff_email' => $request->staff_email,
+            'password' => Hash::make($request->password),
         ]);
 
-        if($query)
+        if($user)
         {
             return back()->with('success','Staff user has been successfully created and stored into the db'); //data has been stored in db
         }
