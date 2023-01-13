@@ -24,12 +24,14 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
+                    
                       <li class="nav-item active">
                         <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
                       </ul>
                       <ul class="navbar-nav ml-auto">
+                      
                       <div class="dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Admin Panel
@@ -40,8 +42,16 @@
                         <a class="dropdown-item" href="<?php echo url('TaC')?>">Terms & Conditions</a>
                      </div>
                      </div>
+                     @if(isset(Auth::user()->staff_email))
+                     <div class>
+                     <strong>Welcome {{ Auth::user()->staff_email }}</strong>
+                     <br/> 
+                     </div>
+                     @else
+                     <script>window.location = "/user";</script>
+                     @endif
                         <li class="nav-item">
-                        <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
+                        <a class="nav-link" href="{{ url('/user/logout') }}"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
                         </li>
                       </ul>
                     </div>

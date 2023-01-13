@@ -31,7 +31,8 @@ class AdminSeeder extends Seeder
             'fname' => 'Jayson',
             'lname' => 'Conceicao',
             'email' => 'jayson@xceedelectrical.com.au',
-            'password' => Hash::make('Jayson123@')
+            'password' => Hash::make('Jayson123@'),
+
         ]);
         
     }

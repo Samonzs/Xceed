@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Mail\Message;
 use Illuminate\Http\Request;
-class UserController extends Controller
+
+class MailController extends Controller
 {
 
    // 发送邮件
