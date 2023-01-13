@@ -134,18 +134,19 @@
 
                               <label for="lname">Last name:</label>
                               <span style="color:red">@error('lastname'){{$message}}@enderror</span>
-                              <input type="text" id="lname" name="last name" value="">
+                              <input type="text" id="lname" name="lastname" value="">
 
                               <label for="email">Email:</label>
                               <span style="color:red">@error('clientemail'){{$message}}@enderror</span>
-                              <input type="text" id="email" name="client email" value="">
+                              <input type="text" id="email" name="clientemail" value="">
 
                               <label for="pNumber">Phone Number:</label>
                               <span style="color:red">@error('phonenumber'){{$message}}@enderror</span>
-                              <input type="text" id="pNumber" name="phone number" value="">
+                              <input type="text" id="pNumber" name="phonenumber" value="">
 
                               <label for="date">Date:</label>
-                              <input type="date" id="date" name="date" value="">
+                              <span style="color:red">@error('date'){{$message}}@enderror</span>
+                              <input type="text" id="date" name="date" value="" placeholder = "dd/mm/yyyy">
 
                               <label for="compName">Company Name:</label>
                               <span style="color:red">@error('compName'){{$message}}@enderror</span>
@@ -157,7 +158,7 @@
 
                               <label for="address">Address line:</label>
                               <span style="color:red">@error('addressline'){{$message}}@enderror</span>
-                              <input type="text" id="address" name="address line" value="">
+                              <input type="text" id="address" name="addressline" value="">
 
                               <label for="suburb">Suburb:</label>
                               <span style="color:red">@error('suburb'){{$message}}@enderror</span>
@@ -187,27 +188,27 @@
                         <section>
                         <label for="jrNumber">Job Reference Number</label>
                               <span style="color:red">@error('jobreferencenumber'){{$message}}@enderror</span>
-                              <input type="number" id="jrNumber" name="job reference number" value="">
+                              <input type="number" id="jrNumber" name="jobreferencenumber" value="">
 
                               <label for="ordNumber">Order Number</label><br>
                               <span style="color:red">@error('ordernumber'){{$message}}@enderror</span>
-                              <input type="number" id="ordNumber" name="order number" value="">
+                              <input type="number" id="ordNumber" name="ordernumber" value="">
 
                               <label for="siteName">Site Name:</label><br>
                               <span style="color:red">@error('sitename'){{$message}}@enderror</span>
-                              <input type="text" id="siteName" name="site name" value=""><br>
+                              <input type="text" id="siteName" name="sitename" value=""><br>
 
                               <label for="siteAddress">Site Address Line:</label><br>
                               <span style="color:red">@error('siteaddressline'){{$message}}@enderror</span>
-                              <input type="text" id="siteAddress" name="site address line" value="">
+                              <input type="text" id="siteAddress" name="siteaddressline" value="">
 
                               <label for="siteAddress">Site State:</label><br>
                               <span style="color:red">@error('siteaddressstate'){{$message}}@enderror</span>
-                              <input type="text" id="siteAddress" name="site address state" value="">
+                              <input type="text" id="siteAddress" name="siteaddressstate" value="">
 
                               <label for="siteAddress">Site Postcode:</label><br>
                               <span style="color:red">@error('sitepostcode'){{$message}}@enderror</span>
-                              <input type="text" id="siteAddress" name="site postcode" value="">
+                              <input type="text" id="siteAddress" name="sitepostcode" value="">
                            </section>      
                         </div>
                      </div>
@@ -232,9 +233,10 @@
                                  <textarea id="quotedesc" name="quotedesc" rows="3" cols="20"></textarea>
                            <div class="container-sm">
                            <div id="survey_options">
-                           <input type="text" name="variation item" class="survey_options" size="50" placeholder="Variation Item">
-                           <input type="text" name="variation item price" class="survey_options" size="50" placeholder="Variation Price">    
-                                 
+                           <span style="color:red">@error('variationitem'){{$message}}@enderror</span>
+                           <input type="text" name="variationitem" class="survey_options" size="50" placeholder="Variation Item">
+                           <span style="color:red">@error('variationitemprice'){{$message}}@enderror</span>  
+                           <input type="text" name="variationitemprice" class="survey_options" size="50" placeholder="Variation Price">    
                            </div>
                   
                         <div class="controls">
@@ -242,15 +244,14 @@
                            <a type="button" id="remove_fields"><i class="fa fa-plus"></i>- Remove Field</a>
                         </div>
                      </div>
-                     <label for="quotedesc">Description of Variation:</label><br>
-                                 <textarea id="variation description" name="variation description" rows="3" cols="13"></textarea>
+
                         <div>
                            <label for="price">Total cost:</label><br>
-                           <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value="" readonly>
+                           <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value="">
                         </div>
-
-                        <label for="date">Variation Date Request:</label>
-                              <input type="date" id="date" name="variation date request" value="">
+                              <label for="date">Variation Date Request:</label>
+                              <span style="color:red">@error('date'){{$message}}@enderror</span>
+                              <input type="text" id="date" name="date" value="" placeholder = "dd/mm/yyyy">
                         
 
 
@@ -264,18 +265,6 @@
                <div class="card">
 
                 
-                  
-              <!--
-               
-               <div class="card">
-                  <div class="card-header" id="headingFour">
-                     <h2 class="mb-0">
-                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Send Email
-                     </button>
-                     </h2>
-                  </div>
-   -->
 <!--
                   <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                      <div class="card-body">

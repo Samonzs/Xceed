@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Mail\Message;
 use Illuminate\Http\Request;
 
-class MailController extends Controller
+class UserController extends Controller
 {
 
     public function show_pdf(Request $request){

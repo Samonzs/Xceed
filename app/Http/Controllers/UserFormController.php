@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use Auth;
-
 class UserFormController extends Controller
 {
-    public function checklogin(Request $request)
+    
+    public function checklogin(Request $request)    
     {
         // Validate for staff (user) login.
 
@@ -29,7 +29,7 @@ class UserFormController extends Controller
                 'regex:/[0-9]/',      // must contain at least one digit
                 'regex:/[@$!%*#?&]/', // must contain a special character  
             ],
-           
+
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
         // $admin = array(
@@ -61,7 +61,6 @@ class UserFormController extends Controller
         
 
     }
-
     function index()
     {
      return view('welcome');
@@ -77,9 +76,6 @@ class UserFormController extends Controller
     {
      return view('listofquotes');
     }
-
-
-
     public function getClientData(Request $request)
     {
         //client details in variation page
@@ -121,6 +117,7 @@ class UserFormController extends Controller
     public function getStaffData(Request $request)
     {
 
+ 
       
         //validation for staff creation page
         /*
@@ -150,13 +147,7 @@ class UserFormController extends Controller
         */
     }
    
+
 }
-
-
-
-
-
-
-
 
 ?>

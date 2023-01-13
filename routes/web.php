@@ -58,6 +58,11 @@ Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
 Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
 
+Route::get('confirmation', 'App\Http\Controllers\HomeController@confirmation');
+Route::post('confirmation', 'App\Http\Controllers\HomeController@confirmation');
+
+
+
 Route::any('confirmation', 'App\Http\Controllers\UserController@confirmation');
 Route::any('client_show', 'App\Http\Controllers\UserController@client_show');
 Route::any('send_email', 'App\Http\Controllers\UserController@send_email');
