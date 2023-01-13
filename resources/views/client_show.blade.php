@@ -52,7 +52,7 @@
         <div class="col-md-10" style="margin: 0 auto">
             <form action="{{url('send_email')}}" method="get" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="email" name="client_email" class="form-control" id="exampleInputEmail1"  value="{{$client_email_find['client email']}}" readonly>
+                    <input type="email" name="client_email" class="form-control" id="exampleInputEmail1"  value="{{$client_email_find['clientEmail']}}" readonly>
                 </div>
                 <div class="form-group">
                     <textarea type="text" class="form-control" id="content" name="content" placeholder="Please enter the content" style="resize: none; height: 500px;"></textarea>

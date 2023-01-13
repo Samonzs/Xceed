@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-   <head>
+<!doctype html>
+<html lang="en">
+<head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>XCEED Create Quote</title>
+      <title>XCEED Confirmation</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -103,267 +103,44 @@
                       </ul>
                     </div>
                 </nav>
-</header>  
-   <body>
-      <center>
-         <img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" alt="Logo">
-      
-            <h3>Create Variation</h3>
-            <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
-            <form action= "clientDetails" >
-               <!-- customer dets -->
-            
-               <div class="accordion" id="accordionExample">
-                  <div class="card">
-                     <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                           Client Details
-                        </button>
-                        </h2>
-                     </div>
+</header> 
+<body>
+<center>
+<img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" alt="Logo">
+    <h3>Confirmation Details</h3>
+    <table class="table table-striped table-responsive-sm table-hover text-center">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Client Email</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Send Email</th>
+          <th scope="col">Show PDF</th>
+        </tr>
+      </thead>
+      <tbody>
+      @foreach($client_list_data as $key=>$item)
+        <tr>
+            <th scope="row">{{$item['id']}}</th>
+            <td>{{$item['firstName']}}</td>
+            <td>{{$item['lastName']}}</td>
+            <td>{{$item['clientEmail']}}</td>
+            <td>{{$item['phoneNumber']}}</td>
+            <td><a href="{{url('client_show?id='.$item['id'])}}">Send Email</a></td>
+            <td><a href="{{url('show_pdf?id='.$item['id'])}}">PDF File</a></td>
+        </tr>
+      @endforeach
+      </tbody>
+    </table>
+    <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
+<center>
 
-                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body">
-                           <section>
-
-                           
-                           <label for="firstname">First name:</label>
-                              <span style="color:red">@error('firstname'){{$message}}@enderror</span>
-                              <input type="text" id="firstname" name="firstname" value="">
-
-                              <label for="lname">Last name:</label>
-                              <span style="color:red">@error('lastname'){{$message}}@enderror</span>
-                              <input type="text" id="lname" name="lastname" value="">
-
-                              <label for="email">Email:</label>
-                              <span style="color:red">@error('clientemail'){{$message}}@enderror</span>
-                              <input type="text" id="email" name="clientemail" value="">
-
-                              <label for="pNumber">Phone Number:</label>
-                              <span style="color:red">@error('phonenumber'){{$message}}@enderror</span>
-                              <input type="text" id="pNumber" name="phonenumber" value="">
-
-                              <label for="date">Date:</label>
-                              <span style="color:red">@error('date'){{$message}}@enderror</span>
-                              <input type="text" id="date" name="date" value="" placeholder = "dd/mm/yyyy">
-
-                              <label for="compName">Company Name:</label>
-                              <span style="color:red">@error('compName'){{$message}}@enderror</span>
-                              <input type="text" id="compName" name="compName" value="">
-
-                              <label for="abn">ABN:</label>
-                              <span style="color:red">@error('abn'){{$message}}@enderror</span>
-                              <input type="text" id="abn" name="abn" value="">
-
-                              <label for="address">Address line:</label>
-                              <span style="color:red">@error('addressline'){{$message}}@enderror</span>
-                              <input type="text" id="address" name="addressline" value="">
-
-                              <label for="suburb">Suburb:</label>
-                              <span style="color:red">@error('suburb'){{$message}}@enderror</span>
-                              <input type="text" id="suburb" name="suburb" value="">
-
-                              <label for="postcode">Post Code:</label>
-                              <span style="color:red">@error('postcode'){{$message}}@enderror</span>
-                              <input type="text" id="postcode" name="postcode" value="">
-
-                              
-                           </section>
-                        </div>
-                     </div>
-               </div>
-
-               <!-- Variations dets -->
-               <div class="card">
-                  <div class="card-header" id="headingTwo">
-                     <h2 class="mb-0">
-                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Client Site
-                     </button>
-                     </h2>
-                  </div>
-                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                        <section>
-                        <label for="jrNumber">Job Reference Number</label>
-                              <span style="color:red">@error('jobreferencenumber'){{$message}}@enderror</span>
-                              <input type="number" id="jrNumber" name="jobreferencenumber" value="">
-
-                              <label for="ordNumber">Order Number</label><br>
-                              <span style="color:red">@error('ordernumber'){{$message}}@enderror</span>
-                              <input type="number" id="ordNumber" name="ordernumber" value="">
-
-                              <label for="siteName">Site Name:</label><br>
-                              <span style="color:red">@error('sitename'){{$message}}@enderror</span>
-                              <input type="text" id="siteName" name="sitename" value=""><br>
-
-                              <label for="siteAddress">Site Address Line:</label><br>
-                              <span style="color:red">@error('siteaddressline'){{$message}}@enderror</span>
-                              <input type="text" id="siteAddress" name="siteaddressline" value="">
-
-                              <label for="siteAddress">Site State:</label><br>
-                              <span style="color:red">@error('siteaddressstate'){{$message}}@enderror</span>
-                              <input type="text" id="siteAddress" name="siteaddressstate" value="">
-
-                              <label for="siteAddress">Site Postcode:</label><br>
-                              <span style="color:red">@error('sitepostcode'){{$message}}@enderror</span>
-                              <input type="text" id="siteAddress" name="sitepostcode" value="">
-                           </section>      
-                        </div>
-                     </div>
-                </div>
-
-                           
-               
-               <!-- Variations (item price inputs) -->
-
-               <div class="card">
-                  <div class="card-header" id="headingThree">
-                     <h2 class="mb-0">
-                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Variations
-                     </button>
-                     </h2>
-                  </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                     <div class="card-body">
-                        <!-- This is where the code goes -->
-                           <label for="quotedesc">Description of Variation:</label><br>
-                                 <textarea id="quotedesc" name="quotedesc" rows="3" cols="20"></textarea>
-                           <div class="container-sm">
-                           <div id="survey_options">
-                           <span style="color:red">@error('variationitem'){{$message}}@enderror</span>
-                           <input type="text" name="variationitem" class="survey_options" size="50" placeholder="Variation Item">
-                           <span style="color:red">@error('variationitemprice'){{$message}}@enderror</span>  
-                           <input type="text" name="variationitemprice" class="survey_options" size="50" placeholder="Variation Price">    
-                           </div>
-                  
-                        <div class="controls">
-                           <a type="button" id="add_more_fields"><i class="fa fa-plus"></i>+ Add More</a>
-                           <a type="button" id="remove_fields"><i class="fa fa-plus"></i>- Remove Field</a>
-                        </div>
-                     </div>
-
-                        <div>
-                           <label for="price">Total cost:</label><br>
-                           <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value="">
-                        </div>
-                              <label for="date">Variation Date Request:</label>
-                              <span style="color:red">@error('date'){{$message}}@enderror</span>
-                              <input type="text" id="date" name="date" value="" placeholder = "dd/mm/yyyy">
-                        
-
-
-
-                     </div>
-                  </div>
-               </div>
-                  <br>
-                  <button type="submit" name="submit" class="btn btn-primary addPost">Submit</button>
-     
-               <div class="card">
-
-                
-<!--
-                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                     <div class="card-body">
-                  <div class="form-box">
-                     <form class="" enctype="multipart/form-data">
-                        <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="text" id="email" name="email" value="">
-                        <label>Title:</label>
-                        <input type="text"  class="form-control" name="title"  >
-                        </div>
-                  <div class="form-group">
-                     <label>Content</label>
-                     <textarea name="content" class="form-control" rows="3" cols="13"></textarea>
-                  </div>
-                     </form>
-                  </div>
-
-                  <div class="submit-box">
-                  <button type="button" class="btn btn-primary addPost">Send</button>
-                  <button type="button" onclick="window.history.back()" class="btn btn-outline-secondary">Cancel</button>
-                  
-               </div>
-               </div>
-
-               -->
-              
-
-         <script> 
- 
-
-            var survey_options = document.getElementById('survey_options');
-            var add_more_fields = document.getElementById('add_more_fields');
-            var remove_fields = document.getElementById('remove_fields');
-            
-            add_more_fields.onclick = function(){
-
-            var item = document.createElement('input');
-            var price = document.createElement('input');
-
-            item.setAttribute('type','text');
-            item.setAttribute('name','survey_options[]');
-            item.setAttribute('class','survey_options');
-            item.setAttribute('siz',50);
-            item.setAttribute('placeholder','Item');
-
-            price.setAttribute('type','text');
-            price.setAttribute('name','survey_options[]');
-            price.setAttribute('class','survey_options');
-            price.setAttribute('siz',50);
-            price.setAttribute('placeholder','Price');
-
-            survey_options.appendChild(item);
-            survey_options.appendChild(price);
-            
-         
-            }
-
-            
-            remove_fields.onclick = function(){
-            var input_tags = survey_options.getElementsByTagName('input');
-            if(input_tags.length > 2) {
-               survey_options.removeChild(input_tags[(input_tags.length) - 1]);
-               survey_options.removeChild(input_tags[(input_tags.length) - 1]);
-            }
-            }
-
-
-            $('.addPost').click(function () {
-        $('.content').val(getPlainTxt());
-        var d = {};
-        var t = $('form').serializeArray();
-        $.each(t, function () {
-            d[this.name] = this.value;
-            if(this.value == ''){
-                //Add a red frame
-                $('input[name='+this.name+']').addClass('is-invalid');
-                //Add notice
-                var msg = $('input[name='+this.name+']').prev().text();
-                toastr.error(msg+'Cannot be Empty');
-                return false;
-            }
-        });
-        $.post('/admin/sendEmail', d, function (data) {
-            if (data.code == 1) {
-                toastr.success(data.msg);
-                setTimeout(function () {
-                    window.location.href = data.url;
-                }, 1500);
-            }else{
-                toastr.error(data.msg);
-            }
-        });
-    });
-
-         </script>
-
- 
-         </form >
-      </center>
-</body>
-</html>
+    <script>
+        @if((session()->has('msg')))
+        alert("{{session()->get('msg')}}");
+        @endif
+    </script>
+   </body>
+   </html>
