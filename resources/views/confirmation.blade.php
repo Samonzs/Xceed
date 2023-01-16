@@ -1,11 +1,10 @@
-@extends('TaC.layout')
-@section('content')
-<!DOCTYPE html>
-<html>
-   <head>
+
+<!doctype html>
+<html lang="en">
+<head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>XCEED Create Quote</title>
+      <title>XCEED Confirmation</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,22 +16,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
    
-fieldset.scheduler-border {
-    border: 1px groove #ddd !important;
-    padding: 0 1.4em 1.4em 1.4em !important;
-    margin: 0 0 1.5em 0 !important;
-    -webkit-box-shadow:  0px 0px 0px 0px #000;
-    box-shadow:  0px 0px 0px 0px #000;
-}
 
-legend.scheduler-border {
-    font-size: 1.2em !important;
-    font-weight: bold !important;
-    text-align: left !important;
-    width:inherit; /* Or auto */
-    padding:0 10px; /* To give a bit of padding on the left and right */
-    border-bottom:none;
-}
    .wrapper {
    width: 400px;
    margin: 40px auto;
@@ -64,13 +48,25 @@ legend.scheduler-border {
    color: black;
    }
 
+   input[type="date"]{
+   padding: 10px;
+   margin: 10px auto;
+   display: block;
+   border-radius: 5px;
+   border: 1px solid lightgrey;
+   background: none;
+   width: 274px;
+   color: black;
+   }
+
    #remove_fields, #add_more_fields{
    margin: 10px;
    font-weight: bold;
    }
-  
-  
 
+   .fieldsetc{
+      border: 1px solid black;
+      }
    
 </style>
    
@@ -118,45 +114,44 @@ legend.scheduler-border {
                       </ul>
                     </div>
                 </nav>
-</header> 
-   <body>
-      <center>
-    <div class="container">
-        <div class="row">
-        
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-body">
-                        <br/>
-                        <div class="table-responsive">
-                            <table class="table">
-                                 <tr>@if(Session::get('success'))
-                                 <div class ="alert alert-success">
-                                 {{Session::get('success')}}
-                                 </div>
-                                 @endif
-                                 </tr>     
-                                       <th>Terms & Conditions</th>
-                                @foreach($TaC as $item)
-                                    <tr>
-                                        <td>{{ $item->TermsAndConditions}}</td>   
-                                        <td>
-                                           <a href="{{ route('TaC.show', $item->id) }}"><button class="btn btn-info"><i class="" ></i> View</button></a>
-                                           <br><br>
-                                           <a href="{{ route('TaC.edit', $item->id) }}"><button class="btn btn-info"><i class="" ></i> Edit</button></a>
-                                    </td>                             
-                                    </tr>
-                                    
-                                @endforeach
-                                    
-                            </table>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
-      </center>
-   </header>
-</body>
-</html>
+</header>  
+<body>
+<center>
+<img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" alt="Logo">
+    <h3>Confirmation Details</h3>
+    <table class="table table-striped table-responsive-sm table-hover text-center">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Client Email</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Send Email</th>
+          <th scope="col">Show PDF</th>
+        </tr>
+      </thead>
+      <tbody>
+      @foreach($client_list_data as $key=>$item)
+        <tr>
+            <th scope="row">{{$item['id']}}</th>
+            <td>{{$item['firstName']}}</td>
+            <td>{{$item['lastName']}}</td>
+            <td>{{$item['clientEmail']}}</td>
+            <td>{{$item['phoneNumber']}}</td>
+            <td><a href="{{url('client_show?id='.$item['id'])}}">Send Email</a></td>
+            <td><a href="{{url('show_pdf?id='.$item['id'])}}">PDF File</a></td>
+        </tr>
+      @endforeach
+      </tbody>
+    </table>
+    <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
+<center>
+
+    <script>
+        @if((session()->has('msg')))
+        alert("{{session()->get('msg')}}");
+        @endif
+    </script>
+   </body>
+   </html>

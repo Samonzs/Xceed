@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\staffListCrud;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class staffListCrudController extends Controller
 {
@@ -49,10 +50,12 @@ class staffListCrudController extends Controller
                 'regex:/[@$!%*#?&]/', // must contain a special character  
             ],
             'password.regex' => 'The password must contain a capital letter, number, and symbol ']);
+        
 
 
         $stafListCrud=staffListCrud::find($id);
         $input=$request->all();
+        $input['password'] = Hash::make($request['password']);
         $stafListCrud->update($input);
         return redirect('staffListCrud')->with('flash_message', 'staff updated');
     }

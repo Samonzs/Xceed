@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+      
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('staff_fname');
@@ -56,14 +57,7 @@ return new class extends Migration
         });
 
 
-        Schema::create('admin', function (Blueprint $table) {
-            $table->id();
-            $table->string('fname');
-            $table->string('lname');
-            $table->string('email');
-            $table->string('password');
-            $table->timestamps();
-        });
+        
     }
 
 

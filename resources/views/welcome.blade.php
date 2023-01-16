@@ -51,6 +51,7 @@
     </script>
 </head>
 <body>
+    
     <center>
     <section class="Form my-4 mx-5">
         <div class="">
@@ -62,12 +63,18 @@
                 </div>
                 <h3 class= "font-weight-bold py-3">Log in</h3>
                 
-                    <form action="users" method= "post" >
-                        <div class= "form-row">
+                @if(isset(Auth::user()->email))
+                    <script>window.location="/user/successlogin";</script>
+                @endif
+
+                    <form action="{{ url('user/checklogin') }}" method="post" >
+                    {{ csrf_field() }}
+    
+                    <div class= "form-row">
                             <div class="col-lg-5">
                                 <label>Email</label>
-                                <input class="form-control" name="email" placeholder="Email Address">
-                                <span style="color:red">@error('email'){{$message}}@enderror</span>
+                                <input class="form-control" name="staff_email" placeholder="Email Address">
+                                <span style="color:red">@error('staff_email'){{$message}}@enderror</span>
                             </div>
                         </div>
                         <br>
@@ -78,6 +85,10 @@
                                 <span style="color:red">@error('password'){{$message}}@enderror</span>
                             </div>
                         </div>
+
+                        @if ($message = Session::get('error'))
+                            <strong style="color:red">{{ $message }}</strong>
+                        @endif
 
                         <div class= "form-row">
                             <div class="col-lg-5">

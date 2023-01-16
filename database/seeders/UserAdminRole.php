@@ -2,13 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\Admin;
-use App\Models\TermsAndConditions;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\TermsAndConditions;
 use Illuminate\Support\Facades\Hash;
 
-class AdminSeeder extends Seeder
+
+class UserAdminRole extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +18,6 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-
         TermsAndConditions::create([
             'termsAndConditions' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et eros ac tellus cursus fringilla eu faucibus lacus. 
             Cras id venenatis metus. Nam ac hendrerit neque. Vivamus a dignissim risus, eu convallis massa. Aenean maximus maximus mi quis aliquam. Sed euismod 
@@ -27,12 +27,12 @@ class AdminSeeder extends Seeder
             Phasellus luctus sollicitudin porttitor.'
         ]);
 
-        Admin::create([
-            'fname' => 'Jayson',
-            'lname' => 'Conceicao',
-            'email' => 'jayson@xceedelectrical.com.au',
-            'password' => Hash::make('Jayson123@')
+        User::create([
+            'staff_fname' => 'Jayson',
+            'staff_lname' => 'Conceicao',
+            'staff_email' => 'jayson@xceedelectrical.com.au',
+            'password' => Hash::make('Jayson123@'),
+            'role' => 'admin'
         ]);
-        
     }
 }

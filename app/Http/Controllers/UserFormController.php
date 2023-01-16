@@ -3,19 +3,18 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
- 
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Auth;
 class UserFormController extends Controller
 {
     
-    function login(Request $req){
-        return User::where('staff_email', $req->input('staff_email'));
-    }
-    public function getData(Request $request)
+    public function checklogin(Request $request)    
     {
         // Validate for staff (user) login.
 
         $validator = $request->validate([
-            'email' => [
+            'staff_email' => [
                 'required',
                 'string',
                 'email',
@@ -31,52 +30,94 @@ class UserFormController extends Controller
                 'regex:/[@$!%*#?&]/', // must contain a special character  
             ],
 
-
-
-           
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
-        if ($validator->success()) {
-            return redirect('listofquotes');
+        // $admin = array(
+        //     'email'  => $request->get('email'),
+        //     'password' => $request->get('password')
+        //    );
+
+        // if (Auth::guard('admin')->attempt($admin))
+        // {
+        //     return redirect('user/successlogin');
+        // }
+
+        // else
+        // {
+        //     return back()->with('error', 'Incorrect email or password');
+        // }
+
+
+        if (Auth::guard('web')->attempt(['staff_email' => $request->staff_email, 'password' => 
+        $request->password], $request->remember))       
+        {
+            return redirect('user/successlogin');
         }
-        else{
-            return $validator;
+
+        else
+        {
+            return back()->with('error', 'Incorrect email or password');
         }
-      
+        
 
     }
+    function index()
+    {
+     return view('welcome');
+    }
+    
+    function logout()
+    {
+     Auth::logout();
+     return redirect('welcome');
+    }
 
+    function successlogin()
+    {
+     return view('listofquotes');
+    }
     public function getClientData(Request $request)
     {
         //client details in variation page
 
-        $request->validate([
+    $validator = Validator::make($request->all(),[
 
-        'firstname' => 'required|regex:/^([^0-9])$/|max:25|min:1',
-        'lastname' => 'required|regex:/^([^0-9])$/|max:25|min:1',
+        'firstname' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
+        'lastname' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
         'clientemail' => 'required', 'string','email','max:255', 'regex:/^\w+[-.\w]@(?!(?:outlook|myemail|yahoo).com$)\w+[-.\w]?.\w{2,4}$/|min:1',
-        'compName' => 'required|regex:/^([^0-9])$/|max:255|min:1',
-        'phonenumber' => 'required|regex:/^[0-9]+$/|max:10|min:1',
+        'compName' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
+        'phonenumber' => 'required|regex:/^[0-9]+$/|max:10|min:10',
+        'date' => 'required|regex:/^\d{2}\/\d{2}\/\d{4}$/|max:10|min:10',
         'abn' => 'required|regex:/^[0-9]+$/|max:11|min:1',
-        'addressline' => 'required|regex:/^([^0-9])$/|max:255|min:1',
-        'suburb' => 'required|regex:/^([^0-9])$/|max:255|min:1',
+        'addressline' => 'required|string|max:255|min:1',
+        'suburb' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'postcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
         'jobreferencenumber' => 'required|regex:/^[0-9]+$/|max:10|min:1',
         'ordernumber' => 'required|regex:/^[0-9]+$/|max:10|min:1',
-        'sitename' => 'required|regex:/^([^0-9])$/|max:255|min:1',
-        'siteaddressline' => 'required|regex:/^([^0-9])$/|max:255|min:1',
-        'siteaddressstate' => 'required|regex:/^([^0-9])$/|max:255|min:1',
+        'sitename' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
+        'siteaddressline' => 'required|string|max:255|min:1',   
+        'siteaddressstate' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'sitepostcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
+        'variationitem' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
+        'variationitemprice' => 'required|regex:/^[0-9]+$/|max:10|min:1',
 
         ]);
 
-        return $request->validate;
-
+        if ($validator->fails()) 
+        {
+            return redirect('createquotes')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        else 
+        {
+            return redirect('confirmation');
+        }
     }
-
     public function getStaffData(Request $request)
     {
 
+ 
       
         //validation for staff creation page
         /*
@@ -106,13 +147,7 @@ class UserFormController extends Controller
         */
     }
    
+
 }
-
-
-
-
-
-
-
 
 ?>

@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    
     public function index()
     {
         return view("welcome");
@@ -14,7 +13,7 @@ class HomeController extends Controller
 
     public function login()
     {
-        return view("login");
+        return view("welcome");
     }
 
     public function createQuotes()
@@ -31,17 +30,33 @@ class HomeController extends Controller
     {
         return view("createstaff");
     }
-    
+
     public function listOfStaff()
     {
         return view("users.index");
     }
 
 
-    
+
     public function TaC()
     {
         return view("TaC.TaC");
     }
+
+
+
+    public function confirmation()
+    {
+        return view("confirmation");
+    }
+
+
+
+
+
+
+
+
+    
 
 }
