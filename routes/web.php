@@ -5,6 +5,8 @@ use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\TaCcontroller;
 use App\Http\Controllers\insertFields_DB;
 use App\Http\Controllers\staffListCrudController;
+use App\Http\Controllers\lovController;
+
 
 
 
@@ -39,13 +41,14 @@ Route::get('clientDetails', [UserFormController::class, 'getClientData']);
 Route::get('TaC', 'App\Http\Controllers\HomeController@TaC');
 Route::resource('/TaC', TaCcontroller::class);
 Route::resource('/staffListCrud', staffListCrudController::class);
-
+Route::resource('/lov', lovController::class);
 
 
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
-Route::get('welcome', 'App\Http\Controllers\HomeController@login');
+
+
 
 Route::get('login', 'App\Http\Controllers\HomeController@login');
 
@@ -56,10 +59,7 @@ Route::get('listofquotes', 'App\Http\Controllers\HomeController@listofquotes');
 
 Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
-
-
-Route::get('confirmation', 'App\Http\Controllers\HomeController@confirmation');
-Route::post('confirmation', 'App\Http\Controllers\HomeController@confirmation');
+Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
 
 
 
