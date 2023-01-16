@@ -34,7 +34,7 @@ class HomeController extends Controller
     
     public function listOfStaff()
     {
-        return view("listOfStaff");
+        return view("users.index");
     }
 
 

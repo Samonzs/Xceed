@@ -10,7 +10,7 @@ class staffListCrudController extends Controller
     public function index()
     {
         $users = staffListCrud::all();
-        return view ('users.index')->with('users', $users);
+        return view ('users.listOfStaff')->with('users', $users);
     }
 
 

@@ -1,4 +1,4 @@
-@extends('users.layout')
+@extends('VariationDetails.layout')
 @section('content')
 <header>
             <nav class="navbar navbar-light bg-light navbar-expand-lg">
@@ -37,23 +37,24 @@
    <thead>                                
       <tr>                                      
          <th>#</th>                                    
-         <th>First Name</th>
-         <th>Last Name</th>                              
-         <th>Email</th>                                                                       
+         <th>Client Name</th>
+         <th>Job Number</th>
+         <th>Variation Date</th>                                                            
+         <th>Total Price</th>
+         <!-- <th>Status</th>-->
          <th>Actions</th>                      
       </tr>             
    </thead>                         
    <tbody>
-                                      @foreach($users as $item)
+ @foreach($VariationDetails as $item)
                                           
       <tr>                                 
          <td>{{ $loop->iteration }}</td>                                
-         <td>{{ $item->staff_fname }}</td>
-         <td>{{ $item->staff_lname }}</td>                       
-         <td>{{ $item->staff_email }}</td>                                                                                     
+         <td>{{ $item->firstName }} {{ $item->lastName }}</td>
+         <td>{{ $item->jobReferenceNumber }}</td>      
+         <td>{{ $item->variationDateRequest }}</td>                 
          <td>
-            <a href="{{ url('/staffListCrud/' . $item->id) }}" title="View Staff"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> <a href="{{ url('/staffListCrud/' . $item->id . '/edit') }}" title="Edit Staff"><button class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a> 
-            <form method="POST" action="{{ url('/staffListCrud' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Staff" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
+            <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> <a href="{{ url('/staffListCrud/' . $item->id . '/edit') }}" title="Edit variation"><button class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a> <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
          </td>                               
       </tr>
 @endforeach
@@ -61,5 +62,7 @@
    </tbody>
                                
 </table>
+
+
 
 @endsection
