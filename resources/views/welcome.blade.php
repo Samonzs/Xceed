@@ -67,16 +67,6 @@
                     <script>window.location="/user/successlogin";</script>
                 @endif
 
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                    <ul>
-                    @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                    </ul>
-                    </div>
-                @endif
-
                     <form action="{{ url('user/checklogin') }}" method="post" >
                     {{ csrf_field() }}
     

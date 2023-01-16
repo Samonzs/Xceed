@@ -56,7 +56,7 @@ Route::get('listofquotes', 'App\Http\Controllers\HomeController@listofquotes');
 
 Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
-Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
+
 
 Route::get('confirmation', 'App\Http\Controllers\HomeController@confirmation');
 Route::post('confirmation', 'App\Http\Controllers\HomeController@confirmation');

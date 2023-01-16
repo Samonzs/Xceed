@@ -31,151 +31,153 @@
                       <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
                       </ul>
                       <ul class="navbar-nav ml-auto">
-                      
+
+                      @if(isset(Auth::user()->staff_email))
+                     <div class="nav-link">
+                     <strong>Welcome {{ Auth::user()->staff_fname }}</strong>
+                     </div>
+                     @if(Auth::user()->hasRole('admin')) 
                       <div class="dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Admin Panel
-                        </a>
+                     </a>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="<?php echo url('listofstaff')?>">Staff List</a>
+                        <a class="dropdown-item" href="<?php echo url('staffListCrud')?>">Staff List</a>
                         <a class="dropdown-item" href="<?php echo url('createstaff')?>">Create Staff</a>
                         <a class="dropdown-item" href="<?php echo url('TaC')?>">Terms & Conditions</a>
                      </div>
-                     </div>
-                     @if(isset(Auth::user()->staff_email))
-                     <div class>
-                     <strong>Welcome {{ Auth::user()->staff_email }}</strong>
+                     @endif
+
                      <br/> 
                      </div>
                      @else
                      <script>window.location = "/user";</script>
-                     @endif
-                        <li class="nav-item">
+                     @endif   
+                        <div class="nav-link">
                         <a class="nav-link" href="{{ url('/user/logout') }}"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
-                        </li>
+                        </div>
                       </ul>
-                    </div>
                 </nav>
-</header>          
+</header>     
 
 
-    <center>
-    <h2>List of Variations</h2>
-   
-    <table class="table table-striped table-responsive-sm table-hover text-center">
-      <thead>
-        <tr>
-          <th scope="col">Quote/Client Name</th>
-          <th scope="col">Job Number</th>
-          <th scope="col">Price</th>
-          <th scope="col">Status</th>
-          <th scope="col">Editing Options</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1. Quote-1</th>
-          <td>123456</td>
-          <td>$--</td>
-          <td>In Progress</td>
-          <td><button type="button" class="btn btn-secondary text-nowrap">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
-        </tr>
-        <tr>
-          <th scope="row">2. Quote-2</th>
-          <td>132456</td>
-          <td>$--</td>
-          <td>Done</td>
-          <td><button type="button" class="btn btn-secondary text-nowrap">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
-        </tr>
-        <tr>
-          <th scope="row">3. Quote-3</th>
-          <td>123654</td>
-          <td>$--</td>
-          <td>In Progress</td>
-          <td><button type="button" class="btn btn-secondary text-nowrap">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
-        </tr>
-      </tbody>
-    </table>
-<center>
+         <center>
+         <h2>List of Variations</h2>
+         
+         <table class="table table-striped table-responsive-sm table-hover text-center">
+            <thead>
+            <tr>
+               <th scope="col">Quote/Client Name</th>
+               <th scope="col">Job Number</th>
+               <th scope="col">Price</th>
+               <th scope="col">Status</th>
+               <th scope="col">Editing Options</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+               <th scope="row">1. Quote-1</th>
+               <td>123456</td>
+               <td>$--</td>
+               <td>In Progress</td>
+               <td><button type="button" class="btn btn-secondary text-nowrap">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
+            </tr>
+            <tr>
+               <th scope="row">2. Quote-2</th>
+               <td>132456</td>
+               <td>$--</td>
+               <td>Done</td>
+               <td><button type="button" class="btn btn-secondary text-nowrap">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
+            </tr>
+            <tr>
+               <th scope="row">3. Quote-3</th>
+               <td>123654</td>
+               <td>$--</td>
+               <td>In Progress</td>
+               <td><button type="button" class="btn btn-secondary text-nowrap">View</button> <button type="button" class="btn btn-secondary">Edit</button> <button type="button" class="btn btn-secondary">Approve</button> <button type="button" class="btn btn-secondary">Close</button>
+            </tr>
+            </tbody>
+         </table>
+      <center>
 
-<footer class="text-center text-lg-start bg-white text-muted">
-         <section class="">
-            <div class="container text-center text-md-start mt-5">
-               <!-- Grid row -->
-               <div class="row mt-3">
-                  <!-- Grid column -->
-                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                     <!-- Content -->
-                     <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fas fa-gem me-3 text-secondary"></i>XCEED Electrical
-                     </h6>
-                     <p>
-                        Very useful disclaimer/ or warning rerouting users to an agreement here...
-                     </p>
+   <footer class="text-center text-lg-start bg-white text-muted">
+            <section class="">
+               <div class="container text-center text-md-start mt-5">
+                  <!-- Grid row -->
+                  <div class="row mt-3">
+                     <!-- Grid column -->
+                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                           <i class="fas fa-gem me-3 text-secondary"></i>XCEED Electrical
+                        </h6>
+                        <p>
+                           Very useful disclaimer/ or warning rerouting users to an agreement here...
+                        </p>
+                     </div>
+                     <!-- Grid column -->
+                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                           Useful Products
+                        </h6>
+                        <p>
+                           <a href="#!" class="text-reset">Useful Product</a>
+                        </p>
+                        <p>
+                           <a href="#!" class="text-reset">Useful Product</a>
+                        </p>
+                        <p>
+                           <a href="#!" class="text-reset">Useful Product</a>
+                        </p>
+                        <p>
+                           <a href="#!" class="text-reset">Useful Product</a>
+                        </p>
+                     </div>
+                     <!-- Grid column -->
+                     <!-- Grid column -->
+                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                           Useful links
+                        </h6>
+                        <p>
+                           <a href="#!" class="text-reset">Useful Link</a>
+                        </p>
+                        <p>
+                           <a href="#!" class="text-reset">Useful Link</a>
+                        </p>
+                        <p>
+                           <a href="#!" class="text-reset">Useful Link</a>
+                        </p>
+                        <p>
+                           <a href="#!" class="text-reset">Useful Link</a>
+                        </p>
+                     </div>
+                     <!-- Grid column -->
+                     <!-- Grid column -->
+                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3 text-secondary"></i> Sydney, Australia</p>
+                        <p>
+                           <i class="fas fa-envelope me-3 text-secondary"></i>
+                           example@site.com
+                        </p>
+                        <p><i class="fas fa-phone me-3 text-secondary"></i> + 61 xxxx xxx xxx</p>
+                        <p><i class="fas fa-print me-3 text-secondary"></i> + 61 xxxx xxx xxx</p>
+                     </div>
+                     <!-- Grid column -->
                   </div>
-                  <!-- Grid column -->
-                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                     <!-- Links -->
-                     <h6 class="text-uppercase fw-bold mb-4">
-                        Useful Products
-                     </h6>
-                     <p>
-                        <a href="#!" class="text-reset">Useful Product</a>
-                     </p>
-                     <p>
-                        <a href="#!" class="text-reset">Useful Product</a>
-                     </p>
-                     <p>
-                        <a href="#!" class="text-reset">Useful Product</a>
-                     </p>
-                     <p>
-                        <a href="#!" class="text-reset">Useful Product</a>
-                     </p>
-                  </div>
-                  <!-- Grid column -->
-                  <!-- Grid column -->
-                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                     <!-- Links -->
-                     <h6 class="text-uppercase fw-bold mb-4">
-                        Useful links
-                     </h6>
-                     <p>
-                        <a href="#!" class="text-reset">Useful Link</a>
-                     </p>
-                     <p>
-                        <a href="#!" class="text-reset">Useful Link</a>
-                     </p>
-                     <p>
-                        <a href="#!" class="text-reset">Useful Link</a>
-                     </p>
-                     <p>
-                        <a href="#!" class="text-reset">Useful Link</a>
-                     </p>
-                  </div>
-                  <!-- Grid column -->
-                  <!-- Grid column -->
-                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                     <!-- Links -->
-                     <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                     <p><i class="fas fa-home me-3 text-secondary"></i> Sydney, Australia</p>
-                     <p>
-                        <i class="fas fa-envelope me-3 text-secondary"></i>
-                        example@site.com
-                     </p>
-                     <p><i class="fas fa-phone me-3 text-secondary"></i> + 61 xxxx xxx xxx</p>
-                     <p><i class="fas fa-print me-3 text-secondary"></i> + 61 xxxx xxx xxx</p>
-                  </div>
-                  <!-- Grid column -->
+                  <!-- Grid row -->
                </div>
-               <!-- Grid row -->
+            </section>
+            <!-- Section: Links  -->
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+               © 2022 Copyright:
+               <a class="text-reset fw-bold" href="#">homeSite.com</a>
             </div>
-         </section>
-         <!-- Section: Links  -->
-         <!-- Copyright -->
-         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-            © 2022 Copyright:
-            <a class="text-reset fw-bold" href="#">homeSite.com</a>
-         </div>
-      </footer>
+         </footer>
    </body>
    </html>
