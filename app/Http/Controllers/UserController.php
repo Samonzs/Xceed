@@ -219,14 +219,14 @@ class UserController extends Controller
     //send email
     public function send_email(Request $request){
 
-       $pdf = $request->input("pdf");
+        $pdf = $request->input("pdf");
         $danhao = $request->input("danhao");
        
         //get id
         $client_email = $request->input("client_email");
         $content = $request->input("content");
         $subject = "Send Email";
-       $seed =  Mail::to($client_email)->send(new SendMail($client_email,$subject,$content,$pdf,$danhao));
+        $seed =  Mail::to($client_email)->send(new SendMail($client_email,$subject,$content,$pdf,$danhao));
         if($seed){
             unlink($pdf);
             return redirect('confirmation')->withInput()->with("msg","Sending succeeded");
