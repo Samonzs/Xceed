@@ -8,43 +8,41 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                    
                       <li class="nav-item active">
                         <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
                       </ul>
-                      <ul class="navbar-nav ml-auto">
+                     
 
-                      @if(isset(Auth::user()->staff_email))
-                     <div class="nav-link">
-                     <strong>Welcome {{ Auth::user()->staff_email }}</strong>
-                     </div>
+                     <ul class="navbar-nav ml-auto">
+                     @if(isset(Auth::user()->staff_email))
+                      <strong class="nav-link">Welcome {{ Auth::user()->staff_fname }}</strong>
+                     @else
+                     <script>window.location = "/user";</script>
+                     @endif
+               
+                     <div class="dropdown">
                      @if(Auth::user()->hasRole('admin')) 
-                      <div class="dropdown">
+
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Admin Panel
-                     </a>
+                        </a>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="<?php echo url('staffListCrud')?>">Staff List</a>
                         <a class="dropdown-item" href="<?php echo url('createstaff')?>">Create Staff</a>
                         <a class="dropdown-item" href="<?php echo url('TaC')?>">Terms & Conditions</a>
-                     </div>
+                     </div> 
                      @endif
-
-                     <br/> 
+                     
                      </div>
-                     @else
-                     <script>window.location = "/user";</script>
-                     @endif   
-                     
-                     
+                        <li class="nav-item">
                         <a class="nav-link" href="{{ url('/user/logout') }}"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
+                        </li>
                       </ul>
-                    </div>                     
-                  </div>
+                    </div>
                 </nav>
-</header>  
+</header>   
 
 <table class="table table-striped table-responsive-sm table-hover text-center">
                                    
@@ -59,7 +57,7 @@
       </tr>             
    </thead>                         
    <tbody>
-                                      @foreach($users as $item)
+      @foreach($users as $item)
                                           
       <tr>                                 
          <td>{{ $loop->iteration }}</td>                                
@@ -69,13 +67,15 @@
          <td>{{ $item->role }}</td>                                                                                                                                                                          
          <td>
             <a href="{{ url('/staffListCrud/' . $item->id) }}" title="View Staff"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> <a href="{{ url('/staffListCrud/' . $item->id . '/edit') }}" title="Edit Staff"><button class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a> 
+            @if($item->role=="user") 
             <form method="POST" action="{{ url('/staffListCrud' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Staff" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
+            @endif
          </td>                               
       </tr>
 @endforeach
-                                      
    </tbody>
                                
 </table>
 
 @endsection
+
