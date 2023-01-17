@@ -1,5 +1,3 @@
-
-
 @extends('TaC.layout')
 @section('content')
 <div class="card">

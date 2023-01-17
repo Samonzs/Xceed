@@ -120,10 +120,8 @@ legend.scheduler-border {
                 </nav>
 </header> 
    <body>
-      <center>
     <div class="container">
         <div class="row">
-        
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
@@ -148,15 +146,13 @@ legend.scheduler-border {
                                     </tr>
                                     
                                 @endforeach
-                                    
                             </table>
                         </div>
                 </div>
             </div>
         </div>
     </div>
-@endsection
-      </center>
    </header>
 </body>
+
 </html>
