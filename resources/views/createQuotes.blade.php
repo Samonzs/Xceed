@@ -264,8 +264,6 @@
                               <input type="text" id="date" name="date" value="" placeholder = "dd/mm/yyyy">
                         
 
-
-
                      </div>
                   </div>
                </div>

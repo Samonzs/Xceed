@@ -59,7 +59,6 @@ Route::get('listofquotes', 'App\Http\Controllers\HomeController@listofquotes');
 
 Route::get('createstaff', 'App\Http\Controllers\HomeController@createstaff');
 
-Route::get('listofstaff', 'App\Http\Controllers\HomeController@listofstaff');
 
 
 
