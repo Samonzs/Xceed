@@ -47,7 +47,7 @@ Route::resource('/lov', lovController::class);
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
-
+Route::get('/welcome', 'App\Http\Controllers\HomeController@index');
 
 
 Route::get('login', 'App\Http\Controllers\HomeController@login');
