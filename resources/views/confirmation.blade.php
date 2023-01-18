@@ -119,32 +119,146 @@
 <center>
 <img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" alt="Logo">
     <h3>Confirmation Details</h3>
-    <table class="table table-striped table-responsive-sm table-hover text-center">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Client Email</th>
-          <th scope="col">Phone Number</th>
-          <th scope="col">Send Email</th>
-          <th scope="col">Show PDF</th>
-        </tr>
-      </thead>
+<br><br>
+
+
+<div class="container">
+        <div class="row">
+        
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <br/>
+                        <div class="table-responsive">
+                            <table class="table">
+    @foreach($client_list_data as $item)
+
+      <h4 > Client Details</h4>
       <tbody>
-      @foreach($client_list_data as $key=>$item)
         <tr>
-            <th scope="row">{{$item['id']}}</th>
-            <td>{{$item['firstName']}}</td>
-            <td>{{$item['lastName']}}</td>
-            <td>{{$item['clientEmail']}}</td>
-            <td>{{$item['phoneNumber']}}</td>
-            <td><a href="{{url('client_show?id='.$item['id'])}}">Send Email</a></td>
-            <td><a href="{{url('show_pdf?id='.$item['id'])}}">PDF File</a></td>
+          <!-- <th scope="col">ID</th> -->
+          <!-- <td scope="row">{{$item['id']}}</th> -->
+
+          <th scope="col">First Name</th>
+          <td>{{$item['firstName']}}</td>
         </tr>
-      @endforeach
-      </tbody>
+        <tr>
+          <th scope="col">Last Name</th>
+          <td>{{$item['lastName']}}</td>   
+        </tr>
+        <tr>
+          <th scope="col">Client Email</th>
+          <td>{{$item['clientEmail']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Phone Number</th>
+          <td>{{$item['phoneNumber']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Date</th>
+          <td>{{$item['date']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Company Name</th>
+          <td>{{$item['companyName']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">ABN</th>
+          <td>{{$item['abn']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Address</th>
+          <td>{{$item['addressLine']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Suburb</th>
+          <td>{{$item['suburb']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Postcode</th>
+          <td>{{$item['postcode']}}</td>
+        </tr>
+    </tbody>
     </table>
+    <br><br>
+
+    <div class="table-responsive">
+                            <table class="table">
+    <!-- <table class="table table-striped table-responsive-sm table-hover text-left"> -->
+    <h4 > Client Site Details</h4>
+    <tbody>
+        <tr>
+          <th scope="col">Job Reference Number</th>
+          <td>{{$item['jobReferenceNumber']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Order Number</th>
+          <td>{{$item['orderNumber']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Site Name</th>
+          <td>{{$item['siteName']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Site Address Line</th>
+          <td>{{$item['siteAddressLine']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Site Address State</th>
+          <td>{{$item['siteAddressState']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Site Postcode</th>
+          <td>{{$item['sitePostcode']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Variation Item</th>
+          <td>{{$item['variationItem']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Variation Item Price</th>
+          <td>{{$item['variationItemPrice']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Variation Description</th>
+          <td>{{$item['variationDescription']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Total Cost</th>
+          <td>{{$item['totalCost']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Variation Date Request</th>
+          <td>{{$item['variationDateRequest']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Created At</th>
+          <td>{{$item['created_at']}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Updated At</th>
+          <td>{{$item['updated_at']}}</td>
+        </tr>
+    </tbody>
+    </table>  
+    <br><br>
+
+    <!-- <table class="table table-striped table-responsive-sm table-hover text-left"> -->
+    <tbody>
+    <h4 > Terms And Conditions</h4>
+    <td>{{$terms_and_conditions['TermsAndConditions']}}</td>
+    </tbody>
+    </table>
+      @endforeach
+
+        <tr>
+        <br><br>
+            <td><a href="{{url('show_pdf?id='.$item['id'])}}"> Show as PDF</a></td>
+<br>
+            <td><a href="{{url('client_show?id='.$item['id'])}}"><button class="btn btn-info">Send Email</button></a></td>
+        </tr>
+
+    
     <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
 <center>
 
