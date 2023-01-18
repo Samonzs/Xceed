@@ -13,16 +13,26 @@
                       </li>
                       <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
                       </ul>
+
                       <ul class="navbar-nav ml-auto">
-                      <div class="dropdown">
+                     @if(isset(Auth::user()->staff_email))
+                      <strong class="nav-link">Welcome {{ Auth::user()->staff_fname }}</strong>
+                     @else
+                     <script>window.location = "/user";</script>
+                     @endif
+               
+                     <div class="dropdown">
+                     @if(Auth::user()->hasRole('admin')) 
+
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Admin Panel
                         </a>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="<?php echo url('/staffListCrud')?>">Staff List</a>
+                        <a class="dropdown-item" href="<?php echo url('staffListCrud')?>">Staff List</a>
                         <a class="dropdown-item" href="<?php echo url('createstaff')?>">Create Staff</a>
                         <a class="dropdown-item" href="<?php echo url('TaC')?>">Terms & Conditions</a>
-                     </div>
+                     </div> 
+                     @endif
                      </div>
                         <li class="nav-item">
                         <a class="nav-link" href="<?php echo url('welcome')?>"><span class="glyphicon glyphicon-log-in"></span>Logout</a>
@@ -55,7 +65,7 @@
          <td>{{ $item->variationDateRequest }}</td>  
          <td>${{ $item->totalCost }}</td>               
          <td>
-         <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> <a href="#" title="Approve"><button class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Approve</button> <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+         <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> <a href="#" title="Approve"><button onclick="edit_btn=disabled;" id="approve_btn" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Approve</button> <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
             @if(Auth::user()->hasRole('admin')) 
             <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
             @endif
