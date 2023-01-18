@@ -74,7 +74,6 @@ return new class extends Migration
         Schema::dropIfExists('clientDetails');
         Schema::dropIfExists('clientSiteDetails');
         Schema::dropIfExists('TermsAndConditions');
-        Schema::dropIfExists('admin');
 
 
     }

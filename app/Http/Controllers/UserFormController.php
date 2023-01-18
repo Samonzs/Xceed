@@ -84,10 +84,16 @@ class UserFormController extends Controller
 
         'firstname' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
         'lastname' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
-        'clientemail' => 'required', 'string','email','max:255', 'regex:/^\w+[-.\w]@(?!(?:outlook|myemail|yahoo).com$)\w+[-.\w]?.\w{2,4}$/|min:1',
+        'clientemail' => [
+            'required',
+            'string',
+            'email',
+            'max:255',
+            'regex:/^\w+[-\.\w]*@(?!(?:outlook|myemail|yahoo)\.com$)\w+[-\.\w]*?\.\w{2,4}$/'
+        ],
         'compName' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'phonenumber' => 'required|regex:/^[0-9]+$/|max:10|min:10',
-        'date' => 'required|regex:/^\d{2}\/\d{2}\/\d{4}$/|max:10|min:10',
+        'date' => 'required|regex:/^\d{2}\/\d{2}\/\d{4}$/',
         'abn' => 'required|regex:/^[0-9]+$/|max:11|min:1',
         'addressline' => 'required|string|max:255|min:1',
         'suburb' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
