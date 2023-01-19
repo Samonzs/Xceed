@@ -73,16 +73,17 @@
    <!-- DASHBOARD  -->
    <header>
             <nav class="navbar navbar-light bg-light navbar-expand-lg">
-              <a class="navbar-brand" href="<?php echo url('listofquotes')?>"><img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" width="85" height="25" alt="XCEED ELectrical Logo"></a>
+              <a class="navbar-brand" href="<?php echo url('lov')?>"><img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" width="85" height="25" alt="XCEED ELectrical Logo"></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
+                      <a class="nav-link" href="<?php echo url('lov')?>">Home <span class="sr-only">(current)</span></a>
+                      
                       <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo url('listofquotes')?>">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
                       </li>
-                      <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
                       </ul>
                      
 
@@ -146,9 +147,9 @@
                               <span style="color:red">@error('lastname'){{$message}}@enderror</span>
                               <input type="text" id="lname" name="lastname" value="">
 
-                              <label for="email">Email:</label>
+                              <label for="clientemail">Email:</label>
                               <span style="color:red">@error('clientemail'){{$message}}@enderror</span>
-                              <input type="text" id="email" name="clientemail" value="">
+                              <input type="text" id="clientemail" name="clientemail" value="">
 
                               <label for="pNumber">Phone Number:</label>
                               <span style="color:red">@error('phonenumber'){{$message}}@enderror</span>
@@ -158,17 +159,17 @@
                               <span style="color:red">@error('date'){{$message}}@enderror</span>
                               <input type="text" id="date" name="date" value="" placeholder = "dd/mm/yyyy">
 
-                              <label for="compName">Company Name:</label>
-                              <span style="color:red">@error('compName'){{$message}}@enderror</span>
-                              <input type="text" id="compName" name="compName" value="">
+                              <label for="companyName">Company Name:</label>
+                              <span style="color:red">@error('companyName'){{$message}}@enderror</span>
+                              <input type="text" id="companyName" name="companyName" value="">
 
                               <label for="abn">ABN:</label>
                               <span style="color:red">@error('abn'){{$message}}@enderror</span>
                               <input type="text" id="abn" name="abn" value="">
 
-                              <label for="address">Address line:</label>
+                              <label for="addressline">Address line:</label>
                               <span style="color:red">@error('addressline'){{$message}}@enderror</span>
-                              <input type="text" id="address" name="addressline" value="">
+                              <input type="text" id="addressline" name="addressline" value="">
 
                               <label for="suburb">Suburb:</label>
                               <span style="color:red">@error('suburb'){{$message}}@enderror</span>
@@ -200,9 +201,9 @@
                               <span style="color:red">@error('jobreferencenumber'){{$message}}@enderror</span>
                               <input type="number" id="jrNumber" name="jobreferencenumber" value="">
 
-                              <label for="ordNumber">Order Number</label><br>
+                              <label for="ordernumber">Order Number</label><br>
                               <span style="color:red">@error('ordernumber'){{$message}}@enderror</span>
-                              <input type="number" id="ordNumber" name="ordernumber" value="">
+                              <input type="number" id="ordernumber" name="ordernumber" value="">
 
                               <label for="siteName">Site Name:</label><br>
                               <span style="color:red">@error('sitename'){{$message}}@enderror</span>
@@ -239,12 +240,13 @@
                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                      <div class="card-body">
                         <!-- This is where the code goes -->
-                           <label for="quotedesc">Description of Variation:</label><br>
-                                 <textarea id="quotedesc" name="quotedesc" rows="3" cols="20"></textarea>
+                           <label for="variationDescription">Description of Variation:</label><br>
+                                 <textarea id="variationDescription" name="variationDescription" rows="3" cols="20"></textarea>
                            <div class="container-sm">
                            <div id="survey_options">
                            <span style="color:red">@error('variationitem'){{$message}}@enderror</span>
                            <input type="text" name="variationitem" class="survey_options" size="50" placeholder="Variation Item">
+                           
                            <span style="color:red">@error('variationitemprice'){{$message}}@enderror</span>  
                            <input type="text" name="variationitemprice" class="survey_options" size="50" placeholder="Variation Price">    
                            </div>
@@ -256,18 +258,27 @@
                      </div>
 
                         <div>
-                           <label for="price">Total cost:</label><br>
-                           <input type="number" min="0.00" max="10000000.00" id="price" name="price" step="0.01" value="">
+                           <label for="totalCost">Total cost:</label><br>
+                           <input type="number" min="0.00" max="10000000.00" id="totalCost" name="totalCost" step="0.01" value="">
                         </div>
-                              <label for="date">Variation Date Request:</label>
+                              <label for="variationDateRequest">Variation Date Request:</label>
                               <span style="color:red">@error('date'){{$message}}@enderror</span>
-                              <input type="text" id="date" name="date" value="" placeholder = "dd/mm/yyyy">
+                              <input type="text" id="variationDateRequest" name="variationDateRequest" value="" placeholder = "dd/mm/yyyy">
                         
 
                      </div>
+
+                     
+
+
+                     <input type="hidden" id="createdBy" name="createdBy" value="{{Auth::user()->staff_fname}}" readonly>
+                  
                   </div>
                </div>
                   <br>
+
+
+
                   <button type="submit" name="submit" class="btn btn-primary addPost">Submit</button>
      
                <div class="card">

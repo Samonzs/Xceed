@@ -41,6 +41,6 @@ class lovController extends Controller
     public function destroy($id)
     {
         lov::destroy($id);
-        return redirect('VariationDetails')->with('flash_message', 'Variation Deleted!');
+        return redirect('lov')->with('flash_message', 'Variation Deleted!');
     }
 }
