@@ -77,7 +77,7 @@ class UserFormController extends Controller
 
     function successlogin()
     {
-     return view('listofquotes');
+     return redirect('lov');
     }
     public function getClientData(Request $request)
     {
