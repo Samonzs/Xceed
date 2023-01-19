@@ -120,7 +120,6 @@ class UserFormController extends Controller
         }
         else 
         {
-            $authUser = auth()->user();
             $query = DB::table('variationdetails')->insert([
             
             'firstname' => $request->input('firstname'),
