@@ -48,6 +48,8 @@ return new class extends Migration
             $table->integer('totalCost');
             $table->Date('variationDateRequest');
             $table->timestamps();
+            $table->string('createdBy');
+
         });
 
         Schema::create('TermsAndConditions', function (Blueprint $table) {

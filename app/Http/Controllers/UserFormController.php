@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+
 use Auth;
 class UserFormController extends Controller
 {
@@ -91,9 +94,9 @@ class UserFormController extends Controller
             'max:255',
             'regex:/^\w+[-\.\w]*@(?!(?:outlook|myemail|yahoo)\.com$)\w+[-\.\w]*?\.\w{2,4}$/'
         ],
-        'compName' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
+        'companyName' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'phonenumber' => 'required|regex:/^[0-9]+$/|max:10|min:10',
-        'date' => 'required|regex:/^\d{2}\/\d{2}\/\d{4}$/',
+        'date' => 'required|regex:/^\d{4}\/\d{2}\/\d{2}$/',
         'abn' => 'required|regex:/^[0-9]+$/|max:11|min:1',
         'addressline' => 'required|string|max:255|min:1',
         'suburb' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
@@ -117,6 +120,34 @@ class UserFormController extends Controller
         }
         else 
         {
+            $authUser = auth()->user();
+            $query = DB::table('variationdetails')->insert([
+            
+            'firstname' => $request->input('firstname'),
+            'lastname' => $request->input('lastname'),
+            'clientemail' => $request->input('clientemail'),
+            'companyName' => $request->input('companyName'),
+            'phonenumber' => $request->input('phonenumber'),
+            'date' => $request->input('date'),
+            'abn' => $request->input('abn'),
+            'addressline' => $request->input('addressline'),
+            'suburb' => $request->input('suburb'),
+            'postcode' => $request->input('postcode'),
+            'jobreferencenumber' => $request->input('jobreferencenumber'),
+            'ordernumber' => $request->input('ordernumber'),
+            'sitename' => $request->input('sitename'),
+            'siteaddressline' => $request->input('siteaddressline'),
+            'siteaddressstate' => $request->input('siteaddressstate'),
+            'sitepostcode' => $request->input('sitepostcode'),
+            'variationitem' => $request->input('variationitem'),
+            'variationitemprice' => $request->input('variationitemprice'),
+            'variationDescription' => $request->input('variationDescription'),
+            'totalCost' => $request->input('totalCost'),
+            'variationDateRequest' => $request->input('variationDateRequest'),
+
+            'createdBy' => $request->input('createdBy')
+
+           ]); 
             return redirect('confirmation');
         }
     }
