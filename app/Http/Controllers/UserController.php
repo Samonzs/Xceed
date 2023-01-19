@@ -231,7 +231,7 @@ class UserController extends Controller
         $danhao = $request->input("danhao");
        
         //get id
-        $client_email = $request->input("clientEmail");
+        $client_email = $request->input("client_email");
         $content = $request->input("content");
         $subject = "Send Email";
         $seed =  Mail::to($client_email)->send(new SendMail($client_email,$subject,$content,$pdf,$danhao));
