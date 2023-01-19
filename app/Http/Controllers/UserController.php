@@ -114,18 +114,26 @@ class UserController extends Controller
     //client list
     public function  confirmation(){
 
-        $confirmation =DB::table("VariationDetails")->get()->toArray();
+        $confirmation =DB::table("VariationDetails")->orderBy('id',"desc")->get()->first();
         
-        $client_list_data =[];
-        foreach ($confirmation as $item){
-            $client_list_data[] = get_object_vars($item);
-        }
-        $TermsAndConditions = DB::table("TermsAndConditions")->get()->first();
-        if(!empty($TermsAndConditions)){
-            $TermsAndConditions = get_object_vars($TermsAndConditions);
+        // $client_list_data =[];
+        // foreach ($confirmation as $item){
+        //     $client_list_data[] = get_object_vars($item);
+        // }
+
+        if(!empty($confirmation)){
+            $client_list_data[] = get_object_vars($confirmation);
+            $TermsAndConditions = DB::table("TermsAndConditions")->where('id',$client_list_data[0]['id'])->get()->first();
+            if(!empty($TermsAndConditions)){
+                $TermsAndConditions = get_object_vars($TermsAndConditions);
+            }else{
+                $TermsAndConditions=[];
+            }
         }else{
             $TermsAndConditions=[];
+            $client_list_data=[];
         }
+   
         return view("confirmation",['client_list_data'=>$client_list_data,'terms_and_conditions'=>$TermsAndConditions]);    
     }
 
