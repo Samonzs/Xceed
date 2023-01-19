@@ -82,7 +82,7 @@
                       <a class="nav-link" href="<?php echo url('lov')?>">Home <span class="sr-only">(current)</span></a>
                       
                       <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo url('lov')?>">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
                       </li>
                       </ul>
                      
