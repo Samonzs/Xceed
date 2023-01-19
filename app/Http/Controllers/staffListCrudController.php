@@ -63,6 +63,6 @@ class staffListCrudController extends Controller
     public function destroy($id)
     {
         staffListCrud::destroy($id);
-        return redirect('users')->with('flash_message', 'User Deleted!');
+        return redirect('staffListCrud')->with('flash_message', 'User Deleted!');
     }
 }
