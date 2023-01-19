@@ -92,8 +92,8 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
             $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
             $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
-            $pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
-            $pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
+            //$pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
+            //$pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
         }
         if(!empty($TermsAndConditions)){
             $pdf->AddPage();
@@ -206,8 +206,8 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
             $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
             $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
-            $pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
-            $pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
+            //$pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
+            //$pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
         }
         if(!empty($TermsAndConditions)){
             $pdf->AddPage();

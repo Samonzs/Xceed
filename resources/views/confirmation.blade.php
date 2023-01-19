@@ -123,14 +123,14 @@
 
 
 <div class="container">
-        <div class="row">
+      <div class="row">
         
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-body">
-                        <br/>
-                        <div class="table-responsive">
-                            <table class="table">
+<div class="col-md-9">
+      <div class="card">
+        <div class="card-body">
+<br/>
+    <div class="table-responsive">
+      <table class="table">
     @foreach($client_list_data as $item)
 
       <h4 > Client Details</h4>
@@ -183,7 +183,7 @@
     <br><br>
 
     <div class="table-responsive">
-                            <table class="table">
+       <table class="table">
     <!-- <table class="table table-striped table-responsive-sm table-hover text-left"> -->
     <h4 > Client Site Details</h4>
     <tbody>
@@ -231,14 +231,14 @@
           <th scope="col">Variation Date Request</th>
           <td>{{$item['variationDateRequest']}}</td>
         </tr>
-        <tr>
+        <!-- <tr>
           <th scope="col">Created At</th>
           <td>{{$item['created_at']}}</td>
         </tr>
         <tr>
           <th scope="col">Updated At</th>
           <td>{{$item['updated_at']}}</td>
-        </tr>
+        </tr> -->
     </tbody>
     </table>  
     <br><br>
