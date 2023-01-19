@@ -49,7 +49,7 @@
           <label for="siteAddressState"><strong>Site Address State</strong></label>
           <input type="text" name="siteAddressState" id="siteAddressState" value="{{$VariationDetails->siteAddressState}}" class="form-control">
 
-          <label for="sitePostcode"><strong>Site Post Code</strong></label>
+          <label for="sitePostcode"><strong>Site Postcode</strong></label>
           <input type="text" name="sitePostcode" id="sitePostcode" value="{{$VariationDetails->sitePostcode}}" class="form-control">
 
           <label for="variationItem"><strong>Variation Item</strong></label>
