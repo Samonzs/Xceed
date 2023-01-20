@@ -141,43 +141,43 @@
                            
                            <label for="firstname">First name:</label>
                               <span style="color:red">@error('firstname'){{$message}}@enderror</span>
-                              <input type="text" id="firstname" name="firstname" value="">
+                              <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}">
 
                               <label for="lname">Last name:</label>
                               <span style="color:red">@error('lastname'){{$message}}@enderror</span>
-                              <input type="text" id="lname" name="lastname" value="">
+                              <input type="text" id="lname" name="lastname" value="{{ old('lastname') }}">
 
                               <label for="clientemail">Email:</label>
                               <span style="color:red">@error('clientemail'){{$message}}@enderror</span>
-                              <input type="text" id="clientemail" name="clientemail" value="">
+                              <input type="text" id="clientemail" name="clientemail" value="{{ old('clientemail') }}">
 
                               <label for="pNumber">Phone Number:</label>
                               <span style="color:red">@error('phonenumber'){{$message}}@enderror</span>
-                              <input type="text" id="pNumber" name="phonenumber" value="">
+                              <input type="text" id="pNumber" name="phonenumber" value="{{ old('phonenumber') }}">
 
                               <label for="date">Date:</label>
                               <span style="color:red">@error('date'){{$message}}@enderror</span>
-                              <input type="text" id="date" name="date" value="" placeholder = "dd/mm/yyyy">
+                              <input type="text" id="date" name="date" value="{{ old('date') }}" placeholder = "dd/mm/yyyy">
 
                               <label for="companyName">Company Name:</label>
                               <span style="color:red">@error('companyName'){{$message}}@enderror</span>
-                              <input type="text" id="companyName" name="companyName" value="">
+                              <input type="text" id="companyName" name="companyName" value="{{ old('companyName') }}">
 
                               <label for="abn">ABN:</label>
                               <span style="color:red">@error('abn'){{$message}}@enderror</span>
-                              <input type="text" id="abn" name="abn" value="">
+                              <input type="text" id="abn" name="abn" value="{{ old('abn') }}">
 
                               <label for="addressline">Address line:</label>
                               <span style="color:red">@error('addressline'){{$message}}@enderror</span>
-                              <input type="text" id="addressline" name="addressline" value="">
+                              <input type="text" id="addressline" name="addressline" value="{{ old('addressline') }}">
 
                               <label for="suburb">Suburb:</label>
                               <span style="color:red">@error('suburb'){{$message}}@enderror</span>
-                              <input type="text" id="suburb" name="suburb" value="">
+                              <input type="text" id="suburb" name="suburb" value="{{ old('suburb') }}">
 
                               <label for="postcode">Post Code:</label>
                               <span style="color:red">@error('postcode'){{$message}}@enderror</span>
-                              <input type="text" id="postcode" name="postcode" value="">
+                              <input type="text" id="postcode" name="postcode" value="{{ old('postcode') }}">
 
                               
                            </section>
@@ -199,27 +199,27 @@
                         <section>
                         <label for="jrNumber">Job Reference Number</label>
                               <span style="color:red">@error('jobreferencenumber'){{$message}}@enderror</span>
-                              <input type="number" id="jrNumber" name="jobreferencenumber" value="">
+                              <input type="number" id="jrNumber" name="jobreferencenumber" value="{{ old('jobreferencenumber') }}">
 
                               <label for="ordernumber">Order Number</label><br>
                               <span style="color:red">@error('ordernumber'){{$message}}@enderror</span>
-                              <input type="number" id="ordernumber" name="ordernumber" value="">
+                              <input type="number" id="ordernumber" name="ordernumber" value="{{ old('ordernumber') }}">
 
                               <label for="siteName">Site Name:</label><br>
                               <span style="color:red">@error('sitename'){{$message}}@enderror</span>
-                              <input type="text" id="siteName" name="sitename" value=""><br>
+                              <input type="text" id="siteName" name="sitename" value="{{ old('sitename') }}"><br>
 
                               <label for="siteAddress">Site Address Line:</label><br>
                               <span style="color:red">@error('siteaddressline'){{$message}}@enderror</span>
-                              <input type="text" id="siteAddress" name="siteaddressline" value="">
+                              <input type="text" id="siteAddress" name="siteaddressline" value="{{ old('siteaddressline') }}">
 
                               <label for="siteAddress">Site State:</label><br>
                               <span style="color:red">@error('siteaddressstate'){{$message}}@enderror</span>
-                              <input type="text" id="siteAddress" name="siteaddressstate" value="">
+                              <input type="text" id="siteAddress" name="siteaddressstate" value="{{ old('siteaddressstate') }}">
 
                               <label for="siteAddress">Site Postcode:</label><br>
                               <span style="color:red">@error('sitepostcode'){{$message}}@enderror</span>
-                              <input type="text" id="siteAddress" name="sitepostcode" value="">
+                              <input type="text" id="siteAddress" name="sitepostcode" value="{{ old('sitepostcode') }}">
                            </section>      
                         </div>
                      </div>
@@ -258,7 +258,9 @@
                      </div>
 
                         <div>
-                           <label for="totalCost">Total cost:</label><br>
+                           <label for="totalCost">Total cost:</label><span style="color:red">
+                           @error('totalCost'){{$message}}@enderror</span>  
+                              <br>
                            <input type="number" min="0.00" max="10000000.00" id="totalCost" name="totalCost" step="0.01" value="">
                         </div>
                               <label for="variationDateRequest">Variation Date Request:</label>
