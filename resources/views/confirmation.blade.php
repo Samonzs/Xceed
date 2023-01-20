@@ -123,11 +123,11 @@
 
 
 <div class="container">
-      <div class="row">
+      <!-- <div class="row"> -->
         
-<div class="col-md-9">
+<div class="col-md-10">
       <div class="card">
-        <div class="card-body">
+        <div class="card-body" >
 <br/>
     <div class="table-responsive">
       <table class="table">
@@ -254,12 +254,12 @@
     </table>
     @endforeach
 
-        <tr>
+        <div>
         <br><br>
-            <td><a href="{{url('show_pdf?id='.$item['id'])}}"> Show as PDF</a></td>
-<br>
-            <td><a href="{{url('client_show?id='.$item['id'])}}"><button class="btn btn-info">Send Email</button></a></td>
-        </tr>
+            <a href="{{url('show_pdf?id='.$item['id'])}}"> <button class="btn btn-info">Show as PDF</button></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{{url('client_show?id='.$item['id'])}}"><button class="btn btn-info">Send Email</button></a>
+    </div>
 
     
     <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
