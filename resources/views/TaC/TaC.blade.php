@@ -154,5 +154,5 @@ legend.scheduler-border {
     </div>
    </header>
 </body>
-
 </html>
+@endsection
