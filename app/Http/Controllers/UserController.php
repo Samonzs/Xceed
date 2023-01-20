@@ -123,7 +123,7 @@ class UserController extends Controller
 
         if(!empty($confirmation)){
             $client_list_data[] = get_object_vars($confirmation);
-            $TermsAndConditions = DB::table("TermsAndConditions")->where('id',$client_list_data[0]['id'])->get()->first();
+            $TermsAndConditions = DB::table("TermsAndConditions")->where('id',[1])->get()->first();
             if(!empty($TermsAndConditions)){
                 $TermsAndConditions = get_object_vars($TermsAndConditions);
             }else{

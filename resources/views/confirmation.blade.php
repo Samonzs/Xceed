@@ -246,13 +246,11 @@
     <tbody>
     @endforeach
 
-    @foreach($terms_and_conditions as $item)
 
     <h4 > Terms And Conditions</h4>
-    <td>{{$item['TermsAndConditions']}}</td>
+    <td>{{$terms_and_conditions['TermsAndConditions']}}</td>
     </tbody>
     </table>
-    @endforeach
 
         <div>
         <br><br>
