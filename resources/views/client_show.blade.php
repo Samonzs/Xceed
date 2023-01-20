@@ -75,6 +75,7 @@
                 <input type="hidden" name="pdf"  value="{{$pdf}}">
                 <input type="hidden" name="danhao"  value="{{$danhao}}">
                 <button type="button" onclick="window.history.back()" class="btn btn-outline-secondary">Cancel & Return</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button type="submit" class="btn btn-success">Confirm & Send</button>
               </form></div>
 
