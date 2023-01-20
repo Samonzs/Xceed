@@ -225,7 +225,7 @@
         </tr>
         <tr>
           <th scope="col">Total Cost</th>
-          <td>{{$item['totalCost']}}</td>
+          <td value="0">${{$item['totalCost']}}</td>
         </tr>
         <tr>
           <th scope="col">Variation Date Request</th>
@@ -245,11 +245,14 @@
 
     <!-- <table class="table table-striped table-responsive-sm table-hover text-left"> -->
     <tbody>
+    @endforeach
+    @foreach($terms_and_conditions as $item)
+
     <h4 > Terms And Conditions</h4>
-    <td>{{$terms_and_conditions['TermsAndConditions']}}</td>
+    <td>{{$item['TermsAndConditions']}}</td>
     </tbody>
     </table>
-      @endforeach
+    @endforeach
 
         <tr>
         <br><br>
