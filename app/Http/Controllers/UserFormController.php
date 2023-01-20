@@ -109,6 +109,7 @@ class UserFormController extends Controller
         'sitepostcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
         'variationitem' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
         'variationitemprice' => 'required|regex:/^[0-9]+$/|max:10|min:1',
+        'totalCost' => 'required|regex:/^[0-9]+$/|max:10|min:1'
 
         ]);
 

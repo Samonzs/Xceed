@@ -44,7 +44,7 @@ return new class extends Migration
             $table->integer('sitePostcode');
             $table->string('variationItem');
             $table->integer('variationItemPrice');
-            $table->string('variationDescription');
+            $table->string('variationDescription')->nullable();
             $table->integer('totalCost');
             $table->Date('variationDateRequest');
             $table->timestamps();
