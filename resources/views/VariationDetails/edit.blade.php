@@ -51,12 +51,6 @@
 
           <label for="sitePostcode"><strong>Site Postcode</strong></label>
           <input type="text" name="sitePostcode" id="sitePostcode" value="{{$VariationDetails->sitePostcode}}" class="form-control">
-
-          <label for="variationItem"><strong>Variation Item</strong></label>
-          <input type="text" name="variationItem" id="variationItem" value="{{$VariationDetails->variationItem}}" class="form-control">
-
-          <label for="variationItemPrice"><strong>Variation Item Price</strong></label>
-          <input type="text" name="variationItemPrice" id="variationItemPrice" value="{{$VariationDetails->variationItemPrice}}" class="form-control">
           
           <label for="variationDescription"><strong>Vriation Description</strong></label>
           <input type="text" name="variationDescription" id="variationDescription" value="{{$VariationDetails->variationDescription}}" class="form-control">

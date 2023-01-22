@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class lovController extends Controller
 {
     
+
     public function index()
     {
         $VariationDetails = lov::all();
