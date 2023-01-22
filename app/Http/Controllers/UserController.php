@@ -87,8 +87,6 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Site Address Line: '.$VariationDetails['siteAddressLine'].'</p>');
             $pdf->writeHTML('<p>Site Address State: '.$VariationDetails['siteAddressState'].'</p>');
             $pdf->writeHTML('<p>Site Postcode: '.$VariationDetails['sitePostcode'].'</p>');
-            $pdf->writeHTML('<p>Variation Item: '.$VariationDetails['variationItem'].'</p>');
-            $pdf->writeHTML('<p>Variation Item Price: '.$VariationDetails['variationItemPrice'].'</p>');
             $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
             $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
             $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
@@ -209,8 +207,6 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Site Address Line: '.$VariationDetails['siteAddressLine'].'</p>');
             $pdf->writeHTML('<p>Site Address State: '.$VariationDetails['siteAddressState'].'</p>');
             $pdf->writeHTML('<p>Site Postcode: '.$VariationDetails['sitePostcode'].'</p>');
-            $pdf->writeHTML('<p>Variation Item: '.$VariationDetails['variationItem'].'</p>');
-            $pdf->writeHTML('<p>Variation Item Price: '.$VariationDetails['variationItemPrice'].'</p>');
             $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
             $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
             $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
@@ -245,8 +241,12 @@ class UserController extends Controller
         $image_base64 = base64_decode($image_parts[1]);
         $file = $folderPath . uniqid() . '.'.$image_type;
         file_put_contents($file, $image_base64);
+        
+        
+        DB::table('variationDetails')->whereIn('signatureUpload', explode(',', NULL))->update($file);
 
-        return redirect()->back()->withInput()->with('signature');
+
+        return redirect()->back()->withInput();
         
     }
 

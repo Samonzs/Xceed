@@ -215,14 +215,7 @@
           <th scope="col">Site Postcode</th>
           <td>{{$item['sitePostcode']}}</td>
         </tr>
-        <tr>
-          <th scope="col">Variation Item</th>
-          <td>{{$item['variationItem']}}</td>
-        </tr>
-        <tr>
-          <th scope="col">Variation Item Price</th>
-          <td>{{$item['variationItemPrice']}}</td>
-        </tr>
+      
         <tr>
           <th scope="col">Variation Description</th>
           <td>{{$item['variationDescription']}}</td>

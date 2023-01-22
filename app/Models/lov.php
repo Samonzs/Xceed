@@ -10,6 +10,6 @@ class lov extends Model
     use HasFactory;
     protected $table = 'VariationDetails';
     protected $primaryKey = 'id';
-    protected $fillable = ['firstName','lastName','staff_email','clientEmail','phoneNumber','date','companyName','abn','addressLine','suburb','postcode','jobReferenceNumber','orderNumber','siteName','siteAddressLine','siteAddressState','sitePostcode','variationItem','variationItemPrice','variationDescription','totalCost','variationDateRequest'];
+    protected $fillable = ['firstName','lastName','staff_email','clientEmail','phoneNumber','date','companyName','abn','addressLine','suburb','postcode','jobReferenceNumber','orderNumber','siteName','siteAddressLine','siteAddressState','sitePostcode','variationDescription','totalCost','variationDateRequest', 'createdBy', 'signatureUpload'];
 
 }

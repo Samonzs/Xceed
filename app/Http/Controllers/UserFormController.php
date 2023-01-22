@@ -107,9 +107,8 @@ class UserFormController extends Controller
         'siteaddressline' => 'required|string|max:255|min:1',   
         'siteaddressstate' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'sitepostcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
-        'variationitem' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
-        'variationitemprice' => 'required|regex:/^[0-9]+$/|max:10|min:1',
-        'totalCost' => 'required|regex:/^[0-9]+$/|max:10|min:1'
+        'totalCost' => 'required|regex:/^[0-9]+$/|max:10|min:1',
+        'variationDateRequest' => 'required|regex:/^\d{4}\/\d{2}\/\d{2}$/'
 
         ]);
 
@@ -139,8 +138,6 @@ class UserFormController extends Controller
             'siteaddressline' => $request->input('siteaddressline'),
             'siteaddressstate' => $request->input('siteaddressstate'),
             'sitepostcode' => $request->input('sitepostcode'),
-            'variationitem' => $request->input('variationitem'),
-            'variationitemprice' => $request->input('variationitemprice'),
             'variationDescription' => $request->input('variationDescription'),
             'totalCost' => $request->input('totalCost'),
             'variationDateRequest' => $request->input('variationDateRequest'),

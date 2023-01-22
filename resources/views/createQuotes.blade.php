@@ -239,22 +239,10 @@
                   </div>
                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                      <div class="card-body">
-                        <!-- This is where the code goes -->
-                           <label for="variationDescription">Description of Variation:</label><br>
-                                 <textarea id="variationDescription" name="variationDescription" rows="3" cols="20"></textarea>
-                           <div class="container-sm">
-                           <div id="survey_options">
-                           <span style="color:red">@error('variationitem'){{$message}}@enderror</span>
-                           <input type="text" name="variationitem" class="survey_options" size="50" placeholder="Variation Item">
-                           
-                           <span style="color:red">@error('variationitemprice'){{$message}}@enderror</span>  
-                           <input type="text" name="variationitemprice" class="survey_options" size="50" placeholder="Variation Price">    
-                           </div>
-                  
-                        <div class="controls">
-                           <a type="button" id="add_more_fields"><i class="fa fa-plus"></i>+ Add More</a>
-                           <a type="button" id="remove_fields"><i class="fa fa-plus"></i>- Remove Field</a>
-                        </div>
+
+
+                     <label for="variationDescription">Description of Variation:</label><br>
+                     <textarea id="variationDescription" name="variationDescription" rows="10" cols="50"></textarea>                                            
                      </div>
 
                         <div>
@@ -264,14 +252,11 @@
                            <input type="number" min="0.00" max="10000000.00" id="totalCost" name="totalCost" step="0.01" value="">
                         </div>
                               <label for="variationDateRequest">Variation Date Request:</label>
-                              <span style="color:red">@error('date'){{$message}}@enderror</span>
+                              <span style="color:red">@error('variationDateRequest'){{$message}}@enderror</span>
                               <input type="text" id="variationDateRequest" name="variationDateRequest" value="" placeholder = "dd/mm/yyyy">
                         
 
                      </div>
-
-                     
-
 
                      <input type="hidden" id="createdBy" name="createdBy" value="{{Auth::user()->staff_fname}}" readonly>
                   
@@ -284,104 +269,6 @@
                   <button type="submit" name="submit" class="btn btn-primary addPost">Submit</button>
      
                <div class="card">
-
-                
-<!--
-                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                     <div class="card-body">
-                  <div class="form-box">
-                     <form class="" enctype="multipart/form-data">
-                        <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="text" id="email" name="email" value="">
-                        <label>Title:</label>
-                        <input type="text"  class="form-control" name="title"  >
-                        </div>
-                  <div class="form-group">
-                     <label>Content</label>
-                     <textarea name="content" class="form-control" rows="3" cols="13"></textarea>
-                  </div>
-                     </form>
-                  </div>
-
-                  <div class="submit-box">
-                  <button type="button" class="btn btn-primary addPost">Send</button>
-                  <button type="button" onclick="window.history.back()" class="btn btn-outline-secondary">Cancel</button>
-                  
-               </div>
-               </div>
-
-               -->
-              
-
-         <script> 
- 
-
-            var survey_options = document.getElementById('survey_options');
-            var add_more_fields = document.getElementById('add_more_fields');
-            var remove_fields = document.getElementById('remove_fields');
-            
-            add_more_fields.onclick = function(){
-
-            var item = document.createElement('input');
-            var price = document.createElement('input');
-
-            item.setAttribute('type','text');
-            item.setAttribute('name','survey_options[]');
-            item.setAttribute('class','survey_options');
-            item.setAttribute('siz',50);
-            item.setAttribute('placeholder','Item');
-
-            price.setAttribute('type','text');
-            price.setAttribute('name','survey_options[]');
-            price.setAttribute('class','survey_options');
-            price.setAttribute('siz',50);
-            price.setAttribute('placeholder','Price');
-
-            survey_options.appendChild(item);
-            survey_options.appendChild(price);
-            
-         
-            }
-
-            
-            remove_fields.onclick = function(){
-            var input_tags = survey_options.getElementsByTagName('input');
-            if(input_tags.length > 2) {
-               survey_options.removeChild(input_tags[(input_tags.length) - 1]);
-               survey_options.removeChild(input_tags[(input_tags.length) - 1]);
-            }
-            }
-
-
-            $('.addPost').click(function () {
-        $('.content').val(getPlainTxt());
-        var d = {};
-        var t = $('form').serializeArray();
-        $.each(t, function () {
-            d[this.name] = this.value;
-            if(this.value == ''){
-                //Add a red frame
-                $('input[name='+this.name+']').addClass('is-invalid');
-                //Add notice
-                var msg = $('input[name='+this.name+']').prev().text();
-                toastr.error(msg+'Cannot be Empty');
-                return false;
-            }
-        });
-        $.post('/admin/sendEmail', d, function (data) {
-            if (data.code == 1) {
-                toastr.success(data.msg);
-                setTimeout(function () {
-                    window.location.href = data.url;
-                }, 1500);
-            }else{
-                toastr.error(data.msg);
-            }
-        });
-    });
-
-         </script>
 
  
          </form >
