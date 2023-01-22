@@ -67,3 +67,6 @@ Route::any('send_email', 'App\Http\Controllers\UserController@send_email');
 Route::any('send', 'App\Http\Controllers\UserController@send');
 Route::any('show_pdf', 'App\Http\Controllers\UserController@show_pdf');
 
+
+
+Route::post('signature', 'App\Http\Controllers\UserController@signature')->name('signature.store');
