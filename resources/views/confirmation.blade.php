@@ -248,6 +248,9 @@
     <h4 > Terms And Conditions</h4>
     <td>{{$terms_and_conditions['TermsAndConditions']}}</td>
     </tbody>
+    <br><br>
+    <input type="checkbox" id="TaCcheckbox" name="TaCcheckbox" value=""><br>
+    <label for="TaCcheckbox"> By ticking, you are confirming that you have read and understood and agreed to terms and conditions</label>
     </table>
 
     <div class="container">
@@ -267,7 +270,6 @@
                             <input id="signature" name="signed" style="display: none" value="{{ old('signed') }}"></input>
                         </div>
                     </form>
-
                </div>
            </div>
        </div>
