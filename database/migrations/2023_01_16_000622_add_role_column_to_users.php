@@ -16,6 +16,10 @@ class AddRoleColumnToUsers extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->enum('role', ['user','admin'])->default('user');
         });
+
+        Schema::table('variationDetails', function (Blueprint $table) {
+            $table->enum('approveStatus', ['0','1'])->default('0');
+        });
     }
 
     /**
@@ -27,6 +31,10 @@ class AddRoleColumnToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('role');
+        });
+
+        Schema::table('variationDetails', function (Blueprint $table) {
+            $table->dropColumn('approveStatus');
         });
     }
 }

@@ -47,7 +47,6 @@ return new class extends Migration
             $table->Date('variationDateRequest');
             $table->timestamps();
             $table->string('createdBy');
-            $table->integer('approveStatus');
             $table->string('signatureUpload')->nullable();
 
         });
