@@ -1,8 +1,3 @@
-@if(Auth::user()->hasRole('user')) 
-<span style="color:black">Error: Unauthorised Access</span>
-
-@elseif(Auth::user()->hasRole('admin')) 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,4 +12,3 @@
   
 </body>
 </html>
-@endif
