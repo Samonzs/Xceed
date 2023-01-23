@@ -242,18 +242,18 @@
 
 
                      <label for="variationDescription">Description of Variation:</label><br>
-                     <textarea id="variationDescription" name="variationDescription" rows="10" cols="50"></textarea>                                            
+                     <textarea id="variationDescription" name="variationDescription" rows="10" cols="50" value="{{ old('variationDescription') }}"></textarea>                                            
                      </div>
 
                         <div>
                            <label for="totalCost">Total cost:</label><span style="color:red">
                            @error('totalCost'){{$message}}@enderror</span>  
                               <br>
-                           <input type="number" min="0.00" max="10000000.00" id="totalCost" name="totalCost" step="0.01" value="">
+                           <input type="number" min="0.00" max="10000000.00" id="totalCost" name="totalCost" step="0.01" value="{{ old('totalCost') }}">
                         </div>
                               <label for="variationDateRequest">Variation Date Request:</label>
                               <span style="color:red">@error('variationDateRequest'){{$message}}@enderror</span>
-                              <input type="text" id="variationDateRequest" name="variationDateRequest" value="" placeholder = "dd/mm/yyyy">
+                              <input type="text" id="variationDateRequest" name="variationDateRequest" value="{{ old('variationDateRequest') }}" placeholder = "dd/mm/yyyy">
                         
 
                      </div>
