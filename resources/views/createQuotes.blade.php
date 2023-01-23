@@ -242,7 +242,7 @@
 
 
                      <label for="variationDescription">Description of Variation:</label><br>
-                     <textarea id="variationDescription" name="variationDescription" rows="10" cols="50" value="{{ old('variationDescription') }}"></textarea>                                            
+                     <textarea id="variationDescription" name="variationDescription" rows="10" cols="50" >{{ old('variationDescription') }}</textarea>                                            
                      </div>
 
                         <div>
