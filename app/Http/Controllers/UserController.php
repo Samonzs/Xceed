@@ -242,9 +242,6 @@ class UserController extends Controller
         $file = $folderPath . uniqid() . '.'.$image_type;
         file_put_contents($file, $image_base64);
         
-        
-        DB::table('variationDetails')->whereIn('signatureUpload', explode(',', NULL))->update($file);
-
 
         return redirect()->back()->withInput();
         
