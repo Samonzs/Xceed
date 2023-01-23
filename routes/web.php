@@ -69,3 +69,6 @@ Route::any('show_pdf', 'App\Http\Controllers\UserController@show_pdf');
 
 Route::post('approveAction', 'App\Http\Controllers\lovController@approveUpdate');
 
+
+
+Route::post('signature', 'App\Http\Controllers\UserController@signature')->name('signature.store');

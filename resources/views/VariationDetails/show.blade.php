@@ -19,8 +19,6 @@
             <p class="card-text"><strong>Site Address Line</strong>: {{ $VariationDetails->siteAddressLine }}</p>
             <p class="card-text"><strong>Site Address State</strong>: {{ $VariationDetails->siteAddressState }}</p>
             <p class="card-text"><strong>Site Postcode</strong>: {{ $VariationDetails->sitePostcode }}</p>
-            <p class="card-text"><strong>Variation Item</strong>: {{ $VariationDetails->variationItem }}</p>
-            <p class="card-text"><strong>Variation Item Price</strong>: {{ $VariationDetails->variationItemPrice }}</p>
             <p class="card-text"><strong>Vriation Description</strong>: {{ $VariationDetails->variationDescription }}</p>
             <p class="card-text"><strong>Total Cost</strong>: {{ $VariationDetails->totalCost }}</p>
             <p class="card-text"><strong>Variation Date Request</strong>: {{ $VariationDetails->variationDateRequest }}</p>

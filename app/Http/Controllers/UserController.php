@@ -87,8 +87,6 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Site Address Line: '.$VariationDetails['siteAddressLine'].'</p>');
             $pdf->writeHTML('<p>Site Address State: '.$VariationDetails['siteAddressState'].'</p>');
             $pdf->writeHTML('<p>Site Postcode: '.$VariationDetails['sitePostcode'].'</p>');
-            $pdf->writeHTML('<p>Variation Item: '.$VariationDetails['variationItem'].'</p>');
-            $pdf->writeHTML('<p>Variation Item Price: '.$VariationDetails['variationItemPrice'].'</p>');
             $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
             $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
             $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
@@ -123,7 +121,7 @@ class UserController extends Controller
 
         if(!empty($confirmation)){
             $client_list_data[] = get_object_vars($confirmation);
-            $TermsAndConditions = DB::table("TermsAndConditions")->where('id',$client_list_data[0]['id'])->get()->first();
+            $TermsAndConditions = DB::table("TermsAndConditions")->where('id',[1])->get()->first();
             if(!empty($TermsAndConditions)){
                 $TermsAndConditions = get_object_vars($TermsAndConditions);
             }else{
@@ -209,8 +207,6 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Site Address Line: '.$VariationDetails['siteAddressLine'].'</p>');
             $pdf->writeHTML('<p>Site Address State: '.$VariationDetails['siteAddressState'].'</p>');
             $pdf->writeHTML('<p>Site Postcode: '.$VariationDetails['sitePostcode'].'</p>');
-            $pdf->writeHTML('<p>Variation Item: '.$VariationDetails['variationItem'].'</p>');
-            $pdf->writeHTML('<p>Variation Item Price: '.$VariationDetails['variationItemPrice'].'</p>');
             $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
             $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
             $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
@@ -233,6 +229,27 @@ class UserController extends Controller
         return view("client_show",['client_email_find'=>$VariationDetails,"pdf"=>$_SERVER['DOCUMENT_ROOT']."pdf/".$danhao.'.pdf','danhao'=>$danhao]);
     }
     //send email
+
+    public function signature(Request $request){
+        
+        //store signature inside folder/db
+
+        $folderPath = "upload/";
+        $image_parts = explode(";base64,", $_POST['signed']); 
+        $image_type_aux = explode("image/", $image_parts[0]);
+        $image_type = $image_type_aux[1];
+        $image_base64 = base64_decode($image_parts[1]);
+        $file = $folderPath . uniqid() . '.'.$image_type;
+        file_put_contents($file, $image_base64);
+        
+        
+        DB::table('variationDetails')->whereIn('signatureUpload', explode(',', NULL))->update($file);
+
+
+        return redirect()->back()->withInput();
+        
+    }
+
     public function send_email(Request $request){
 
         $pdf = $request->input("pdf");
@@ -250,6 +267,7 @@ class UserController extends Controller
             unlink($pdf);
             return redirect('confirmation')->withInput()->with("msg","fail in send");
         }
+
 
     }
 }
