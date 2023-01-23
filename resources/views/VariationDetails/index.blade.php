@@ -67,13 +67,15 @@
          <td>${{ $item->totalCost }}</td>               
          <td>
          <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
-         <script>
-            function disableEdit() {
-            document.getElementById("edit_btn").disabled = true;
-            }
-         </script>
-         <a href="#" title="Approve"><button onclick="disableEdit()" id="approve_btn" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Approve</button> <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
+         <!-- <input type="submit" id="approveStatus" name="approveStatus" placeholder="approve"> -->
+
+         <button type="submit" id="approveStatus" name="approveStatus" class="btn btn-success btn-sm" >Approve</button>
+         @if($item->approveStatus=="0")
+         <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+         @elseif($item->approveStatus=="1")
+         <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" disabled class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+         @endif
 
             @if(Auth::user()->hasRole('admin')) 
             <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
@@ -91,14 +93,19 @@
          <td>${{ $item->totalCost }}</td>               
          <td>
          <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
-         <script>
-            function disableEdit() {
-            document.getElementById("edit_btn").disabled = true;
-            }
-         </script>
-         <a href="#" title="Approve"><button onclick="disableEdit()" id="approve_btn" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Approve</button> <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
 
+         <form action="{{ url('/lov/' . $item->id . '/') }}" method="POST">
+            {{ csrf_field() }}
+            {{ method_field('PATCH') }}
+            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" >Approve</button>
+         </form>
+
+         @if($item->approveStatus=="0")
+         <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+         @elseif($item->approveStatus=="1")
+         <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" disabled class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+         @endif
             @if(Auth::user()->hasRole('admin')) 
             <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
             @endif
