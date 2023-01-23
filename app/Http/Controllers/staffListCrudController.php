@@ -49,7 +49,7 @@ class staffListCrudController extends Controller
                 'regex:/[0-9]/',      // must contain at least one digit
                 'regex:/[@$!%*#?&]/', // must contain a special character  
             ],
-            'password.regex' => 'The password must contain a capital letter, number, and symbol ']);
+           ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
         
 
 

@@ -1,11 +1,17 @@
 @extends('TaC.layout')
 @section('content')
+
+@if(Auth::user()->hasRole('user')) 
+<span style="color:black">Error: Unauthorised Access</span>
+
+@elseif(Auth::user()->hasRole('admin')) 
+
 <!DOCTYPE html>
 <html>
    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>XCEED Create Quote</title>
+      <title>Terms and Conditions</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -119,10 +125,11 @@ legend.scheduler-border {
                     </div>
                 </nav>
 </header> 
+
+
    <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
                         <br/>
@@ -148,11 +155,12 @@ legend.scheduler-border {
                                 @endforeach
                             </table>
                         </div>
-                </div>
             </div>
         </div>
     </div>
    </header>
 </body>
+
+
 </html>
-@endsection
+@endif
