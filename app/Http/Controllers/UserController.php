@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendMail;
+use App\Models\lov;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Mail\Message;
@@ -230,7 +231,7 @@ class UserController extends Controller
     }
     //send email
 
-    public function signature(Request $request){
+    public function signature(Request $request ){
         
         //store signature inside folder/db
 
@@ -239,8 +240,15 @@ class UserController extends Controller
         $image_type_aux = explode("image/", $image_parts[0]);
         $image_type = $image_type_aux[1];
         $image_base64 = base64_decode($image_parts[1]);
-        $file = $folderPath . uniqid() . '.'.$image_type;
-        file_put_contents($file, $image_base64);
+        $sigFile = uniqid() . '.'.$image_type;
+
+        $sigFilePath = $folderPath . $sigFile;
+        file_put_contents($sigFilePath, $image_base64);
+        
+        $id = lov::get('id')->pluck('id')->last();
+        $file= lov::find($id);
+        $file->signatureUpload=json_encode($sigFile);
+        $file->save();
         
 
         return redirect()->back()->withInput();

@@ -95,8 +95,6 @@
                             <button name= "submit" type="submit" class="button mt-3" >Login</button>      
                             </div>
                         </div>
-                        <br>
-                        <a href="#"> Forgot Password?</a>
                     </form>
                 </div>
             </div>
