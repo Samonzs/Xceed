@@ -66,9 +66,9 @@
           <input type="text" name="sitePostcode" id="sitePostcode" value="{{$VariationDetails->sitePostcode}}" class="form-control">
           
           <label for="variationDescription"><strong>Vriation Description</strong></label>
-          <input type="text" name="variationDescription" id="variationDescription" value="{{$VariationDetails->variationDescription}}" class="form-control">
+          <!-- <input type="text" name="variationDescription" id="variationDescription" value="{{$VariationDetails->variationDescription}}" class="form-control"> -->
           <!-- change to text area, giving error where it doesn't display updated info. It does however store the value into database... -->
-          <!-- <textarea type="text" name="variationDescription" id="variationDescription" value="{{$VariationDetails->variationDescription}}" class="form-control"></textarea> -->
+          <textarea type="text" name="variationDescription" id="variationDescription" rows="10" value="{{$VariationDetails->variationDescription}}" class="form-control"></textarea>
 
           <label for="totalCost"> <strong>Total Cost</strong></label> <strong></strong>
           <span style="color:red">@error('totalCost'){{$message}}@enderror</span>
