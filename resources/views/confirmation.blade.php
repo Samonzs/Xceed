@@ -264,6 +264,7 @@
                             <label class="" for=""><strong>Draw Signature:</strong></label>
                             <br/>
                             <div id="sig"></div>
+                            <input name="id" type="hidden" value="{{$item['id'] }}"></input>
                             <br><br>
                             <button id="clear" class="btn btn-danger">Clear Signature</button>
                             <button class="btn btn-success">Save</button>

@@ -28,7 +28,7 @@ class UserController extends Controller
         }else{
             $VariationDetails=[];
         }
-        $TermsAndConditions = DB::table("TermsAndConditions")->where("id","=",$id)->get()->first();
+        $TermsAndConditions = DB::table("TermsAndConditions")->where("id",1)->get()->first();
         if(!empty($TermsAndConditions)){
             $TermsAndConditions = get_object_vars($TermsAndConditions);
         }else{
@@ -59,8 +59,8 @@ class UserController extends Controller
         //Font senting
         $pdf->SetFont('stsongstdlight', '', 14);
 
-       // $logo_path='https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png';
-       // $logo_path='public/images/logo.jpg';
+        $logo_path=public_path('images').'/details.jpg';
+
 
         if(!empty($VariationDetails)){
             $pdf->AddPage();
@@ -90,13 +90,25 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
             $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
             $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
-            //$pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
+
+            $pdf->Image($logo_path, 130, 3, 80, 40, '', '', '', true, 72, '', false, false, 0, false, false, false);
+
+
+
+            // $pdf->writeHTML('<img src='.public_path('/').$VariationDetails['signatureUpload'].'>');
+            // $pdf->writeHTML('<p>Created At: '.public_path('/').$VariationDetails['signatureUpload'].'</p>');
             //$pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
+            // $pdf->Image("'".public_path('/').$VariationDetails['signatureUpload']."'");
         }
         if(!empty($TermsAndConditions)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Terms And Conditions</h1></div>');
             $pdf->writeHTML('<p>Terms And Conditions: '.$TermsAndConditions['TermsAndConditions'].'</p>');
+            $VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
+            $img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
+            $pdf->Image($img_path, 150, 100, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
+
+
             // $pdf->writeHTML('<p>created_at: '.$TermsAndConditions['created_at'].'</p>');
             // $pdf->writeHTML('<p>updated_at: '.$TermsAndConditions['updated_at'].'</p>');
         }
@@ -121,7 +133,7 @@ class UserController extends Controller
 
         if(!empty($confirmation)){
             $client_list_data[] = get_object_vars($confirmation);
-            $TermsAndConditions = DB::table("TermsAndConditions")->where('id',[1])->get()->first();
+            $TermsAndConditions = DB::table("TermsAndConditions")->where('id',1)->get()->first();
             if(!empty($TermsAndConditions)){
                 $TermsAndConditions = get_object_vars($TermsAndConditions);
             }else{
@@ -153,14 +165,14 @@ class UserController extends Controller
         }else{
             $VariationDetails=[];
         }
-        $TermsAndConditions = DB::table("TermsAndConditions")->where("id","=",$id)->get()->first();
+        $TermsAndConditions = DB::table("TermsAndConditions")->where("id",1)->get()->first();
         if(!empty($TermsAndConditions)){
             $TermsAndConditions = get_object_vars($TermsAndConditions);
         }else{
             $TermsAndConditions=[];
         }
         //generate pdf
-        $pdf = new \TCPDF();
+        $pdf = new \TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
         // contents of padf file
         $pdf->SetCreator('XCEED');
         $pdf->SetAuthor('XCEED');
@@ -182,6 +194,9 @@ class UserController extends Controller
         $pdf->setFontSubsetting(true);
         
         $pdf->SetFont('stsongstdlight', '', 14);
+
+        $logo_path=public_path('images').'/details.jpg';
+
         if(!empty($VariationDetails)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Client Details</h1></div>');
@@ -210,13 +225,20 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
             $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
             $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
-            //$pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
+            $pdf->writeHTML('<img src='.$VariationDetails['signatureUpload'].'>');
             //$pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
+
+            $pdf->Image($logo_path, 130, 3, 80, 40, '', '', '', true, 72, '', false, false, 0, false, false, false);
+
         }
         if(!empty($TermsAndConditions)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Terms And Conditions</h1></div>');
             $pdf->writeHTML('<p>Terms And Conditions: '.$TermsAndConditions['TermsAndConditions'].'</p>');
+            $VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
+            $img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
+            $pdf->Image($img_path, 150, 100, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
+
            // $pdf->writeHTML('<p>Created At: '.$TermsAndConditions['created_at'].'</p>');
            // $pdf->writeHTML('<p>Updated At: '.$TermsAndConditions['updated_at'].'</p>');
         }
@@ -233,6 +255,8 @@ class UserController extends Controller
     public function signature(Request $request){
         
         //store signature inside folder/db
+        $id = $_POST['id'];
+
 
         $folderPath = "upload/";
         $image_parts = explode(";base64,", $_POST['signed']); 
@@ -240,8 +264,9 @@ class UserController extends Controller
         $image_type = $image_type_aux[1];
         $image_base64 = base64_decode($image_parts[1]);
         $file = $folderPath . uniqid() . '.'.$image_type;
+
         file_put_contents($file, $image_base64);
-        
+        Db::table("variationdetails")->where("id",$id)->update(["signatureUpload"=>$file]);
 
         return redirect()->back()->withInput();
         
