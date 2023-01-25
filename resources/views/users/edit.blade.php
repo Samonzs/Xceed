@@ -73,7 +73,7 @@
           <label for="pass"><strong>Password</strong>:</label>
           <span style="color:red">@error('password'){{$message}}@enderror</span>
           <input type="password" name="password" id="password" value="{{$users->password}}" class="form-control" ><br>
-          <input type="submit" value="Update" class="btn btn-success"> <a href="<?php echo url('/staffListCrud')?>"><button class="btn btn-secondary btn-sm ">Back</button></a>
+          <a href="<?php echo url('/staffListCrud')?>"><button class="btn btn-secondary">Back</button></a> <input type="submit" value="Update" class="btn btn-success"> 
     </form>
 
 </div>
