@@ -71,11 +71,11 @@ class lovController extends Controller
         return redirect('lov')->with('flash_message', 'Variation Deleted!');
     }
 
-    public function approveUpdate(Request $request, $VariationDetails)
-{
-    $lov=lov::find($approveStatus); 
-    $VariationDetails->approveStatus = $request->approveStatus;
+    public function store($id)
+    {
+    $lov=lov::find($id);
+    $lov-> approveStatus="1"; 
     $lov->save();
-    return redirect()->back()->with('message', 'Variation Approved');
-}
+    return redirect()->back();
+    }
 }
