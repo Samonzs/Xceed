@@ -56,7 +56,7 @@
       </tr>             
    </thead>                         
    <tbody>
- @foreach($VariationDetails as $item)
+@foreach($VariationDetails as $item)
 
    @if($item->createdBy == Auth::user()->staff_fname)                                  
       <tr>                                 
@@ -68,14 +68,19 @@
          <td>
          <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
 
-         <form action="approveUpdate" method="POST">
+         <form action="{{ url('/lov/' . $item->id . '/store') }} " style="display:inline" method="POST">
             {{ csrf_field() }}
             {{ method_field('POST') }}
+            @if($item->approveStatus=="0")
             <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" >Approve</button>
+            @elseif($item->approveStatus=="1")
+            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" disabled >Approve</button>
+            @endif
          </form>
 
          @if($item->approveStatus=="0")
          <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+         
          @elseif($item->approveStatus=="1")
          <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" disabled class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
          @endif
@@ -99,13 +104,16 @@
          <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
 
 
-         <form action="approveUpdate" method="POST">
+         <form action="{{ url('/lov/' . $item->id . '/store') }} " style="display:inline" method="POST">
             {{ csrf_field() }}
             {{ method_field('POST') }}
+            @if($item->approveStatus=="0")
             <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" >Approve</button>
+            @elseif($item->approveStatus=="1")
+            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" disabled >Approve</button>
+            @endif
          </form>
 
-         
 
          @if($item->approveStatus=="0")
          <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
