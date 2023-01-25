@@ -103,14 +103,16 @@
          <td>
          <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
 
+         
+
 
          <form action="{{ url('/lov/' . $item->id . '/store') }} " style="display:inline" method="POST">
             {{ csrf_field() }}
             {{ method_field('POST') }}
             @if($item->approveStatus=="0")
-            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" >Approve</button>
+            <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" >Approve</button>
             @elseif($item->approveStatus=="1")
-            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" disabled >Approve</button>
+            <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" disabled >Approve</button>
             @endif
          </form>
 

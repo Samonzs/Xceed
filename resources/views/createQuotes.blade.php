@@ -139,43 +139,43 @@
                            <section>
 
                            
-                           <label for="firstname">First name:</label>
+                           <label for="firstname">First name:</label> <br>
                               <span style="color:red">@error('firstname'){{$message}}@enderror</span>
                               <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}">
 
-                              <label for="lname">Last name:</label>
+                              <label for="lname">Last name:</label><br>
                               <span style="color:red">@error('lastname'){{$message}}@enderror</span>
                               <input type="text" id="lname" name="lastname" value="{{ old('lastname') }}">
 
-                              <label for="clientemail">Email:</label>
+                              <label for="clientemail">Email:</label><br>
                               <span style="color:red">@error('clientemail'){{$message}}@enderror</span>
                               <input type="text" id="clientemail" name="clientemail" value="{{ old('clientemail') }}">
 
-                              <label for="pNumber">Phone Number:</label>
+                              <label for="pNumber">Phone Number:</label><br>
                               <span style="color:red">@error('phonenumber'){{$message}}@enderror</span>
                               <input type="text" id="pNumber" name="phonenumber" value="{{ old('phonenumber') }}">
 
-                              <label for="date">Date:</label>
+                              <label for="date">Date:</label><br>
                               <span style="color:red">@error('date'){{$message}}@enderror</span>
                               <input type="text" id="date" name="date" value="{{ old('date') }}" placeholder = "dd/mm/yyyy">
 
-                              <label for="companyName">Company Name:</label>
+                              <label for="companyName">Company Name:</label><br>
                               <span style="color:red">@error('companyName'){{$message}}@enderror</span>
                               <input type="text" id="companyName" name="companyName" value="{{ old('companyName') }}">
 
-                              <label for="abn">ABN:</label>
+                              <label for="abn">ABN:</label><br>
                               <span style="color:red">@error('abn'){{$message}}@enderror</span>
                               <input type="text" id="abn" name="abn" value="{{ old('abn') }}">
 
-                              <label for="addressline">Address line:</label>
+                              <label for="addressline">Address line:</label><br>
                               <span style="color:red">@error('addressline'){{$message}}@enderror</span>
                               <input type="text" id="addressline" name="addressline" value="{{ old('addressline') }}">
 
-                              <label for="suburb">Suburb:</label>
+                              <label for="suburb">Suburb:</label><br>
                               <span style="color:red">@error('suburb'){{$message}}@enderror</span>
                               <input type="text" id="suburb" name="suburb" value="{{ old('suburb') }}">
 
-                              <label for="postcode">Post Code:</label>
+                              <label for="postcode">Post Code:</label><br>
                               <span style="color:red">@error('postcode'){{$message}}@enderror</span>
                               <input type="text" id="postcode" name="postcode" value="{{ old('postcode') }}">
 
@@ -197,7 +197,7 @@
                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
                         <section>
-                        <label for="jrNumber">Job Reference Number</label>
+                        <label for="jrNumber">Job Reference Number</label><br>
                               <span style="color:red">@error('jobreferencenumber'){{$message}}@enderror</span>
                               <input type="number" id="jrNumber" name="jobreferencenumber" value="{{ old('jobreferencenumber') }}">
 
@@ -242,16 +242,16 @@
 
 
                      <label for="variationDescription">Description of Variation:</label><br>
-                     <textarea id="variationDescription" name="variationDescription" rows="10" cols="50" >{{ old('variationDescription') }}</textarea>                                            
+                     <textarea id="variationDescription" name="variationDescription" rows="10" class="form-control" >{{ old('variationDescription') }}</textarea>                                            
                      </div>
 
                         <div>
-                           <label for="totalCost">Total cost:</label><span style="color:red">
-                           @error('totalCost'){{$message}}@enderror</span>  
-                              <br>
+                           <label for="totalCost">Total cost:</label><br>
+                           <span style="color:red">@error('totalCost'){{$message}}@enderror</span>  
+                           <br>
                            <input type="number" min="0.00" max="10000000.00" id="totalCost" name="totalCost" step="0.01" value="{{ old('totalCost') }}">
                         </div>
-                              <label for="variationDateRequest">Variation Date Request:</label>
+                              <label for="variationDateRequest">Variation Date Request:</label><br>
                               <span style="color:red">@error('variationDateRequest'){{$message}}@enderror</span>
                               <input type="text" id="variationDateRequest" name="variationDateRequest" value="{{ old('variationDateRequest') }}" placeholder = "dd/mm/yyyy">
                         

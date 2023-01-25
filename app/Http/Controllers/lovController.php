@@ -33,8 +33,8 @@ class lovController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'firstName' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
-            'lastName' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
+            'firstname' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
+            'lastname' => 'required|regex:/^([^0-9]+)$/|max:25|min:1',
             'clientemail' => [
                 'required',
                 'string',
@@ -56,9 +56,8 @@ class lovController extends Controller
             'siteaddressstate' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
             'sitepostcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
             'totalCost' => 'required|regex:/^[0-9]+$/|max:10|min:1',
-            'variationDateRequest' => 'required|regex:/^\d{4}\/\d{2}\/\d{2}$/',
-             ]);
-    
+            'variationDateRequest' => 'required|regex:/^\d{4}\/\d{2}\/\d{2}$/' ]);
+
         $lov=lov::find($id);
         $input=$request->all();
         $lov->update($input);
