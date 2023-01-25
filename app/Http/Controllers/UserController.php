@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendMail;
+use App\Models\lov;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Mail\Message;
@@ -252,7 +253,7 @@ class UserController extends Controller
     }
     //send email
 
-    public function signature(Request $request){
+    public function signature(Request $request ){
         
         //store signature inside folder/db
         $id = $_POST['id'];

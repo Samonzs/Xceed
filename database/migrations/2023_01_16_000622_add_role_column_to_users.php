@@ -20,6 +20,10 @@ class AddRoleColumnToUsers extends Migration
         Schema::table('variationDetails', function (Blueprint $table) {
             $table->enum('approveStatus', ['0','1'])->default('0');
         });
+
+        Schema::table('variationDetails', function (Blueprint $table) {
+            $table->string('signatureUpload')->default('');
+        });
     }
 
     /**
@@ -35,6 +39,10 @@ class AddRoleColumnToUsers extends Migration
 
         Schema::table('variationDetails', function (Blueprint $table) {
             $table->dropColumn('approveStatus');
+        });
+
+        Schema::table('variationDetails', function (Blueprint $table) {
+            $table->dropColumn('signatureUpload');
         });
     }
 }

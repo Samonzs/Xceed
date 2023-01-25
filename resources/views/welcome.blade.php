@@ -73,7 +73,7 @@
                     <div class= "form-row">
                             <div class="col-lg-5">
                                 <label>Email</label>
-                                <input class="form-control" name="staff_email" placeholder="Email Address">
+                                <input class="form-control" name="staff_email" placeholder="Email Address" value= "{{ old('staff_email') }}">
                                 <span style="color:red">@error('staff_email'){{$message}}@enderror</span>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                         <div class= "form-row">
                             <div class="col-lg-5">
                                 <label>Password</label>
-                                <input class="form-control" name ="password" type="password"  placeholder="Password">
+                                <input class="form-control" name ="password" type="password"  placeholder="Password" value="{{ old('password') }}">
                                 <span style="color:red">@error('password'){{$message}}@enderror</span>
                             </div>
                         </div>
@@ -95,8 +95,6 @@
                             <button name= "submit" type="submit" class="button mt-3" >Login</button>      
                             </div>
                         </div>
-                        <br>
-                        <a href="#"> Forgot Password?</a>
                     </form>
                 </div>
             </div>

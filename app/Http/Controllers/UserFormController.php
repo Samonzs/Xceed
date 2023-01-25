@@ -35,21 +35,7 @@ class UserFormController extends Controller
 
         ], ['password.regex' => 'The password must contain a capital letter, number, and symbol ']);
 
-        // $admin = array(
-        //     'email'  => $request->get('email'),
-        //     'password' => $request->get('password')
-        //    );
-
-        // if (Auth::guard('admin')->attempt($admin))
-        // {
-        //     return redirect('user/successlogin');
-        // }
-
-        // else
-        // {
-        //     return back()->with('error', 'Incorrect email or password');
-        // }
-
+        
 
         if (Auth::guard('web')->attempt(['staff_email' => $request->staff_email, 'password' => 
         $request->password], $request->remember))       

@@ -84,7 +84,7 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                      <li class="nav-item active">
+                      <li class="nav-item">
                         <a class="nav-link" href="<?php echo url('lov')?>">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
@@ -249,8 +249,7 @@
     <td>{{$terms_and_conditions['TermsAndConditions']}}</td>
     </tbody>
     <br><br>
-    <input type="checkbox" id="TaCcheckbox" name="TaCcheckbox" value="I confirm">
-    <label for="TaCcheckbox"> By ticking, you are confirming that you have read and understood and agreed to terms and conditions</label>
+    <label for="TaCcheckbox"> By Signing, you are confirming that you have confirmed your details as well as read and understood the terms and conditions</label>
     </table>
 
     <div class="container">
