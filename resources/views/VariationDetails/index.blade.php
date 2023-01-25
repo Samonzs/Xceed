@@ -41,7 +41,7 @@
                     </div>
                 </nav>
 </header>  
-                            
+                            
 <table class="table table-striped table-responsive-sm table-hover text-center">
                                    
    <thead>                                
@@ -68,22 +68,26 @@
          <td>
          <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
 
-         <!-- <input type="submit" id="approveStatus" name="approveStatus" placeholder="approve"> -->
+         <form action="approveUpdate" method="POST">
+            {{ csrf_field() }}
+            {{ method_field('POST') }}
+            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" >Approve</button>
+         </form>
 
-         <button type="submit" id="approveStatus" name="approveStatus" class="btn btn-success btn-sm" >Approve</button>
          @if($item->approveStatus=="0")
          <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
          @elseif($item->approveStatus=="1")
          <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" disabled class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
          @endif
 
-            @if(Auth::user()->hasRole('admin')) 
-            <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
-            @endif
+         @if(Auth::user()->hasRole('admin')) 
+         <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
+         @endif
+         
          </td>                               
       </tr>
    
-      @elseif(Auth::user()->role == "admin")
+   @elseif(Auth::user()->role == "admin")
 
       <tr>                                 
          <td>{{ $loop->iteration }}</td>                                
@@ -95,20 +99,24 @@
          <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
 
 
-         <form action="{{ url('/lov/' . $item->id . '/') }}" method="POST">
+         <form action="approveUpdate" method="POST">
             {{ csrf_field() }}
-            {{ method_field('PATCH') }}
+            {{ method_field('POST') }}
             <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" >Approve</button>
          </form>
 
+         
+
          @if($item->approveStatus=="0")
          <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+         
          @elseif($item->approveStatus=="1")
          <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" disabled class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
          @endif
-            @if(Auth::user()->hasRole('admin')) 
-            <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
-            @endif
+
+         @if(Auth::user()->hasRole('admin')) 
+         <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
+         @endif
          </td>                               
       </tr>
 
