@@ -83,7 +83,7 @@ class UserFormController extends Controller
         'companyName' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'phonenumber' => 'required|regex:/^[0-9]+$/|max:10|min:10',
         'date' => 'required|regex:/^\d{4}\/\d{2}\/\d{2}$/',
-        'abn' => 'required|regex:/^[0-9]+$/|max:11|min:1',
+        'abn' => 'required|regex:/^[0-9]+$/|max:11|min:11',
         'addressline' => 'required|string|max:255|min:1',
         'suburb' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'postcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
