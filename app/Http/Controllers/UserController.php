@@ -105,9 +105,10 @@ class UserController extends Controller
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Terms And Conditions</h1></div>');
             $pdf->writeHTML('<p>Terms And Conditions: '.$TermsAndConditions['TermsAndConditions'].'</p>');
+            $pdf->writeHTML('<div style="text-align: center"><h4>Signature</h4></div>');
             $VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
             $img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
-            $pdf->Image($img_path, 150, 100, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
+            $pdf->Image($img_path, 80, 120, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
 
 
             // $pdf->writeHTML('<p>created_at: '.$TermsAndConditions['created_at'].'</p>');
@@ -236,9 +237,10 @@ class UserController extends Controller
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Terms And Conditions</h1></div>');
             $pdf->writeHTML('<p>Terms And Conditions: '.$TermsAndConditions['TermsAndConditions'].'</p>');
+            $pdf->writeHTML('<div style="text-align: center"><h4>Signature</h4></div>');
             $VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
             $img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
-            $pdf->Image($img_path, 150, 100, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
+            $pdf->Image($img_path, 80, 120, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
 
            // $pdf->writeHTML('<p>Created At: '.$TermsAndConditions['created_at'].'</p>');
            // $pdf->writeHTML('<p>Updated At: '.$TermsAndConditions['updated_at'].'</p>');
