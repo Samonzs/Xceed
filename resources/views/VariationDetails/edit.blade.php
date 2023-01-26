@@ -120,7 +120,7 @@
             <!-- change to text area, giving error where it doesn't display updated info. It does however store the value into database...  -- now fixed!!! -- -->
             <textarea type="text" name="variationDescription" id="variationDescription" rows="10" class="form-control">{{$VariationDetails->variationDescription}}</textarea>
 
-            <label for="totalCost"> <strong>Total Cost</strong></label>
+            <label for="totalCost"> <strong>Total Cost ($)</strong></label>
             <span style="color:red">@error('totalCost'){{$message}}@enderror</span>
             <input type="text" name="totalCost" id="totalCost" value="{{$VariationDetails->totalCost}}" class="form-control">
 
