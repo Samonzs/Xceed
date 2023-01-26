@@ -32,8 +32,8 @@ class staffListCrudController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'staff_fname' => 'required|regex:/^([^0-9]*)$/|min:3',
-            'staff_lname' => 'required|regex:/^([^0-9]*)$/|min:3',
+            'staff_fname' => 'required|regex:/^([^0-9]*)$/|min:1',
+            'staff_lname' => 'required|regex:/^([^0-9]*)$/|min:1',
             'staff_email' => [
                 'required',
                 'string',

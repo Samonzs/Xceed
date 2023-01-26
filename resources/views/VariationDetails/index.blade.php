@@ -51,6 +51,7 @@
          <th>Job Number</th>
          <th>Variation Date</th>                                                            
          <th>Total Price</th>
+         <th>Created By</th>
          <!-- <th>Status</th>-->
          <th>Actions</th>                      
       </tr>             
@@ -64,7 +65,8 @@
          <td>{{ $item->firstName }} {{ $item->lastName }}</td>
          <td>{{ $item->jobReferenceNumber }}</td>      
          <td>{{ $item->variationDateRequest }}</td>  
-         <td>${{ $item->totalCost }}</td>               
+         <td>${{ $item->totalCost }}</td>   
+         <td>{{ $item->createdBy }}</td>            
          <td>
          <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
 

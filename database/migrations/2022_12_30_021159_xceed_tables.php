@@ -32,7 +32,7 @@ return new class extends Migration
             $table->integer('phoneNumber');
             $table->date('date');
             $table->string('companyName');
-            $table->integer('abn');
+            $table->string('abn');
             $table->string('addressLine');
             $table->string('suburb');
             $table->integer('postcode');

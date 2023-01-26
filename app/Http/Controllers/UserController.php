@@ -283,14 +283,14 @@ class UserController extends Controller
         //get id
         $client_email = $request->input("client_email");
         $content = $request->input("content");
-        $subject = "Send Email";
+        $subject = "Variation Information";
         $seed =  Mail::to($client_email)->send(new SendMail($client_email,$subject,$content,$pdf,$danhao));
         if($seed){
             unlink($pdf);
-            return redirect('confirmation')->withInput()->with("msg","Sending succeeded");
+            return redirect('lov')->withInput()->with("msg","Sending succeeded");
         }else{
             unlink($pdf);
-            return redirect('confirmation')->withInput()->with("msg","fail in send");
+            return redirect('lov')->withInput()->with("msg","fail in send");
         }
 
 
