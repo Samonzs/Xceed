@@ -157,7 +157,7 @@
 
                               <label for="date">Date:</label><br>
                               <span style="color:red">@error('date'){{$message}}@enderror</span>
-                              <input type="text" id="date" name="date" value="{{ old('date') }}" placeholder = "dd/mm/yyyy">
+                              <input type="text" id="date" name="date" value="{{ old('date') }}" placeholder = "yyyy/mm/dd">
 
                               <label for="companyName">Company Name:</label><br>
                               <span style="color:red">@error('companyName'){{$message}}@enderror</span>
@@ -253,7 +253,7 @@
                         </div>
                               <label for="variationDateRequest">Variation Date Request:</label><br>
                               <span style="color:red">@error('variationDateRequest'){{$message}}@enderror</span>
-                              <input type="text" id="variationDateRequest" name="variationDateRequest" value="{{ old('variationDateRequest') }}" placeholder = "dd/mm/yyyy">
+                              <input type="text" id="variationDateRequest" name="variationDateRequest" value="{{ old('variationDateRequest') }}" placeholder = "yyyy/mm/dd">
                         
 
                      </div>

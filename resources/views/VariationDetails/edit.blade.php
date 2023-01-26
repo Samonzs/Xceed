@@ -84,6 +84,15 @@
             <span style="color:red">@error('companyName'){{$message}}@enderror</span>
             <input type="text" name="companyName" id="companyName" value="{{$VariationDetails->companyName}}" class="form-control">
 
+
+            <label for="phoneNumber"><strong>Phone Number</strong></label>
+            <span style="color:red">@error('phoneNumber'){{$message}}@enderror</span>
+            <input type="text" name="phoneNumber" id="phoneNumber" value="{{$VariationDetails->phoneNumber}}" class="form-control">
+
+            <label for="date"><strong>Date</strong></label>
+            <span style="color:red">@error('date'){{$message}}@enderror</span>
+            <input type="text" name="date" id="date" value="{{$VariationDetails->date}}" class="form-control">
+
             <label for="abn"><strong>ABN</strong></label>
             <span style="color:red">@error('abn'){{$message}}@enderror</span>
             <input type="text" name="abn" id="abn" value="{{$VariationDetails->abn}}" class="form-control">
@@ -115,26 +124,24 @@
             <label for="siteAddressLine"><strong>Site Address Line</strong></label>
             <span style="color:red">@error('siteAddressLine'){{$message}}@enderror</span>
             <input type="text" name="siteAddressLine" id="siteAddressLine" value="{{$VariationDetails->siteAddressLine}}" class="form-control">
-
-            <label for="siteAddressState"><strong>Site Address State</strong></label>
-            <span style="color:red">@error('siteAddressState'){{$message}}@enderror</span>
-            <input type="text" name="siteAddressState" id="siteAddressState" value="{{$VariationDetails->siteAddressState}}" class="form-control">
+          
+          <label for="siteAddressState"><strong>Site Address State</strong></label>
+          <span style="color:red">@error('siteAddressState'){{$message}}@enderror</span>
+          <input type="text" name="siteAddressState" id="siteAddressState" value="{{$VariationDetails->siteAddressState}}" class="form-control">
 
             <label for="sitePostcode"><strong>Site Postcode</strong></label>
             <span style="color:red">@error('sitePostcode'){{$message}}@enderror</span>
             <input type="text" name="sitePostcode" id="sitePostcode" value="{{$VariationDetails->sitePostcode}}" class="form-control">
             
-            <label for="variationDescription"><strong>Vriation Description</strong></label>
-            <!-- <input type="text" name="variationDescription" id="variationDescription" value="{{$VariationDetails->variationDescription}}" class="form-control"> -->
-            <!-- change to text area, giving error where it doesn't display updated info. It does however store the value into database...  -- now fixed!!! -- -->
+            <label for="variationDescription"><strong>Variation Description</strong></label>
             <textarea type="text" name="variationDescription" id="variationDescription" rows="10" class="form-control">{{$VariationDetails->variationDescription}}</textarea>
 
-            <label for="totalCost"> <strong>Total Cost ($)</strong></label>
+           <label for="totalCost"> <strong>Total Cost ($)</strong></label>
             <span style="color:red">@error('totalCost'){{$message}}@enderror</span>
             <input type="text" name="totalCost" id="totalCost" value="{{$VariationDetails->totalCost}}" class="form-control">
 
             <label for="variationDateRequest"><strong>Variation Date Request</strong></label>
-            <!-- <span style="color:red">@error('variationDateRequest'){{$message}}@enderror</span> -->
+            <span style="color:red">@error('variationDateRequest'){{$message}}@enderror</span>
             <input type="text" name="variationDateRequest" id="variationDateRequest" value="{{$VariationDetails->variationDateRequest}}" class="form-control"> <br>
 
             <a href="<?php echo url('/lov')?>"><button class="btn btn-secondary">Back</button></a> <input type="submit" value="Update" class="btn btn-success">
