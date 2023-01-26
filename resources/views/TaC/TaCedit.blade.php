@@ -73,9 +73,8 @@
         
         <label><strong>Terms and Conditions</strong></label></br><br><span style="color:red">@error('TermsAndConditions'){{$message}}@enderror</span>
         <textarea style="white-space: pre-wrap;" rows="10" cols="50" type="text" id ="TaC" name="TermsAndConditions" class="form-control">{{$TaC->TermsAndConditions}}</textarea></br>
-        <input type="submit" value="Update" class="btn btn-success"></br>
+        <a href="{{ url('TaC')}}"><button class="btn btn-secondary"><i class="fa fa-pencil-square-o"></i> Back</button></a> <input type="submit" value="Update" class="btn btn-success"></br>
       </form>
-        <br><a href="{{ url('TaC')}}"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i> Back</button></a>
 
   
   </div>
