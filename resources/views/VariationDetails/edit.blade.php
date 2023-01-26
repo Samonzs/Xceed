@@ -58,89 +58,81 @@
             {!! csrf_field() !!}
             @method("PATCH")
             <input type="hidden" name="id" id="id" value="{{$VariationDetails->id}}" id="id"/>
-            <label for="firstName"><strong>First Name</strong></label>
+            <label for="firstName"><strong>First Name</strong></label><br>
             <span style="color:red">@error('firstName'){{$message}}@enderror</span>
             <input type="text" name="firstName" id="firstName" value="{{$VariationDetails->firstName}}" class="form-control">
             
 
-            <label for="lastName"><strong>Last Name</strong></label>
+            <label for="lastName"><strong>Last Name</strong></label><br>
             <span style="color:red">@error('lastName'){{$message}}@enderror</span>
             <input type="text" name="lastName" id="lastName" value="{{$VariationDetails->lastName}}" class="form-control">
 
-            <label for="clientEmail"><strong>Client Email</strong></label>
+            <label for="clientEmail"><strong>Client Email</strong></label><br>
             <span style="color:red">@error('clientEmail'){{$message}}@enderror</span>
             <input type="text" name="clientEmail" id="clientEmail" value="{{$VariationDetails->clientEmail}}" class="form-control">
             
-            <label for="phoneNumber"><strong>Phone Number</strong></label>
+            <label for="phoneNumber"><strong>Phone Number</strong></label><br>
             <span style="color:red">@error('phoneNumber'){{$message}}@enderror</span>
-            <input type="text" name="phoneNumber" id="phoneNumber" value="{{$VariationDetails->phoneNumber}}" class="form-control">
+            <input type="text" name="phoneNumber" id="phoneNumber" value="0{{$VariationDetails->phoneNumber}}" class="form-control">
             
-            <label for="date"><strong>Date</strong></label>
+            <label for="date"><strong>Date</strong></label><br>
             <span style="color:red">@error('date'){{$message}}@enderror</span>
             <input type="text" name="date" id="date" value="{{$VariationDetails->date}}" class="form-control">
             
 
-            <label for="companyName"><strong>Company Name</strong></label>
+            <label for="companyName"><strong>Company Name</strong></label><br>
             <span style="color:red">@error('companyName'){{$message}}@enderror</span>
             <input type="text" name="companyName" id="companyName" value="{{$VariationDetails->companyName}}" class="form-control">
 
 
-            <label for="phoneNumber"><strong>Phone Number</strong></label>
-            <span style="color:red">@error('phoneNumber'){{$message}}@enderror</span>
-            <input type="text" name="phoneNumber" id="phoneNumber" value="{{$VariationDetails->phoneNumber}}" class="form-control">
-
-            <label for="date"><strong>Date</strong></label>
-            <span style="color:red">@error('date'){{$message}}@enderror</span>
-            <input type="text" name="date" id="date" value="{{$VariationDetails->date}}" class="form-control">
-
-            <label for="abn"><strong>ABN</strong></label>
+            <label for="abn"><strong>ABN</strong></label><br>
             <span style="color:red">@error('abn'){{$message}}@enderror</span>
             <input type="text" name="abn" id="abn" value="{{$VariationDetails->abn}}" class="form-control">
 
-            <label for="addressLine"><strong>Address Line</strong></label>
+            <label for="addressLine"><strong>Address Line</strong></label><br>
             <span style="color:red">@error('addressLine'){{$message}}@enderror</span>
             <input type="text" name="addressLine" id="addressLine" value="{{$VariationDetails->addressLine}}" class="form-control">
 
-            <label for="suburb"><strong>Suburb</strong></label>
+            <label for="suburb"><strong>Suburb</strong></label><br>
             <span style="color:red">@error('suburb'){{$message}}@enderror</span>
             <input type="text" name="suburb" id="suburb" value="{{$VariationDetails->suburb}}" class="form-control">
 
-            <label for="postcode"><strong>Postcode</strong></label>
+            <label for="postcode"><strong>Postcode</strong></label><br>
             <span style="color:red">@error('postcode'){{$message}}@enderror</span>
             <input type="text" name="postcode" id="postcode" value="{{$VariationDetails->postcode}}" class="form-control">
 
-            <label for="jobReferenceNumber"><strong>Job Reference Number</strong></label>
+            <label for="jobReferenceNumber"><strong>Job Reference Number</strong></label><br>
             <span style="color:red">@error('jobReferenceNumber'){{$message}}@enderror</span>
             <input type="text" name="jobReferenceNumber" id="jobReferenceNumber" value="{{$VariationDetails->jobReferenceNumber}}" class="form-control">
 
-            <label for="orderNumber"><strong>Order Number</strong></label>
+            <label for="orderNumber"><strong>Order Number</strong></label><br>
             <span style="color:red">@error('orderNumber'){{$message}}@enderror</span>
             <input type="text" name="orderNumber" id="orderNumber" value="{{$VariationDetails->orderNumber}}" class="form-control">
 
-            <label for="siteName"><strong>Site Name</strong></label>
+            <label for="siteName"><strong>Site Name</strong></label><br>
             <span style="color:red">@error('siteName'){{$message}}@enderror</span>
             <input type="text" name="siteName" id="siteName" value="{{$VariationDetails->siteName}}" class="form-control">
 
-            <label for="siteAddressLine"><strong>Site Address Line</strong></label>
+            <label for="siteAddressLine"><strong>Site Address Line</strong></label><br>
             <span style="color:red">@error('siteAddressLine'){{$message}}@enderror</span>
             <input type="text" name="siteAddressLine" id="siteAddressLine" value="{{$VariationDetails->siteAddressLine}}" class="form-control">
           
-          <label for="siteAddressState"><strong>Site Address State</strong></label>
+          <label for="siteAddressState"><strong>Site Address State</strong></label><br>
           <span style="color:red">@error('siteAddressState'){{$message}}@enderror</span>
           <input type="text" name="siteAddressState" id="siteAddressState" value="{{$VariationDetails->siteAddressState}}" class="form-control">
 
-            <label for="sitePostcode"><strong>Site Postcode</strong></label>
+            <label for="sitePostcode"><strong>Site Postcode</strong></label><br>
             <span style="color:red">@error('sitePostcode'){{$message}}@enderror</span>
             <input type="text" name="sitePostcode" id="sitePostcode" value="{{$VariationDetails->sitePostcode}}" class="form-control">
             
-            <label for="variationDescription"><strong>Variation Description</strong></label>
+            <label for="variationDescription"><strong>Variation Description</strong></label><br>
             <textarea type="text" name="variationDescription" id="variationDescription" rows="10" class="form-control">{{$VariationDetails->variationDescription}}</textarea>
 
-           <label for="totalCost"> <strong>Total Cost ($)</strong></label>
+           <label for="totalCost"> <strong>Total Cost ($)</strong></label><br>
             <span style="color:red">@error('totalCost'){{$message}}@enderror</span>
             <input type="text" name="totalCost" id="totalCost" value="{{$VariationDetails->totalCost}}" class="form-control">
 
-            <label for="variationDateRequest"><strong>Variation Date Request</strong></label>
+            <label for="variationDateRequest"><strong>Variation Date Request</strong></label><br>
             <span style="color:red">@error('variationDateRequest'){{$message}}@enderror</span>
             <input type="text" name="variationDateRequest" id="variationDateRequest" value="{{$VariationDetails->variationDateRequest}}" class="form-control"> <br>
 

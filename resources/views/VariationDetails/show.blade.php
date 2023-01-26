@@ -55,7 +55,9 @@
         <div class="card-body">
             <p class="card-title"> <strong>First Name</strong> : {{ $VariationDetails->firstName }}</p><p class="card-title"><strong>Last Name</strong>: {{ $VariationDetails->lastName }}</p>
             <p class="card-text"><strong>Client Email</strong>: {{ $VariationDetails->clientEmail }}</p>
+            <p class="card-text"><strong>Phone Number</strong>: 0{{ $VariationDetails->phoneNumber }}</p>
             <p class="card-text"><strong>Company Name</strong>: {{ $VariationDetails->companyName }}</p>
+            <p class="card-text"><strong>Date</strong>: {{ $VariationDetails->date }}</p>
             <p class="card-text"><strong>ABN</strong>: {{ $VariationDetails->abn }}</p>
             <p class="card-text"><strong>Address Line</strong>: {{ $VariationDetails->addressLine }}</p>
             <p class="card-text"><strong>Suburb</strong>: {{ $VariationDetails->suburb }}</p>
