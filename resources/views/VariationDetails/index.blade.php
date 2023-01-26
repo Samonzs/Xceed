@@ -74,7 +74,7 @@
             {{ csrf_field() }}
             {{ method_field('POST') }}
             @if($item->approveStatus=="0")
-            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" >Approve</button>
+            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Approve Variation?&quot;)">Approve</button>
             @elseif($item->approveStatus=="1")
             <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" disabled >Approve</button>
             @endif
@@ -88,7 +88,7 @@
          @endif
 
          @if(Auth::user()->hasRole('admin')) 
-         <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
+         <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Do you want to delete the variation?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
          @endif
          
          </td>                               
@@ -112,7 +112,7 @@
             {{ csrf_field() }}
             {{ method_field('POST') }}
             @if($item->approveStatus=="0")
-            <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" >Approve</button>
+            <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Approve Variation?&quot;)">Approve</button>
             @elseif($item->approveStatus=="1")
             <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" disabled >Approve</button>
             @endif
@@ -127,7 +127,7 @@
          @endif
 
          @if(Auth::user()->hasRole('admin')) 
-         <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
+         <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Do you want to delete the variation?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
          @endif
          </td>                               
       </tr>
