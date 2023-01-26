@@ -66,7 +66,9 @@
             <p class="card-text"><strong>Site Address Line</strong>: {{ $VariationDetails->siteAddressLine }}</p>
             <p class="card-text"><strong>Site Address State</strong>: {{ $VariationDetails->siteAddressState }}</p>
             <p class="card-text"><strong>Site Postcode</strong>: {{ $VariationDetails->sitePostcode }}</p>
-            <p class="card-text"><strong>Vriation Description</strong>: {{ $VariationDetails->variationDescription }}</p>
+            <label for="variationDescription"><strong>Vriation Description:</strong></label>
+            <textarea readonly name="variationDescription" id="variationDescription" class="form-control" rows="10">{{ $VariationDetails->variationDescription }}</textarea>
+            <!-- <p class="card-text"><strong>Vriation Description</strong>: {{ $VariationDetails->variationDescription }}</p> -->
             <p class="card-text"><strong>Total Cost</strong>: {{ $VariationDetails->totalCost }}</p>
             <p class="card-text"><strong>Variation Date Request</strong>: {{ $VariationDetails->variationDateRequest }}</p>
             <a href="<?php echo url('/lov')?>"><button class="btn btn-secondary btn-info btn-sm">Back</button></a>
