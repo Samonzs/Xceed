@@ -69,7 +69,7 @@ class UserController extends Controller
             $pdf->writeHTML('<p>First Name: '.$VariationDetails['firstName'].'</p>');
             $pdf->writeHTML('<p>Last Name: '.$VariationDetails['lastName'].'</p>');
             $pdf->writeHTML('<p>Client Email: '.$VariationDetails['clientEmail'].'</p>');
-            $pdf->writeHTML('<p>Phone Number: '.$VariationDetails['phoneNumber'].'</p>');
+            $pdf->writeHTML('<p>Phone Number: 0'.$VariationDetails['phoneNumber'].'</p>');
             $pdf->writeHTML('<p>Date: '.$VariationDetails['date'].'</p>');
             $pdf->writeHTML('<p>Company Name: '.$VariationDetails['companyName'].'</p>');
             $pdf->writeHTML('<p>ABN: '.$VariationDetails['abn'].'</p>');
@@ -207,7 +207,7 @@ class UserController extends Controller
             $pdf->writeHTML('<p>First Name: '.$VariationDetails['firstName'].'</p>');
             $pdf->writeHTML('<p>Last Name: '.$VariationDetails['lastName'].'</p>');
             $pdf->writeHTML('<p>Client Email: '.$VariationDetails['clientEmail'].'</p>');
-            $pdf->writeHTML('<p>Phone Number: '.$VariationDetails['phoneNumber'].'</p>');
+            $pdf->writeHTML('<p>Phone Number: 0'.$VariationDetails['phoneNumber'].'</p>');
             $pdf->writeHTML('<p>Date: '.$VariationDetails['date'].'</p>');
             $pdf->writeHTML('<p>Company Name: '.$VariationDetails['companyName'].'</p>');
             $pdf->writeHTML('<p>ABN: '.$VariationDetails['abn'].'</p>');
