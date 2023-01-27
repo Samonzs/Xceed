@@ -42,7 +42,7 @@ class staffListCrudController extends Controller
                 'regex:/^\w+[-\.\w]*@(?!(?:outlook|myemail|yahoo)\.com$)\w+[-\.\w]*?\.\w{2,4}$/'
             ],
             'password' => [
-                'required',
+                'nullable',
                 'string',
                 'min:8',              // must be at least 10 characters in length
                 'regex:/[A-Z]/',      // must contain at least one uppercase letter
@@ -55,7 +55,14 @@ class staffListCrudController extends Controller
 
         $stafListCrud=staffListCrud::find($id);
         $input=$request->all();
-        $input['password'] = Hash::make($request['password']);
+
+        if(!is_null($input['password'])){
+            $input['password'] = Hash::make($request['password']);
+        }
+        else
+        {
+            unset($input['password']);
+        }
         $stafListCrud->update($input);
         return redirect('staffListCrud')->with('flash_message', 'staff updated');
     }
