@@ -66,7 +66,7 @@
   <center>
         <h4>Terms and Conditions : </h4>
         <div class="card-body">
-        <h5 class="card-title">{{ $TaC->TermsAndConditions }}</h5>
+        <h5 class="card-title">{!! nl2br($TaC->TermsAndConditions) !!}</h5>
         <br><a href="{{ url('TaC')}}"><button class="btn btn-info"><i class="fa fa-pencil-square-o"></i> Back</button></a>
 
   </center> 
