@@ -110,7 +110,7 @@ class UserController extends Controller
             if(!empty($VariationDetails['signatureUpload'])){
                     $VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
 		            $img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
-		            $pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 200, '', false, false, 0, false, false, false);	
+		            $pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 300, '', false, false, 0, false, false, false);	
             }
 
             // $pdf->writeHTML('<p>created_at: '.$TermsAndConditions['created_at'].'</p>');
@@ -243,7 +243,7 @@ class UserController extends Controller
             if(!empty($VariationDetails['signatureUpload'])){
              	$VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
             	$img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
-            	$pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 200, '', false, false, 0, false, false, false);
+            	$pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 300, '', false, false, 0, false, false, false);
             }
 
 
