@@ -92,8 +92,7 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
             $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
 
-            $pdf->Image($logo_path, 130, 3, 80, 40, '', '', '', true, 72, '', false, false, 0, false, false, false);
-
+            $pdf->Image($logo_path, 130, 3, 80, 40, '', '', '', true, 200, '', false, false, 0, false, false, false);
 
 
             // $pdf->writeHTML('<img src='.public_path('/').$VariationDetails['signatureUpload'].'>');
@@ -111,7 +110,7 @@ class UserController extends Controller
             if(!empty($VariationDetails['signatureUpload'])){
                     $VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
 		            $img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
-		            $pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);	
+		            $pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 200, '', false, false, 0, false, false, false);	
             }
 
             // $pdf->writeHTML('<p>created_at: '.$TermsAndConditions['created_at'].'</p>');
@@ -233,8 +232,7 @@ class UserController extends Controller
             $pdf->writeHTML('<img src='.$VariationDetails['signatureUpload'].'>');
             //$pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
 
-            $pdf->Image($logo_path, 130, 3, 80, 40, '', '', '', true, 72, '', false, false, 0, false, false, false);
-
+            $pdf->Image($logo_path, 130, 3, 80, 40, '', '', '', true, 200, '', false, false, 0, false, false, false);
         }
         if(!empty($TermsAndConditions)){
             $pdf->AddPage();
@@ -245,7 +243,7 @@ class UserController extends Controller
             if(!empty($VariationDetails['signatureUpload'])){
              	$VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
             	$img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
-            	$pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
+            	$pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 200, '', false, false, 0, false, false, false);
             }
 
 
