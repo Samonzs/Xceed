@@ -74,7 +74,7 @@
             {{ csrf_field() }}
             {{ method_field('POST') }}
             @if($item->approveStatus=="0")
-            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Approve Variation?&quot;)">Approve</button>
+            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?&quot;)">Approve</button>
             @elseif($item->approveStatus=="1")
             <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" disabled >Approve</button>
             @endif
@@ -112,7 +112,7 @@
             {{ csrf_field() }}
             {{ method_field('POST') }}
             @if($item->approveStatus=="0")
-            <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Approve Variation?&quot;)">Approve</button>
+            <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?&quot;)">Approve</button>
             @elseif($item->approveStatus=="1")
             <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" disabled >Approve</button>
             @endif
