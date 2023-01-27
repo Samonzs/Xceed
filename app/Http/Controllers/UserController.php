@@ -45,10 +45,10 @@ class UserController extends Controller
         $pdf->SetSubject('XCEED');
         $pdf->SetKeywords('XCEED');
 
-        $pdf->setHeaderFont(['stsongstdlight', '', '10']);
+        $pdf->setHeaderFont(['helvetica', '', '10']);
         $pdf->setFooterFont(['helvetica', '', '8']);
         
-        $pdf->SetDefaultMonospacedFont('courier');
+        $pdf->SetDefaultMonospacedFont('helvetica');
         
         $pdf->SetMargins(15, 15, 15);
         $pdf->SetHeaderMargin(5);
@@ -58,7 +58,7 @@ class UserController extends Controller
         // set default font subsetting mode
         $pdf->setFontSubsetting(true);
         //Font senting
-        $pdf->SetFont('stsongstdlight', '', 14);
+        $pdf->SetFont('helvetica', '', 14);
 
         $logo_path=public_path('images').'/details.jpg';
 
@@ -105,11 +105,13 @@ class UserController extends Controller
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Terms And Conditions</h1></div>');
             $pdf->writeHTML('<p>Terms And Conditions: '.$TermsAndConditions['TermsAndConditions'].'</p>');
+            
+            $pdf->writeHTML('<div><h4>Date: '.$VariationDetails['date'].'</h4></div>');
             $pdf->writeHTML('<div style="text-align: center"><h4>Signature</h4></div>');
             if(!empty($VariationDetails['signatureUpload'])){
                     $VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
 		            $img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
-		            $pdf->Image($img_path, 80, 120, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);	
+		            $pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);	
             }
 
             // $pdf->writeHTML('<p>created_at: '.$TermsAndConditions['created_at'].'</p>');
@@ -183,10 +185,10 @@ class UserController extends Controller
         $pdf->SetSubject('XCEED');
         $pdf->SetKeywords('XCEED');
         // font of header and footer
-        $pdf->setHeaderFont(['stsongstdlight', '', '10']);
+        $pdf->setHeaderFont(['helvetica', '', '10']);
         $pdf->setFooterFont(['helvetica', '', '8']);
         
-        $pdf->SetDefaultMonospacedFont('courier');
+        $pdf->SetDefaultMonospacedFont('helvetica');
         // margins
         $pdf->SetMargins(15, 15, 15);
         $pdf->SetHeaderMargin(5);
@@ -196,7 +198,7 @@ class UserController extends Controller
         // set default font subsetting mode
         $pdf->setFontSubsetting(true);
         
-        $pdf->SetFont('stsongstdlight', '', 14);
+        $pdf->SetFont('helvetica', '', 14);
 
         $logo_path=public_path('images').'/details.jpg';
 
@@ -238,11 +240,12 @@ class UserController extends Controller
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Terms And Conditions</h1></div>');
             $pdf->writeHTML('<p>Terms And Conditions: '.$TermsAndConditions['TermsAndConditions'].'</p>');
+            $pdf->writeHTML('<div><h4>Date: '.$VariationDetails['date'].'</h4></div>');
             $pdf->writeHTML('<div style="text-align: center"><h4>Signature</h4></div>');
             if(!empty($VariationDetails['signatureUpload'])){
              	$VariationDetails['signatureUpload'] = explode("/", $VariationDetails['signatureUpload']);
             	$img_path = public_path('upload')."/".$VariationDetails['signatureUpload'][1]; 
-            	$pdf->Image($img_path, 80, 120, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
+            	$pdf->Image($img_path, 80, 150, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
             }
 
 
