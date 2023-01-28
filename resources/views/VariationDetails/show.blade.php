@@ -71,7 +71,7 @@
             <label for="variationDescription"><strong>Vriation Description:</strong></label>
             <textarea readonly name="variationDescription" id="variationDescription" class="form-control" rows="10">{{ $VariationDetails->variationDescription }}</textarea><br>
             <!-- <p class="card-text"><strong>Vriation Description</strong>: {{ $VariationDetails->variationDescription }}</p> -->
-            <p class="card-text"><strong>Total Cost</strong>: ${{ $VariationDetails->totalCost }}</p>
+            <p class="card-text"><strong>Total Cost</strong>: <b>$</b>{{ $VariationDetails->totalCost }}</p>
             <p class="card-text"><strong>Variation Date Request</strong>: {{ $VariationDetails->variationDateRequest }}</p>
             <a href="<?php echo url('/lov')?>"><button class="btn btn-secondary btn-info btn-sm">Back</button></a>
         </div>
