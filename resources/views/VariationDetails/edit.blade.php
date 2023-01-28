@@ -82,15 +82,6 @@
             <span style="color:red">@error('companyName'){{$message}}@enderror</span>
             <input type="text" name="companyName" id="companyName" value="{{$VariationDetails->companyName}}" class="form-control">
 
-
-            <label for="phoneNumber"><strong>Phone Number</strong></label>
-            <span style="color:red">@error('phoneNumber'){{$message}}@enderror</span>
-            <input type="text" name="phoneNumber" id="phoneNumber" value="{{$VariationDetails->phoneNumber}}" class="form-control">
-
-            <label for="date"><strong>Date</strong></label>
-            <span style="color:red">@error('date'){{$message}}@enderror</span>
-            <input type="text" name="date" id="date" value="{{$VariationDetails->date}}" class="form-control">
-
             <label for="abn"><strong>ABN</strong></label>
             <span style="color:red">@error('abn'){{$message}}@enderror</span>
             <input type="text" name="abn" id="abn" value="{{$VariationDetails->abn}}" class="form-control">
