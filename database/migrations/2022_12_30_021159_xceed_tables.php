@@ -42,7 +42,7 @@ return new class extends Migration
             $table->string('siteAddressLine');
             $table->string('siteAddressState');
             $table->integer('sitePostcode');
-            $table->string('variationDescription')->nullable();
+            $table->longText('variationDescription')->nullable();
             $table->integer('totalCost');
             $table->Date('variationDateRequest');
             $table->timestamps();

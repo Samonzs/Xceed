@@ -73,7 +73,7 @@ class UserController extends Controller
             $pdf->writeHTML('<p>Date: '.$VariationDetails['date'].'</p>');
             $pdf->writeHTML('<p>Company Name: '.$VariationDetails['companyName'].'</p>');
             $pdf->writeHTML('<p>ABN: '.$VariationDetails['abn'].'</p>');
-            $pdf->writeHTML('<p>Address Line: '.$VariationDetails['addressLine'].'</p>');
+            $pdf->writeHTML('<p>Addre2ss Line: '.$VariationDetails['addressLine'].'</p>');
             $pdf->writeHTML('<p>Suburb: '.$VariationDetails['suburb'].'</p>');
             $pdf->writeHTML('<p>Postcode: '.$VariationDetails['postcode'].'</p>');
             //$pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
