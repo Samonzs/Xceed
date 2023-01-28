@@ -63,21 +63,21 @@
 @section('content')
 
 
-
+<div class="row">
 <div class="card">
   <div class="card-body">
       
       <form action="{{ url('TaC/' .$TaC->id) }}" method="post">
       {!! csrf_field() !!}
         @method("PATCH")
-        
         <label><strong>Terms and Conditions</strong></label></br><br><span style="color:red">@error('TermsAndConditions'){{$message}}@enderror</span>
         <textarea style="white-space: pre-wrap;" rows="10" cols="50" type="text" id ="TaC" name="TermsAndConditions" class="form-control">{{$TaC->TermsAndConditions}}</textarea></br>
-        <a href="{{ url('TaC')}}"><button class="btn btn-secondary"><i class="fa fa-pencil-square-o"></i> Back</button></a> <input type="submit" value="Update" class="btn btn-success"></br>
+        <a href="{{ url('TaC')}}"><button type="button" class="btn btn-secondary"><i class="fa fa-pencil-square-o"></i> Back</button></a> <input type="submit"  class="btn btn-success"></br>
       </form>
 
   
   </div>
+</div>
 </div>
 
 @endsection
