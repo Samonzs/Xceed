@@ -62,7 +62,6 @@
             <span style="color:red">@error('firstName'){{$message}}@enderror</span>
             <input type="text" name="firstName" id="firstName" value="{{$VariationDetails->firstName}}" class="form-control">
             
-
             <label for="lastName"><strong>Last Name</strong></label><br>
             <span style="color:red">@error('lastName'){{$message}}@enderror</span>
             <input type="text" name="lastName" id="lastName" value="{{$VariationDetails->lastName}}" class="form-control">
@@ -78,7 +77,6 @@
             <label for="date"><strong>Date</strong></label><br>
             <span style="color:red">@error('date'){{$message}}@enderror</span>
             <input type="text" name="date" id="date" value="{{$VariationDetails->date}}" class="form-control">
-            
 
             <label for="companyName"><strong>Company Name</strong></label><br>
             <span style="color:red">@error('companyName'){{$message}}@enderror</span>
