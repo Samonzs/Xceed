@@ -262,19 +262,17 @@
                         <div class="col-md-12">
                             <label class="" for=""><strong>Draw Signature:</strong></label>
                             <br/>
-                            <div id="sig"></div>
+                            <div id="sig" onmousedown="setSaveDisabled(false)"></div>
                             <input name="id" type="hidden" value="{{$item['id'] }}"></input>
                             <br><br>
                             <button id="clear" class="btn btn-danger">Clear Signature</button>
               
-                            <button id= "Save" name="save" class="btn btn-success" onclick="">Save</button>
-
-                            <script>
-                              
-                            </script>
+                            <button disabled id="Save" name="save" class="btn btn-success">Save</button>
 
                             <input id="signature" name="signed" style="display: none" value="{{ old('signed') }}"></input>
-                        </div>
+              
+                        
+                          </div>
                     </form>
                </div>
            </div>
@@ -293,7 +291,13 @@
         e.preventDefault();
         sig.signature('clear');
         $("#signature").val('');
+        setSaveDisabled(true);
     });
+    
+    function setSaveDisabled(disabled) {
+        document.getElementById("Save").disabled = disabled;
+    }
+
 </script>
 
 
@@ -304,7 +308,6 @@
             <a href="{{url('client_show?id='.$item['id'])}}"><button class="btn btn-info">Send Email</button></a>
     </div>
     
-    <!-- this nav bar will contain the green accent, a sign in page as well as a staff support link (we'll see if this is good or not) -->
 <center>
 
     <script>
