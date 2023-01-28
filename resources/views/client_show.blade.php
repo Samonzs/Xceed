@@ -57,8 +57,6 @@
                 </nav>
 </header>  
     <h2 style="text-align: center">Confirmation Email</h2>
-
-
     <div class="row">
         <div class="col-md-10" style="margin: 0 auto">
             <form action="{{url('send_email')}}" method="get" enctype="multipart/form-data">
