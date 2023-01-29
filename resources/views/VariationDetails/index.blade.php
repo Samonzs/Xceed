@@ -136,8 +136,10 @@
 <script>
 	
 	$("#approveVariationModal").on('shown.bs.modal', function (e) {
-		const base = "{{ url('') }}";
-		const type = e.relatedTarget.dataset['type'];
+	   const base = "{{ url('') }}";
+      
+      // grab data-type and data-item from button
+      const type = e.relatedTarget.dataset['type'];
 		const item = e.relatedTarget.dataset['item'];
 		
 		let action, method, text, label;
