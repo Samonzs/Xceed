@@ -271,7 +271,6 @@
 
                             <input id="signature" name="signed" style="display: none" value="{{ old('signed') }}"></input>
               
-                        
                           </div>
                     </form>
                </div>
