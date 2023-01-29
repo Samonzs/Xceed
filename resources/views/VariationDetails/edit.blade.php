@@ -1,11 +1,6 @@
 @extends('VariationDetails.layout')
 @section('content')
 
-@if(Auth::user()->hasRole('user')) 
-<span style="color:black">Error: Unauthorised Access</span>
-
-@elseif(Auth::user()->hasRole('admin'))
-
 <header>
             <nav class="navbar navbar-light bg-light navbar-expand-lg">
               <a class="navbar-brand" href="<?php echo url('lov')?>"><img src="https://xceedelectrical.com.au/wp-content/uploads/2020/05/Xceed-Electrical-Logo.png" class="img-fluid" width="85" height="25" alt="XCEED ELectrical Logo"></a>
@@ -139,7 +134,5 @@
   </div>
 </div>
 
-  
 
 @stop
-@endif

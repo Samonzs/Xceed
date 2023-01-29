@@ -74,11 +74,42 @@
             {{ csrf_field() }}
             {{ method_field('POST') }}
             @if($item->approveStatus=="0")
-            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?&quot;)">Approve</button>
+            <!-- <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?&quot;)">Approve</button> -->
+            
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveVariationModal">
+            Approve
+            </button>
+
             @elseif($item->approveStatus=="1")
-            <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" disabled >Approve</button>
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveVariationModal" disabled>
+            Approve
+            </button>
             @endif
+
+            <!-- Modal -->
+            <div class="modal fade" id="approveVariationModal" tabindex="-1" role="dialog" aria-labelledby="approveVariationModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Approve Variation</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                  <div class="modal-body">
+                     Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="onsubmit" id="approveStatus"class="btn btn-primary">Confirm</button> <!--submits the form-->
+                  </div>
+               </div>
+            </div>
+            </div>
          </form>
+
+          
 
          @if($item->approveStatus=="0")
          <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
@@ -112,10 +143,35 @@
             {{ csrf_field() }}
             {{ method_field('POST') }}
             @if($item->approveStatus=="0")
-            <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?&quot;)">Approve</button>
+           <!-- Button trigger modal -->
+           <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveVariationModal">
+            Approve
+            </button>
+
             @elseif($item->approveStatus=="1")
-            <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" disabled >Approve</button>
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" disabled >Approve</button>
             @endif
+            <!-- Modal -->
+            <div class="modal fade" id="approveVariationModal" tabindex="-1" role="dialog" aria-labelledby="approveVariationModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Approve Variation</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                  <div class="modal-body">
+                     Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Confirm</button>
+                  </div>
+               </div>
+            </div>
+            </div>
+            
          </form>
 
 
