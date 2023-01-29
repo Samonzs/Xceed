@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->string('clientEmail');
-            $table->integer('phoneNumber');
+            $table->string('phoneNumber');
             $table->date('date');
             $table->string('companyName');
             $table->string('abn');
