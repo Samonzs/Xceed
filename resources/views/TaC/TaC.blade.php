@@ -129,10 +129,9 @@ legend.scheduler-border {
 
    <body>
     <div class="container">
-        <div class="row">
-                <div class="card">
-                    <div class="card-body">
-                        <br/>
+        <div class="card">
+        <div class="d-flex flex-column">
+                    <div class="p-2">
                         <div class="table-responsive">
                             <table class="table">
                                  <tr>@if(Session::get('success'))

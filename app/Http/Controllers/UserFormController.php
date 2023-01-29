@@ -82,7 +82,7 @@ class UserFormController extends Controller
         ],
         'companyName' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'phonenumber' => 'required|regex:/^[0-9]+$/|max:10|min:10',
-        'date' => 'required|regex:/^\d{4}\/\d{2}\/\d{2}$/',
+        'date' => 'required|regex:/^\d{4}\-\d{2}\-\d{2}$/',
         'abn' => 'required|regex:/^[0-9]+$/|max:11|min:11',
         'addressline' => 'required|string|max:255|min:1',
         'suburb' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
@@ -94,8 +94,15 @@ class UserFormController extends Controller
         'siteaddressstate' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'sitepostcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
         'totalCost' => 'required|regex:/^[0-9]+$/|max:10|min:1',
-        'variationDateRequest' => 'required|regex:/^\d{4}\/\d{2}\/\d{2}$/'
+        'variationDateRequest' => 'required|regex:/^\d{4}\-\d{2}\-\d{2}$/'
 
+        ], ['date.regex' => 'The date must be in the format of yyyy-mm-dd',
+        'variationDateRequest.regex'=> 'The date must be in the format of yyyy-mm-dd',
+        'abn.regex' => 'The ABN must be 11 numeric digits',
+        'phonenumber.regex' => 'The phone number must be 10 numeric digits starting with 04',
+        'postcode.regex' => 'The postcode must be 4 numeric digits',
+        'sitepostcode.regex' => 'The site postcode must be 4 numeric digits',
+        'totalCost.regex' => 'Total cost must be numeric'
         ]);
 
         if ($validator->fails()) 

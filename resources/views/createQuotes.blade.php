@@ -157,7 +157,7 @@
 
                               <label for="date">Date:</label><br>
                               <span style="color:red">@error('date'){{$message}}@enderror</span>
-                              <input type="text" id="date" name="date" value="{{ old('date') }}" placeholder = "yyyy/mm/dd">
+                              <input type="text" id="date" name="date" value="{{ old('date') }}" placeholder = "yyyy-mm-dd">
 
                               <label for="companyName">Company Name:</label><br>
                               <span style="color:red">@error('companyName'){{$message}}@enderror</span>

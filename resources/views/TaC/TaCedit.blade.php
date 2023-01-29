@@ -61,12 +61,9 @@
 
 
 @section('content')
-
-
-<div class="row">
-<div class="card">
-  <div class="card-body">
-      
+<div class= "card">
+<div class="d-flex flex-column">
+<div class="p-2">
       <form action="{{ url('TaC/' .$TaC->id) }}" method="post">
       {!! csrf_field() !!}
         @method("PATCH")
@@ -75,10 +72,8 @@
         <a href="{{ url('TaC')}}"><button type="button" class="btn btn-secondary"><i class="fa fa-pencil-square-o"></i> Back</button></a> <input type="submit"  class="btn btn-success"></br>
       </form>
 
-  
-  </div>
+      </div>
 </div>
 </div>
-
 @endsection
 @endif
