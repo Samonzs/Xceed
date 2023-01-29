@@ -93,14 +93,14 @@
 				{{ method_field('DELETE') }}
 
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">n/a</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Delete User?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 
 				<div class="modal-body">
-					n/a
+					
 				</div>
 
 				<div class="modal-footer">
@@ -112,7 +112,24 @@
 	</div>
 </div>
 
+<script>
+	
+	$("#confirmationModal").on('shown.bs.modal', function (e) {
+		const base = "{{ url('') }}";
+		const item = e.relatedTarget.dataset['item'];
+    
+		const action = `${base}/staffListCrud/${item}`;
+		const text = `Do you want to delete the user (${item})?`;
 
+		const form = $("#form-confirm")[0];
+		const modalBody = $("#form-confirm > .modal-body")[0];
+
+		form.action = action;
+		modalBody.innerText = text;
+
+	});
+	
+</script>
 
 @endsection
 @endif
