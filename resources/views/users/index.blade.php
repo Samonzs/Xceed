@@ -73,10 +73,7 @@
          <td>
             <a href="{{ url('/staffListCrud/' . $item->id) }}" title="View Staff"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> <a href="{{ url('/staffListCrud/' . $item->id . '/edit') }}" title="Edit Staff"><button class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a> 
             @if($item->role=="user") 
-            <form method="POST" action="{{ url('/staffListCrud' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> 
-            {{ method_field('DELETE') }} 
-            {{ csrf_field() }} 
-            <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Staff" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
+            <button class="btn btn-secondary btn-danger btn-sm" data-toggle="modal" data-target="#confirmationModal" data-item="{{ $item->id }}">Delete</button>                                      
             @endif
          </td>                               
       </tr>
@@ -87,7 +84,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="approveVariationModal" tabindex="-1" role="dialog" aria-labelledby="approveVariationModalLabel" aria-hidden="true">
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 
