@@ -142,8 +142,6 @@
 		
 		let action, method, text, label;
 
-		console.log(e)
-
 		if (type === "store") {
 			action = `${base}/lov/${item}/store`;
 			method = "POST";
