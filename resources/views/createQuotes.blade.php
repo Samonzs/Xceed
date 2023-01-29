@@ -253,7 +253,7 @@
                         </div>
                               <label for="variationDateRequest">Variation Date Request:</label><br>
                               <span style="color:red">@error('variationDateRequest'){{$message}}@enderror</span>
-                              <input type="text" id="variationDateRequest" name="variationDateRequest" value="{{ old('variationDateRequest') }}" placeholder = "yyyy/mm/dd">
+                              <input type="text" id="variationDateRequest" name="variationDateRequest" value="{{ old('variationDateRequest') }}" placeholder = "yyyy-mm-dd">
                         
 
                      </div>
