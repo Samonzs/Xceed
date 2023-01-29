@@ -59,133 +59,38 @@
    <tbody>
 @foreach($VariationDetails as $item)
 
-   @if($item->createdBy == Auth::user()->staff_fname)                                  
-      <tr>                                 
-         <td>{{ $loop->iteration }}</td>                                
-         <td>{{ $item->firstName }} {{ $item->lastName }}</td>
-         <td>{{ $item->jobReferenceNumber }}</td>      
-         <td>{{ $item->variationDateRequest }}</td>  
-         <td>${{ $item->totalCost }}</td>   
-         <td>{{ $item->createdBy }}</td>            
-         <td>
-         <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
-
-         <form action="{{ url('/lov/' . $item->id . '/store') }} " style="display:inline" method="POST">
-            {{ csrf_field() }}
-            {{ method_field('POST') }}
-            @if($item->approveStatus=="0")
-            <!-- <button type="submit" class="btn btn-success btn-sm" id="approveStatus" name="approveStatus" onclick="return confirm(&quot;Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?&quot;)">Approve</button> -->
-            
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveVariationModal">
-            Approve
-            </button>
-
-            @elseif($item->approveStatus=="1")
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveVariationModal" disabled>
-            Approve
-            </button>
-            @endif
-
-            <!-- Modal -->
-            <div class="modal fade" id="approveVariationModal" tabindex="-1" role="dialog" aria-labelledby="approveVariationModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                  <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Approve Variation</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                  </button>
-                  </div>
-                  <div class="modal-body">
-                     Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?
-                  </div>
-                  <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="onsubmit" id="approveStatus"class="btn btn-primary">Confirm</button> <!--submits the form-->
-                  </div>
-               </div>
-            </div>
-            </div>
-         </form>
-
-          
-
-         @if($item->approveStatus=="0")
-         <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-         
-         @elseif($item->approveStatus=="1")
-         <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" disabled class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-         @endif
-
-         @if(Auth::user()->hasRole('admin')) 
-         <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Do you want to delete the variation?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
-         @endif
-         
-         </td>                               
-      </tr>
-   
-   @elseif(Auth::user()->role == "admin")
+   @if($item->createdBy == Auth::user()->staff_fname || Auth::user()->role == "admin")
 
       <tr>                                 
          <td>{{ $loop->iteration }}</td>                                
          <td>{{ $item->firstName }} {{ $item->lastName }}</td>
          <td>{{ $item->jobReferenceNumber }}</td>      
          <td>{{ $item->variationDateRequest }}</td>  
-         <td>${{ $item->totalCost }}</td>
-         <td>{{ $item->createdBy }}</td>                           
+         <td>${{ $item->totalCost }}</td>          
+         <td>{{ $item->createdBy }}</td>          
          <td>
-         <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a> 
+			 <a href="{{ url('/lov/' . $item->id) }}" title="View Variation"><button class="btn btn-secondary btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
 
-         
+			@if($item->approveStatus=="0")
+			<!-- Button trigger modal -->
+			<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveVariationModal" data-item="{{ $item->id }}" data-type="store">Approve</button>
 
-
-         <form action="{{ url('/lov/' . $item->id . '/store') }} " style="display:inline" method="POST">
-            {{ csrf_field() }}
-            {{ method_field('POST') }}
-            @if($item->approveStatus=="0")
-           <!-- Button trigger modal -->
-           <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveVariationModal">
-            Approve
-            </button>
-
-            @elseif($item->approveStatus=="1")
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approveModalCenter" id="approveStatus" name="approveStatus" disabled >Approve</button>
-            @endif
-            <!-- Modal -->
-            <div class="modal fade" id="approveVariationModal" tabindex="-1" role="dialog" aria-labelledby="approveVariationModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                  <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Approve Variation</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                  </button>
-                  </div>
-                  <div class="modal-body">
-                     Are you sure you want to approve variation, from here onwards you wont be able to edit or make changes?
-                  </div>
-                  <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Confirm</button>
-                  </div>
-               </div>
-            </div>
-            </div>
-            
-         </form>
+			@elseif($item->approveStatus=="1")
+			<button class="btn btn-success btn-sm" disabled>Approve</button>
+			@endif
 
 
-         @if($item->approveStatus=="0")
-         <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-         
-         @elseif($item->approveStatus=="1")
-         <a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" disabled class="btn btn-secondary btn-primary btn-sm "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-         @endif
+			@if($item->approveStatus=="0")
+			<a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" class="btn btn-secondary btn-primary btn-sm ">Edit</button></a>
 
-         @if(Auth::user()->hasRole('admin')) 
-         <form method="POST" action="{{ url('/lov' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline"> {{ method_field('DELETE') }} {{ csrf_field() }} <button type="submit" class="btn btn-secondary btn-danger btn-sm" title="Delete Variation" onclick="return confirm(&quot;Do you want to delete the variation?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button> </form>                                        
-         @endif
+			@elseif($item->approveStatus=="1")
+			<a href="{{ url('/lov/' . $item->id . '/edit') }}" title="Edit variation"><button id="edit_btn" disabled class="btn btn-secondary btn-primary btn-sm "> Edit</button></a>
+			@endif
+
+			@if(Auth::user()->hasRole('admin'))
+			<!-- Button trigger modal -->
+			<button class="btn btn-secondary btn-danger btn-sm" data-toggle="modal" data-target="#approveVariationModal" data-item="{{ $item->id }}" data-type="delete">Delete</button>
+			@endif
          </td>                               
       </tr>
 
@@ -199,6 +104,70 @@
                                
 </table>
 
+<!-- Modal -->
+<div class="modal fade" id="approveVariationModal" tabindex="-1" role="dialog" aria-labelledby="approveVariationModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
 
+			<form id="form-confirm" action="" method="POST">
+				{{ csrf_field() }}
+				{{ method_field('POST') }}
+
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">n/a</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					n/a
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Confirm</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	$("#approveVariationModal").on('shown.bs.modal', function (e) {
+		const base = "{{ url('') }}";
+		const type = e.relatedTarget.dataset['type'];
+		const item = e.relatedTarget.dataset['item'];
+		
+		let action, method, text, label;
+
+		console.log(e)
+
+		if (type === "store") {
+			action = `${base}/lov/${item}/store`;
+			method = "POST";
+			text = "Are you sure you want to approve this variation? You won't be able to edit or make changes once you do this.";
+			label = "Approve Variation";
+		}
+		else if (type === "delete") {
+			action = `${base}/lov/${item}`;
+			method = "DELETE";
+			text = `Do you want to delete the variation (${item})?`;
+			label = "Delete Variation";
+		}
+	
+		const form = $("#form-confirm")[0];
+		const formMethod = $("#form-confirm > input[name='_method']")[0];
+		const modalBody = $("#form-confirm > .modal-body")[0];
+		const modalLabel = $("#exampleModalLabel")[0];
+
+		form.action = action;
+		formMethod.value = method;
+		modalBody.innerText = text;
+		modalLabel.innerText = label;
+	});
+	
+</script>
 
 @endsection
