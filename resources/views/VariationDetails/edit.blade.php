@@ -67,7 +67,7 @@
             
             <label for="phoneNumber"><strong>Phone Number</strong></label><br>
             <span style="color:red">@error('phoneNumber'){{$message}}@enderror</span>
-            <input type="text" name="phoneNumber" id="phoneNumber" value="0{{$VariationDetails->phoneNumber}}" class="form-control">
+            <input type="text" name="phoneNumber" id="phoneNumber" value="{{$VariationDetails->phoneNumber}}" class="form-control">
             
             <label for="date"><strong>Date</strong></label><br>
             <span style="color:red">@error('date'){{$message}}@enderror</span>

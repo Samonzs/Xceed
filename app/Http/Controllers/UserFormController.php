@@ -81,8 +81,14 @@ class UserFormController extends Controller
             'regex:/^\w+[-\.\w]*@(?!(?:outlook|myemail|yahoo)\.com$)\w+[-\.\w]*?\.\w{2,4}$/'
         ],
         'companyName' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
-        'phonenumber' => 'required|regex:/^[0-9]+$/|max:10|min:10',
-        'date' => 'required|regex:/^\d{4}\-\d{2}\-\d{2}$/',
+        'phonenumber' =>[
+            'required',
+            'regex:/^0(9|4)\d{8}$/'
+            ],
+        'date' => [
+            'required',
+            'regex:/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/'
+            ],
         'abn' => 'required|regex:/^[0-9]+$/|max:11|min:11',
         'addressline' => 'required|string|max:255|min:1',
         'suburb' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
@@ -94,12 +100,15 @@ class UserFormController extends Controller
         'siteaddressstate' => 'required|regex:/^([^0-9]+)$/|max:255|min:1',
         'sitepostcode' => 'required|regex:/^[0-9]+$/|max:4|min:4',
         'totalCost' => 'required|regex:/^[0-9]+$/|max:10|min:1',
-        'variationDateRequest' => 'required|regex:/^\d{4}\-\d{2}\-\d{2}$/'
+        'variationDateRequest' => [
+        'required',
+        'regex:/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/'
+        ]
 
-        ], ['date.regex' => 'The date must be in the format of yyyy-mm-dd',
-        'variationDateRequest.regex'=> 'The date must be in the format of yyyy-mm-dd',
+        ], ['date.regex' => 'The date must be in the format of yyyy-mm-dd (mm cannot exceed 12, and dd cannot exceed 31)',
+        'variationDateRequest.regex'=> 'The date must be in the format of yyyy-mm-dd (mm cannot exceed 12, and dd cannot exceed 31)',
         'abn.regex' => 'The ABN must be 11 numeric digits',
-        'phonenumber.regex' => 'The phone number must be 10 numeric digits starting with 04',
+        'phonenumber.regex' => 'The phone number must be 10 numeric digits starting with 04/02',
         'postcode.regex' => 'The postcode must be 4 numeric digits',
         'sitepostcode.regex' => 'The site postcode must be 4 numeric digits',
         'totalCost.regex' => 'Total cost must be numeric'
