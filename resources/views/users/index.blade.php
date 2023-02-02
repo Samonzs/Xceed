@@ -65,7 +65,7 @@
       @foreach($users as $item)
                                           
       <tr>                                 
-         <td>{{ $loop->iteration }}</td>                                
+         <td>{{ $item->id }}</td>                                
          <td>{{ $item->staff_fname }}</td>
          <td>{{ $item->staff_lname }}</td>                       
          <td>{{ $item->staff_email }}</td>

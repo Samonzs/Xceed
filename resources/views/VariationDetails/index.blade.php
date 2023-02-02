@@ -62,7 +62,7 @@
    @if($item->createdBy == Auth::user()->staff_fname || Auth::user()->role == "admin")
 
       <tr>                                 
-         <td>{{ $loop->iteration }}</td>                                
+         <td>{{ $item->id }}</td>                                
          <td>{{ $item->firstName }} {{ $item->lastName }}</td>
          <td>{{ $item->jobReferenceNumber }}</td>      
          <td>{{ $item->variationDateRequest }}</td>  
