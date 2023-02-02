@@ -73,7 +73,7 @@ class UserController extends Controller
             $pdf->writeHTML('<p><strong>Date: </strong>'.$VariationDetails['date'].'</p>');
             $pdf->writeHTML('<p><strong>Company Name: </strong>'.$VariationDetails['companyName'].'</p>');
             $pdf->writeHTML('<p><strong>ABN: </strong>'.$VariationDetails['abn'].'</p>');
-            $pdf->writeHTML('<p><strong>Addre2ss Line: </strong>'.$VariationDetails['addressLine'].'</p>');
+            $pdf->writeHTML('<p><strong>Address Line: </strong>'.$VariationDetails['addressLine'].'</p>');
             $pdf->writeHTML('<p><strong>Suburb: </strong>'.$VariationDetails['suburb'].'</p>');
             $pdf->writeHTML('<p><strong>Postcode: </strong>'.$VariationDetails['postcode'].'</p>');
             //$pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
@@ -213,7 +213,7 @@ class UserController extends Controller
             $pdf->writeHTML('<p><strong>ABN: </strong>'.$VariationDetails['abn'].'</p>');
             $pdf->writeHTML('<p><strong>Address Line: </strong>'.$VariationDetails['addressLine'].'</p>');
             $pdf->writeHTML('<p><strong>Suburb: </strong>'.$VariationDetails['suburb'].'</p>');
-            $pdf->writeHTML('<p><strong>ostcode: </strong>'.$VariationDetails['postcode'].'</p>');
+            $pdf->writeHTML('<p><strong>Postcode: </strong>'.$VariationDetails['postcode'].'</p>');
             //$pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
             //$pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
         //}
