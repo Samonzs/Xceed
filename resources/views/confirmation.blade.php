@@ -85,7 +85,7 @@
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="<?php echo url('lov')?>">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?php echo url('lov')?>">Home <span class="sr-only"></span></a>
                       </li>
                       <a class="nav-link" href="<?php echo url('createquotes')?>">Create Variations</a>
                       </ul>
@@ -218,8 +218,10 @@
       
         <tr>
           <th scope="col">Variation Description</th>
-          <td>{{$item['variationDescription']}}</td>
+          <td>{!!nl2br($item['variationDescription'])!!}</td>
         </tr>
+
+
         <tr>
           <th scope="col">Total Cost</th>
           <td>{{$item['totalCost']}}</td>
@@ -246,7 +248,7 @@
 
 
     <h4 > Terms And Conditions</h4>
-    <td>{{$terms_and_conditions['TermsAndConditions']}}</td>
+    <td>{!!nl2br($terms_and_conditions['TermsAndConditions'])!!}</td>
     </tbody>
     <br><br>
     <label for="TaCcheckbox"> By Signing, you are confirming that you have confirmed your details as well as read and understood the terms and conditions</label>

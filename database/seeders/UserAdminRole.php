@@ -19,12 +19,7 @@ class UserAdminRole extends Seeder
     public function run()
     {
         TermsAndConditions::create([
-            'termsAndConditions' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et eros ac tellus cursus fringilla eu faucibus lacus. 
-            Cras id venenatis metus. Nam ac hendrerit neque. Vivamus a dignissim risus, eu convallis massa. Aenean maximus maximus mi quis aliquam. Sed euismod 
-            dictum convallis. Curabitur lacinia dui odio. Vestibulum dignissim mauris id massa fermentum, quis tempus turpis varius. Duis eget imperdiet odio. 
-            Curabitur fermentum, urna ac sodales tincidunt, ex purus tincidunt ex, in molestie purus velit nec ante. Morbi gravida elit ac nisi pulvinar, at dictum 
-            est condimentum. Etiam diam ex, semper et est eget, pulvinar posuere ligula. Pellentesque ullamcorper vehicula fermentum. Fusce ac erat tellus. 
-            Phasellus luctus sollicitudin porttitor.'
+            'termsAndConditions' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
         ]);
 
         User::create([

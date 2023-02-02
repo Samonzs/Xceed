@@ -66,31 +66,31 @@ class UserController extends Controller
         if(!empty($VariationDetails)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Client Details</h1></div>');
-            $pdf->writeHTML('<p>First Name: '.$VariationDetails['firstName'].'</p>');
-            $pdf->writeHTML('<p>Last Name: '.$VariationDetails['lastName'].'</p>');
-            $pdf->writeHTML('<p>Client Email: '.$VariationDetails['clientEmail'].'</p>');
-            $pdf->writeHTML('<p>Phone Number: 0'.$VariationDetails['phoneNumber'].'</p>');
-            $pdf->writeHTML('<p>Date: '.$VariationDetails['date'].'</p>');
-            $pdf->writeHTML('<p>Company Name: '.$VariationDetails['companyName'].'</p>');
-            $pdf->writeHTML('<p>ABN: '.$VariationDetails['abn'].'</p>');
-            $pdf->writeHTML('<p>Addre2ss Line: '.$VariationDetails['addressLine'].'</p>');
-            $pdf->writeHTML('<p>Suburb: '.$VariationDetails['suburb'].'</p>');
-            $pdf->writeHTML('<p>Postcode: '.$VariationDetails['postcode'].'</p>');
+            $pdf->writeHTML('<p><strong>First Name: </strong>'.$VariationDetails['firstName'].'</p>');
+            $pdf->writeHTML('<p><strong>Last Name: </strong>'.$VariationDetails['lastName'].'</p>');
+            $pdf->writeHTML('<p><strong>Client Email: </strong>'.$VariationDetails['clientEmail'].'</p>');
+            $pdf->writeHTML('<p><strong>Phone Number: </strong>'.$VariationDetails['phoneNumber'].'</p>');
+            $pdf->writeHTML('<p><strong>Date: </strong>'.$VariationDetails['date'].'</p>');
+            $pdf->writeHTML('<p><strong>Company Name: </strong>'.$VariationDetails['companyName'].'</p>');
+            $pdf->writeHTML('<p><strong>ABN: </strong>'.$VariationDetails['abn'].'</p>');
+            $pdf->writeHTML('<p><strong>Addre2ss Line: </strong>'.$VariationDetails['addressLine'].'</p>');
+            $pdf->writeHTML('<p><strong>Suburb: </strong>'.$VariationDetails['suburb'].'</p>');
+            $pdf->writeHTML('<p><strong>Postcode: </strong>'.$VariationDetails['postcode'].'</p>');
             //$pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
             //$pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
         //}
         //if(!empty($VariationDetails)){
             //$pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Client Site Details</h1></div>');
-            $pdf->writeHTML('<p>Job Reference Number: '.$VariationDetails['jobReferenceNumber'].'</p>');
-            $pdf->writeHTML('<p>Order Number: '.$VariationDetails['orderNumber'].'</p>');
-            $pdf->writeHTML('<p>Site Name: '.$VariationDetails['siteName'].'</p>');
-            $pdf->writeHTML('<p>Site Address Line: '.$VariationDetails['siteAddressLine'].'</p>');
-            $pdf->writeHTML('<p>Site Address State: '.$VariationDetails['siteAddressState'].'</p>');
-            $pdf->writeHTML('<p>Site Postcode: '.$VariationDetails['sitePostcode'].'</p>');
-            $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
-            $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
-            $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
+            $pdf->writeHTML('<p><strong>Job Reference Number: </strong>'.$VariationDetails['jobReferenceNumber'].'</p>');
+            $pdf->writeHTML('<p><strong>Order Number: </strong>'.$VariationDetails['orderNumber'].'</p>');
+            $pdf->writeHTML('<p><strong>Site Name: </strong>'.$VariationDetails['siteName'].'</p>');
+            $pdf->writeHTML('<p><strong>Site Address Line: </strong>'.$VariationDetails['siteAddressLine'].'</p>');
+            $pdf->writeHTML('<p><strong>Site Address State: </strong>'.$VariationDetails['siteAddressState'].'</p>');
+            $pdf->writeHTML('<p><strong>Site Postcode: </strong>'.$VariationDetails['sitePostcode'].'</p>');
+            $pdf->writeHTML('<p><strong>Variation Description: </strong><br>'.nl2br($VariationDetails['variationDescription']).'</p>');
+            $pdf->writeHTML('<p><strong>Total Cost: </strong>'.$VariationDetails['totalCost'].'</p>');
+            $pdf->writeHTML('<p><strong>Variation Date Request: </strong>'.$VariationDetails['variationDateRequest'].'</p>');
 
             $pdf->Image($logo_path, 130, 3, 80, 40, '', '', '', true, 200, '', false, false, 0, false, false, false);
 
@@ -103,7 +103,7 @@ class UserController extends Controller
         if(!empty($TermsAndConditions)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Terms And Conditions</h1></div>');
-            $pdf->writeHTML('<p>Terms And Conditions: '.$TermsAndConditions['TermsAndConditions'].'</p>');
+            $pdf->writeHTML('<p>Terms And Conditions: '.nl2br($TermsAndConditions['TermsAndConditions']).'</p>');
             
             $pdf->writeHTML('<div><h4>Date: '.$VariationDetails['date'].'</h4></div>');
             $pdf->writeHTML('<div style="text-align: center"><h4>Signature</h4></div>');
@@ -204,31 +204,31 @@ class UserController extends Controller
         if(!empty($VariationDetails)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Client Details</h1></div>');
-            $pdf->writeHTML('<p>First Name: '.$VariationDetails['firstName'].'</p>');
-            $pdf->writeHTML('<p>Last Name: '.$VariationDetails['lastName'].'</p>');
-            $pdf->writeHTML('<p>Client Email: '.$VariationDetails['clientEmail'].'</p>');
-            $pdf->writeHTML('<p>Phone Number: 0'.$VariationDetails['phoneNumber'].'</p>');
-            $pdf->writeHTML('<p>Date: '.$VariationDetails['date'].'</p>');
-            $pdf->writeHTML('<p>Company Name: '.$VariationDetails['companyName'].'</p>');
-            $pdf->writeHTML('<p>ABN: '.$VariationDetails['abn'].'</p>');
-            $pdf->writeHTML('<p>Address Line: '.$VariationDetails['addressLine'].'</p>');
-            $pdf->writeHTML('<p>Suburb: '.$VariationDetails['suburb'].'</p>');
-            $pdf->writeHTML('<p>Postcode: '.$VariationDetails['postcode'].'</p>');
+            $pdf->writeHTML('<p><strong>First Name: </strong>'.$VariationDetails['firstName'].'</p>');
+            $pdf->writeHTML('<p><strong>Last Name: </strong>'.$VariationDetails['lastName'].'</p>');
+            $pdf->writeHTML('<p><strong>Client Email: </strong>'.$VariationDetails['clientEmail'].'</p>');
+            $pdf->writeHTML('<p><strong>Phone Number: </strong>'.$VariationDetails['phoneNumber'].'</p>');
+            $pdf->writeHTML('<p><strong>Date: </strong>'.$VariationDetails['date'].'</p>');
+            $pdf->writeHTML('<p><strong>Company Name: </strong>'.$VariationDetails['companyName'].'</p>');
+            $pdf->writeHTML('<p><strong>ABN: </strong>'.$VariationDetails['abn'].'</p>');
+            $pdf->writeHTML('<p><strong>Address Line: </strong>'.$VariationDetails['addressLine'].'</p>');
+            $pdf->writeHTML('<p><strong>Suburb: </strong>'.$VariationDetails['suburb'].'</p>');
+            $pdf->writeHTML('<p><strong>ostcode: </strong>'.$VariationDetails['postcode'].'</p>');
             //$pdf->writeHTML('<p>Created At: '.$VariationDetails['created_at'].'</p>');
             //$pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
         //}
        // if(!empty($VariationDetails)){
            // $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Client Site Details</h1></div>');
-            $pdf->writeHTML('<p>Job Reference Number: '.$VariationDetails['jobReferenceNumber'].'</p>');
-            $pdf->writeHTML('<p>Order Number: '.$VariationDetails['orderNumber'].'</p>');
-            $pdf->writeHTML('<p>Site Name: '.$VariationDetails['siteName'].'</p>');
-            $pdf->writeHTML('<p>Site Address Line: '.$VariationDetails['siteAddressLine'].'</p>');
-            $pdf->writeHTML('<p>Site Address State: '.$VariationDetails['siteAddressState'].'</p>');
-            $pdf->writeHTML('<p>Site Postcode: '.$VariationDetails['sitePostcode'].'</p>');
-            $pdf->writeHTML('<p>Variation Description: '.$VariationDetails['variationDescription'].'</p>');
-            $pdf->writeHTML('<p>Total Cost: '.$VariationDetails['totalCost'].'</p>');
-            $pdf->writeHTML('<p>Variation Date Request: '.$VariationDetails['variationDateRequest'].'</p>');
+            $pdf->writeHTML('<p><strong>Job Reference Number: </strong>'.$VariationDetails['jobReferenceNumber'].'</p>');
+            $pdf->writeHTML('<p><strong>Order Number: </strong>'.$VariationDetails['orderNumber'].'</p>');
+            $pdf->writeHTML('<p><strong>Site Name: </strong>'.$VariationDetails['siteName'].'</p>');
+            $pdf->writeHTML('<p><strong>Site Address Line: </strong>'.$VariationDetails['siteAddressLine'].'</p>');
+            $pdf->writeHTML('<p><strong>Site Address State: </strong>'.$VariationDetails['siteAddressState'].'</p>');
+            $pdf->writeHTML('<p><strong>Site Postcode: </strong>'.$VariationDetails['sitePostcode'].'</p>');
+            $pdf->writeHTML('<p><strong>Variation Description: </strong><br>'.nl2br($VariationDetails['variationDescription']).'</p>');
+            $pdf->writeHTML('<p><strong>Total Cost: </strong>'.$VariationDetails['totalCost'].'</p>');
+            $pdf->writeHTML('<p><strong>Variation Date Request: </strong>'.$VariationDetails['variationDateRequest'].'</p>');
             $pdf->writeHTML('<img src='.$VariationDetails['signatureUpload'].'>');
             //$pdf->writeHTML('<p>Updated At: '.$VariationDetails['updated_at'].'</p>');
 
@@ -237,7 +237,7 @@ class UserController extends Controller
         if(!empty($TermsAndConditions)){
             $pdf->AddPage();
             $pdf->writeHTML('<div style="text-align: center"><h1>Terms And Conditions</h1></div>');
-            $pdf->writeHTML('<p>Terms And Conditions: '.$TermsAndConditions['TermsAndConditions'].'</p>');
+            $pdf->writeHTML('<p>Terms And Conditions: '.nl2br($TermsAndConditions['TermsAndConditions']).'</p>');
             $pdf->writeHTML('<div><h4>Date: '.$VariationDetails['date'].'</h4></div>');
             $pdf->writeHTML('<div style="text-align: center"><h4>Signature</h4></div>');
             if(!empty($VariationDetails['signatureUpload'])){
